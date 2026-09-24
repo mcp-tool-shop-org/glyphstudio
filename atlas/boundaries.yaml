@@ -1,0 +1,62 @@
+summary: ""
+boundaries:
+  - name: .github
+    globs:
+      - .github/**
+    role: config
+  - name: api-contract
+    globs:
+      - packages/api-contract/**
+    role: code
+  - name: assets
+    globs:
+      - assets/**
+    role: data
+  - name: audit
+    globs:
+      - audit/**
+    role: docs
+  - name: desktop
+    globs:
+      - apps/desktop/**
+    role: code
+  - name: docs
+    globs:
+      - docs/**
+    role: data
+  - name: dogfood
+    globs:
+      - dogfood/**
+    role: data
+  - name: domain
+    globs:
+      - packages/domain/**
+    role: code
+  - name: examples
+    globs:
+      - examples/**
+    role: config
+  - name: mcp-sprite-server
+    globs:
+      - packages/mcp-sprite-server/**
+    role: code
+  - name: root
+    globs:
+      - "*"
+    role: config
+  - name: scripts
+    globs:
+      - scripts/**
+    role: code
+  - name: showcase
+    globs:
+      - showcase/**
+    role: code
+  - name: site
+    globs:
+      - site/**
+    role: site
+  - name: state
+    globs:
+      - packages/state/**
+    role: code
