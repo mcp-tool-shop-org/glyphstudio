@@ -43,7 +43,7 @@ jobs:
           cache: pnpm
 
       - name: Atlas check
-        run: npx --yes @dogfood-lab/atlas@1.16.0 check
+        run: npx --yes @dogfood-lab/atlas@1.17.0 check
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile

@@ -9,7 +9,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "68f299573e21606f7410cfd3e5639b4ad88d6ab298115f87922bdd50ab4f9d3d",
+          "hash": "7c506c0c825a0471b9265a15d39c078adff264db300a657bc364a389b5366d6a",
           "path": ".github/workflows/ci.yml"
         },
         {
@@ -47,6 +47,9 @@
         },
         {
           "hash": "4009365d33c70dce775060f376030e063743015e800f5e104bd52f14edf7d948",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/api-contract/src/commands.ts"
         },
         {
@@ -90,7 +93,7 @@
       "name": "api-contract",
       "origin": "authored",
       "role": "code",
-      "testedBy": 0,
+      "testedBy": 5,
       "unresolvedSites": 0
     },
     {
@@ -471,7 +474,9 @@
             "apps/desktop/src/components/VectorSourceBanner.tsx",
             "apps/desktop/src/components/VectorWorkspace.tsx",
             "apps/desktop/src/lib/seedSampleContent.ts",
-            "apps/desktop/src/lib/toast.ts"
+            "apps/desktop/src/lib/toast.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/app/AppShell.tsx"
         },
@@ -507,7 +512,9 @@
           "hash": "610d382b443d29ba569e0be36aee44b505384d72742bcf040dd88f4f07e07e08",
           "importsFiles": [
             "apps/desktop/src/components/AnchorPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/AnchorPanel.test.tsx"
         },
@@ -516,13 +523,19 @@
             "AnchorPanel"
           ],
           "hash": "476acb43dcefe69e15a790fcb8a0ce9b1f254ab1934695a9275896cd58bd5d92",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/AnchorPanel.tsx"
         },
         {
           "hash": "8d9762eb2371af6e0c74c4a21eeee7e4897629933ff7831b5cd1d6ac7087e9f5",
           "importsFiles": [
             "apps/desktop/src/components/AssetBrowserPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/AssetBrowserPanel.test.tsx"
         },
@@ -532,7 +545,9 @@
           ],
           "hash": "5acdea56a208560a87de56e64d38ef55eee111b0e9e7a28bd3dc202db4b1ebb4",
           "importsFiles": [
-            "apps/desktop/src/lib/packagingSettings.ts"
+            "apps/desktop/src/lib/packagingSettings.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/AssetBrowserPanel.tsx"
         },
@@ -540,7 +555,9 @@
           "hash": "7aee16f6547a52892d8d177dea75020cf5ea25f1e7ddc40059e23dc3703c78f8",
           "importsFiles": [
             "apps/desktop/src/components/BottomDock.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/BottomDock.test.tsx"
         },
@@ -559,14 +576,17 @@
             "apps/desktop/src/components/SandboxPanel.tsx",
             "apps/desktop/src/components/ScenePlaybackControls.tsx",
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/BottomDock.tsx"
         },
         {
           "hash": "bfef203f7286d248f874b781f3e6c6c9767388cb68a9a332afad5f241abbf5e6",
           "importsFiles": [
-            "apps/desktop/src/components/BundlePanel.tsx"
+            "apps/desktop/src/components/BundlePanel.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/BundlePanel.test.tsx"
         },
@@ -575,13 +595,18 @@
             "BundlePanel"
           ],
           "hash": "fa822e0b6b28c8be592893c1d38bd04b745bdbbee9bde724485ee27215a9086b",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/BundlePanel.tsx"
         },
         {
           "hash": "d29f00649432beb42286b543bbab03509c8587ac21fac0d4d9979b02619992d9",
           "importsFiles": [
             "apps/desktop/src/components/CameraKeyframePanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/CameraKeyframePanel.test.tsx"
         },
@@ -590,13 +615,19 @@
             "CameraKeyframePanel"
           ],
           "hash": "8b8ba3caaf883c6b4726f9b6dc67de72e23987547a42f350aa7e60422d874595",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/CameraKeyframePanel.tsx"
         },
         {
           "hash": "c279a6154e659f99c564ccb53353c9ff84490f1bfd7f255af80f98065c9b0676",
           "importsFiles": [
             "apps/desktop/src/components/CameraTimelineLane.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/CameraTimelineLane.test.tsx"
         },
@@ -605,6 +636,10 @@
             "CameraTimelineLane"
           ],
           "hash": "3a8be2d69fe17db9590795cf30c2d54e4558d3574290aa543353cde98eeae27f",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/CameraTimelineLane.tsx"
         },
         {
@@ -612,7 +647,9 @@
           "importsFiles": [
             "apps/desktop/src/components/Canvas.tsx",
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/Canvas.test.tsx"
         },
@@ -627,14 +664,18 @@
             "apps/desktop/src/lib/canvasRenderHelpers.ts",
             "apps/desktop/src/lib/syncLayers.ts",
             "apps/desktop/src/lib/toast.ts",
-            "apps/desktop/src/lib/useCanvasPointerHandlers.ts"
+            "apps/desktop/src/lib/useCanvasPointerHandlers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/Canvas.tsx"
         },
         {
           "hash": "a6d4d43221e06e91a561ac944db1e670f460ad63f3edf53cfbfe17f30e2d1045",
           "importsFiles": [
-            "apps/desktop/src/components/CharacterBuilderPanel.tsx"
+            "apps/desktop/src/components/CharacterBuilderPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/CharacterBuilderPanel.test.tsx"
         },
@@ -643,13 +684,19 @@
             "CharacterBuilderPanel"
           ],
           "hash": "fe6c5ac44b64a9991069295cb380b37ad37a99d0ef90d7a42ceaceb22fa4aeb5",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/CharacterBuilderPanel.tsx"
         },
         {
           "hash": "3a2c9fa5b014f176dd4b31f4a17e206da13962a536b767429031f0b04f4b3eae",
           "importsFiles": [
             "apps/desktop/src/components/ClipPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ClipPanel.test.tsx"
         },
@@ -658,12 +705,17 @@
             "ClipPanel"
           ],
           "hash": "b78c9e3b91a996b797118f0a8d56b4fcddd46a826c97cadfacea66cd61a26ce0",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ClipPanel.tsx"
         },
         {
           "hash": "eca1072790d8ccb2ddde052475eacbfc8202eaefcb536e84d7a2d12cd42d23ba",
           "importsFiles": [
-            "apps/desktop/src/components/ColorPickerPopover.tsx"
+            "apps/desktop/src/components/ColorPickerPopover.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ColorPickerPopover.test.tsx"
         },
@@ -672,6 +724,9 @@
             "ColorPickerPopover"
           ],
           "hash": "a9af1fd543175f3a05aa65ace106002f0681ff7f3d2d6f989bad7f32199ea061",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ColorPickerPopover.tsx"
         },
         {
@@ -718,7 +773,8 @@
           "hash": "6b7b673442bd2d8cb8fa58167eed1ae538ca8ed96d3b3461b2be3e938ab54a9d",
           "importsFiles": [
             "apps/desktop/src/components/EditorStatusBar.tsx",
-            "apps/desktop/src/lib/canvasFrameStore.ts"
+            "apps/desktop/src/lib/canvasFrameStore.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/EditorStatusBar.test.tsx"
         },
@@ -728,7 +784,8 @@
           ],
           "hash": "6cbae3e2e1f383f231c19e5f4df592bb8718e6faf20c19df700488d28ae69ba1",
           "importsFiles": [
-            "apps/desktop/src/lib/canvasFrameStore.ts"
+            "apps/desktop/src/lib/canvasFrameStore.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/EditorStatusBar.tsx"
         },
@@ -736,7 +793,8 @@
           "hash": "2b27b536e11dc4780d76c11d29e26a4911c314f8986503c7b74092a3da126f9d",
           "importsFiles": [
             "apps/desktop/src/components/ExportPreviewPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ExportPreviewPanel.test.tsx"
         },
@@ -747,7 +805,9 @@
           "hash": "3a2cfce4367ef30457b3b73be17f60d648936533a0ae54d4de4ebd388abba60f",
           "importsFiles": [
             "apps/desktop/src/lib/exportSettings.ts",
-            "apps/desktop/src/lib/packagingSettings.ts"
+            "apps/desktop/src/lib/packagingSettings.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ExportPreviewPanel.tsx"
         },
@@ -757,7 +817,8 @@
           ],
           "hash": "75d3fa43c9039a69fcda4a84f92c40ca786124a475a623283b8f138b6d63802b",
           "importsFiles": [
-            "apps/desktop/src/lib/partLibraryStorage.ts"
+            "apps/desktop/src/lib/partLibraryStorage.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/HintBar.tsx"
         },
@@ -765,7 +826,8 @@
           "hash": "9cba529d816c67e9287c8f8ffae8641b7c04188d0add811f0aa2de445344d51b",
           "importsFiles": [
             "apps/desktop/src/components/LayerPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/LayerPanel.test.tsx"
         },
@@ -777,7 +839,8 @@
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
             "apps/desktop/src/lib/syncLayers.ts",
-            "apps/desktop/src/lib/toast.ts"
+            "apps/desktop/src/lib/toast.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/LayerPanel.tsx"
         },
@@ -785,7 +848,9 @@
           "hash": "eaba8d17f0b2fe0dd6cb9dc3d894a26e57da52fbba4b7546c770d7349a786f5a",
           "importsFiles": [
             "apps/desktop/src/components/LibraryPanel.tsx",
-            "apps/desktop/src/lib/partLibraryStorage.ts"
+            "apps/desktop/src/lib/partLibraryStorage.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/LibraryPanel.test.tsx"
         },
@@ -797,7 +862,9 @@
           "importsFiles": [
             "apps/desktop/src/lib/packLibraryStorage.ts",
             "apps/desktop/src/lib/partLibraryStorage.ts",
-            "apps/desktop/src/lib/templateLibraryStorage.ts"
+            "apps/desktop/src/lib/templateLibraryStorage.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/LibraryPanel.tsx"
         },
@@ -805,7 +872,8 @@
           "hash": "95b5b2dbeeb6a6249e4dce8942272d696187be1ff20f54af65171c62a15c41ef",
           "importsFiles": [
             "apps/desktop/src/components/MotionPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/MotionPanel.test.tsx"
         },
@@ -814,12 +882,17 @@
             "MotionPanel"
           ],
           "hash": "6cb25be2ea9c4c753be27daf4acc164f38eaf2c26f058683299d85e8167a2776",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/MotionPanel.tsx"
         },
         {
           "hash": "53b70fe95a8e36d6eaee3d8cdaf1d8e3a7a5088c59b4d53d933cb3edac00f414",
           "importsFiles": [
-            "apps/desktop/src/components/OutputPresetsPanel.tsx"
+            "apps/desktop/src/components/OutputPresetsPanel.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/OutputPresetsPanel.test.tsx"
         },
@@ -828,12 +901,17 @@
             "OutputPresetsPanel"
           ],
           "hash": "93dd2451b20bea12ed763693ad2b0507e57139ba7d6ad11f7d54304c1668e130",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/OutputPresetsPanel.tsx"
         },
         {
           "hash": "a6d4aca424db673c6f39d9641cb58529e12f7f2db438322d3b4d0d184b899a5f",
           "importsFiles": [
-            "apps/desktop/src/components/PalettePropsPanel.tsx"
+            "apps/desktop/src/components/PalettePropsPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/PalettePropsPanel.test.tsx"
         },
@@ -842,12 +920,17 @@
             "PalettePropsPanel"
           ],
           "hash": "96f79f540733edb9476d886a7f6c7a0341f02313a2a7bd117a844299f313b5df",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/PalettePropsPanel.tsx"
         },
         {
           "hash": "678b68dd785d5ad44c547a61e920abf823942833231e0cfb3de8807d9d5d13a1",
           "importsFiles": [
-            "apps/desktop/src/components/PaletteSetsPanel.tsx"
+            "apps/desktop/src/components/PaletteSetsPanel.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/PaletteSetsPanel.test.tsx"
         },
@@ -856,13 +939,18 @@
             "PaletteSetsPanel"
           ],
           "hash": "b45a1b1a962b78c1fb321d6e2ba750c3fee9ead5a4c896a4190212c29f651aa3",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/PaletteSetsPanel.tsx"
         },
         {
           "hash": "4951bc3925091f0da5685d63a724f3286f80fbcfbbc45e5d041229730488c90c",
           "importsFiles": [
             "apps/desktop/src/components/PartsPanel.tsx",
-            "apps/desktop/src/lib/partLibraryStorage.ts"
+            "apps/desktop/src/lib/partLibraryStorage.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/PartsPanel.test.tsx"
         },
@@ -872,7 +960,9 @@
           ],
           "hash": "3e7e8d684a659f02db516999f2fc3a365ab2e2c2e15b549e3e7f35a90dc9e4f3",
           "importsFiles": [
-            "apps/desktop/src/lib/partLibraryStorage.ts"
+            "apps/desktop/src/lib/partLibraryStorage.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/PartsPanel.tsx"
         },
@@ -880,7 +970,9 @@
           "hash": "20b559e8cc092b733c559e146416febd53262d29ce8be3ad5bd4238ee75527fb",
           "importsFiles": [
             "apps/desktop/src/components/PresetPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/PresetPanel.test.tsx"
         },
@@ -889,12 +981,17 @@
             "PresetPanel"
           ],
           "hash": "cd9f7e45fed0ad07853c81373213cc241ae632f86245e43bd1431d7dc9afedc2",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/PresetPanel.tsx"
         },
         {
           "hash": "e5b2981a3a019015f58f9f845735be52f008b022a56d54378c6ee0bbe7f9c56b",
           "importsFiles": [
-            "apps/desktop/src/components/ProjectHome.tsx"
+            "apps/desktop/src/components/ProjectHome.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ProjectHome.test.tsx"
         },
@@ -910,14 +1007,17 @@
             "apps/desktop/src/lib/templateLibraryStorage.ts",
             "apps/desktop/src/lib/toast.ts",
             "apps/desktop/src/workflows/definitions.ts",
-            "apps/desktop/src/workflows/executor.ts"
+            "apps/desktop/src/workflows/executor.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ProjectHome.tsx"
         },
         {
           "hash": "2bd4478885ce75d37be3e271040e96d6a6b0c151a90440ebd9276cc34cdf3ee9",
           "importsFiles": [
-            "apps/desktop/src/components/QuickPaletteStrip.tsx"
+            "apps/desktop/src/components/QuickPaletteStrip.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/QuickPaletteStrip.test.tsx"
         },
@@ -926,6 +1026,9 @@
             "QuickPaletteStrip"
           ],
           "hash": "29597612de5c8e8d4be5dede2f74edde9246315d4bb7b7da74738357fb42ef92",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/QuickPaletteStrip.tsx"
         },
         {
@@ -933,7 +1036,8 @@
           "importsFiles": [
             "apps/desktop/src/components/RecoveryPrompt.tsx",
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/RecoveryPrompt.test.tsx"
         },
@@ -944,7 +1048,8 @@
           "hash": "3453a39929bebede1add5e29f7c8b2698862ad39cf29ebd90ba19c4c7e1b5138",
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/RecoveryPrompt.tsx"
         },
@@ -953,12 +1058,16 @@
             "ReferencePanel"
           ],
           "hash": "c1c3f90c5d79fb14a7fe93745c47c5e4682c6434316670e78a732d9c957d6faf",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ReferencePanel.tsx"
         },
         {
           "hash": "e70374a9d948b3e9dca07f8e2c8004ce0607e385553bf9e20fa645598a6f4283",
           "importsFiles": [
-            "apps/desktop/src/components/RightDock.tsx"
+            "apps/desktop/src/components/RightDock.tsx",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/components/RightDock.test.tsx"
         },
@@ -993,7 +1102,8 @@
             "apps/desktop/src/components/VectorCopilotPanel.tsx",
             "apps/desktop/src/components/VectorPropertiesPanel.tsx",
             "apps/desktop/src/components/VectorReductionPanel.tsx",
-            "apps/desktop/src/components/VectorShapesPanel.tsx"
+            "apps/desktop/src/components/VectorShapesPanel.tsx",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/components/RightDock.tsx"
         },
@@ -1001,7 +1111,8 @@
           "hash": "848d13d956bef42c507c83c2b75e6a1b6f5f0e17b03dda8c893aa9c21e1d0a9d",
           "importsFiles": [
             "apps/desktop/src/components/SandboxPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SandboxPanel.test.tsx"
         },
@@ -1012,7 +1123,9 @@
           "hash": "48eb4483bd5966aeb554f87fb1f3954dca15723b492475821221546fe98a6f2b",
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SandboxPanel.tsx"
         },
@@ -1020,7 +1133,8 @@
           "hash": "a2bc4285ba5003c430f464db8533c3179b27600ec0db6259bac4494ca60edf2a",
           "importsFiles": [
             "apps/desktop/src/components/SceneCanvas.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SceneCanvas.test.tsx"
         },
@@ -1029,6 +1143,10 @@
             "SceneCanvas"
           ],
           "hash": "c9000764860857a00219de961350ef57284c357bcbea274addc4226978933cee",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/SceneCanvas.tsx"
         },
         {
@@ -1036,13 +1154,18 @@
             "SceneComparisonPane"
           ],
           "hash": "18f32116fd151ba82b4d373c45552fe5fc5261bf6b2eae9c89b8badf40057816",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/SceneComparisonPane.tsx"
         },
         {
           "hash": "2ee857967801dc4cad1e7b0a7e9d87305f7a02689b2d53b404c336b44c109c64",
           "importsFiles": [
             "apps/desktop/src/components/SceneInstancesPanel.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SceneInstancesPanel.test.tsx"
         },
@@ -1051,13 +1174,18 @@
             "SceneInstancesPanel"
           ],
           "hash": "ad2cd7b93963845c190f9c4f06e313107a21a6a213293131b7bf2ef56dae1779",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/SceneInstancesPanel.tsx"
         },
         {
           "hash": "ad46e7cdff7ff8574f0e79e1e120c8fb0fb3d7b8e8c2a86e56664c590377decc",
           "importsFiles": [
             "apps/desktop/src/components/ScenePlaybackControls.tsx",
-            "apps/desktop/src/test/helpers.ts"
+            "apps/desktop/src/test/helpers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ScenePlaybackControls.test.tsx"
         },
@@ -1066,6 +1194,10 @@
             "ScenePlaybackControls"
           ],
           "hash": "202ae9a9890db331627b8def279318d55598f101154983c5f425f1e30f09772b",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ScenePlaybackControls.tsx"
         },
         {
@@ -1073,12 +1205,17 @@
             "SceneProvenanceDrilldownPane"
           ],
           "hash": "e3a07641c19c5812bc411222b3e2e6d714466a656a49173b5857068d497e4901",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/SceneProvenanceDrilldownPane.tsx"
         },
         {
           "hash": "3751a62a17ccae4ff216ff30d28692403af56fa4074725d69d850efe82b3e199",
           "importsFiles": [
-            "apps/desktop/src/components/SceneProvenancePanel.tsx"
+            "apps/desktop/src/components/SceneProvenancePanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SceneProvenancePanel.test.tsx"
         },
@@ -1090,7 +1227,8 @@
           "importsFiles": [
             "apps/desktop/src/components/SceneComparisonPane.tsx",
             "apps/desktop/src/components/SceneProvenanceDrilldownPane.tsx",
-            "apps/desktop/src/components/SceneRestorePreviewPane.tsx"
+            "apps/desktop/src/components/SceneRestorePreviewPane.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SceneProvenancePanel.tsx"
         },
@@ -1099,6 +1237,9 @@
             "SceneRestorePreviewPane"
           ],
           "hash": "0783063682218e62a915722618ec63077c7a3eeea69ad9b0264ef3fe14dd847a",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/SceneRestorePreviewPane.tsx"
         },
         {
@@ -1120,13 +1261,17 @@
             "ShortcutStrip"
           ],
           "hash": "cdcf37660954dee9735c5b2270384ec54d14e400af6d8c6952199bbd1f18b125",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ShortcutStrip.tsx"
         },
         {
           "hash": "6624016676de17ad15757cb62407f2f637b8093b50c729db7996c951890321af",
           "importsFiles": [
             "apps/desktop/src/components/SliceManagerPanel.tsx",
-            "apps/desktop/src/lib/canvasFrameStore.ts"
+            "apps/desktop/src/lib/canvasFrameStore.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SliceManagerPanel.test.tsx"
         },
@@ -1137,7 +1282,8 @@
           "hash": "2eb27f4180e47846bf694aa723ca8ab6be8070ff2088adb92a78389f0395c1be",
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SliceManagerPanel.tsx"
         },
@@ -1148,7 +1294,8 @@
           "hash": "91d33606abd18e3c49d137766146572d5559b4ceb5a4b37b83a3ffe50d03916a",
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/SnapshotPanel.tsx"
         },
@@ -1168,7 +1315,8 @@
             "apps/desktop/src/lib/animationPresetLibrary.ts",
             "apps/desktop/src/lib/animationSequenceGenerator.ts",
             "apps/desktop/src/lib/spriteTemplateLibrary.ts",
-            "apps/desktop/src/lib/spriteTemplateRenderer.ts"
+            "apps/desktop/src/lib/spriteTemplateRenderer.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/components/TemplateBrowserPanel.tsx"
         },
@@ -1193,7 +1341,9 @@
         {
           "hash": "4d351dbdb5fbf2174ccefa479175a7eaf00297c340057b044e71cce687bd8f91",
           "importsFiles": [
-            "apps/desktop/src/components/ToolRail.tsx"
+            "apps/desktop/src/components/ToolRail.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ToolRail.test.tsx"
         },
@@ -1207,14 +1357,17 @@
             "apps/desktop/src/components/QuickPaletteStrip.tsx",
             "apps/desktop/src/lib/canvasFrameStore.ts",
             "apps/desktop/src/lib/canvasPixelMath.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ToolRail.tsx"
         },
         {
           "hash": "86b483c2577a3ad915917c9866475e38cc1957ec7c7ee1d219bfa5b208d81728",
           "importsFiles": [
-            "apps/desktop/src/components/TopBar.tsx"
+            "apps/desktop/src/components/TopBar.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/TopBar.test.tsx"
         },
@@ -1223,12 +1376,17 @@
             "TopBar"
           ],
           "hash": "f238b67d051b3b88937e80689c46a0e87083868b5e339750daeba30faddf5920",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/TopBar.tsx"
         },
         {
           "hash": "e94f69e92a815dddfaf6fd75f588cd930968126ad73d14ddfefb55421c10acb5",
           "importsFiles": [
-            "apps/desktop/src/components/TransformBar.tsx"
+            "apps/desktop/src/components/TransformBar.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/TransformBar.test.tsx"
         },
@@ -1239,14 +1397,17 @@
           "hash": "354711a83aba9b82291b5b7470325e969035d7f21f35539e30fe0015fb895adc",
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/TransformBar.tsx"
         },
         {
           "hash": "8956961004626505ba0ccccf9be74b6d627ed0a10ab06cf71af46e01d3fd2c2f",
           "importsFiles": [
-            "apps/desktop/src/components/ValidationPanel.tsx"
+            "apps/desktop/src/components/ValidationPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/ValidationPanel.test.tsx"
         },
@@ -1255,12 +1416,18 @@
             "ValidationPanel"
           ],
           "hash": "cc2331a90953d98f7af86896b37e092b98b4a8e68cb971e6cee708e468d7d47b",
+          "importsFiles": [
+            "packages/api-contract/src/index.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/ValidationPanel.tsx"
         },
         {
           "hash": "a38da192e16f3a3f1cbb31cb4ffc46cdebfd4b6ec34592ef4acb9f7fbd77dc60",
           "importsFiles": [
-            "apps/desktop/src/components/VariantBar.tsx"
+            "apps/desktop/src/components/VariantBar.tsx",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VariantBar.test.tsx"
         },
@@ -1269,12 +1436,18 @@
             "VariantBar"
           ],
           "hash": "9448fa50fc41c9a9a1417c88b903576bc2c241de4a7637c024041044e020780f",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VariantBar.tsx"
         },
         {
           "hash": "b949ef257c56d62f9631b6cc13ea43a2e20b9a14c9def54fc6bd6f56f4af85cf",
           "importsFiles": [
-            "apps/desktop/src/components/VectorAICreationPanel.tsx"
+            "apps/desktop/src/components/VectorAICreationPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorAICreationPanel.test.tsx"
         },
@@ -1283,6 +1456,10 @@
             "VectorAICreationPanel"
           ],
           "hash": "21c1bd9ce0ef41b71c29c36273b21b510db33cb8e000aed4716ccbe451d7c710",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorAICreationPanel.tsx"
         },
         {
@@ -1290,12 +1467,18 @@
             "VectorCanvas"
           ],
           "hash": "b0fd8142176fb0865d30519a583ec58207a56199d73fff3f8668b8870cb24750",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorCanvas.tsx"
         },
         {
           "hash": "86561f575c5ac0eb115ea6120838e1c7e6037edd12c310d4459eadb8af61c718",
           "importsFiles": [
-            "apps/desktop/src/components/VectorCopilotPanel.tsx"
+            "apps/desktop/src/components/VectorCopilotPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorCopilotPanel.test.tsx"
         },
@@ -1304,12 +1487,17 @@
             "VectorCopilotPanel"
           ],
           "hash": "e99df5a74fa24271e64928d102c82975f609359f8249c811522e75692f4e0fdb",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorCopilotPanel.tsx"
         },
         {
           "hash": "57d67908632d6b7cc4ba4612f113a6d431019f2c6c65ce19a9a1e2d10495f123",
           "importsFiles": [
-            "apps/desktop/src/components/VectorLivePreview.tsx"
+            "apps/desktop/src/components/VectorLivePreview.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorLivePreview.test.tsx"
         },
@@ -1318,12 +1506,18 @@
             "VectorLivePreview"
           ],
           "hash": "45cca0a0e286f31ad6d968749d984df1e5afe1da5722932d15cf495ad9f83f37",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorLivePreview.tsx"
         },
         {
           "hash": "b48589edffe2004cec023f5a4cc6caa8c1d5facba15e69d1fd3a280ba0f88887",
           "importsFiles": [
-            "apps/desktop/src/components/VectorPropertiesPanel.tsx"
+            "apps/desktop/src/components/VectorPropertiesPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorPropertiesPanel.test.tsx"
         },
@@ -1332,24 +1526,33 @@
             "VectorPropertiesPanel"
           ],
           "hash": "84b092ae1c9fab1299c6a57ee3b1a00affb80ec4cd86ade2d13da4424c983f6a",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorPropertiesPanel.tsx"
         },
         {
           "hash": "004cd02c1e9013ac7e46819b2c9bdedf6b658dfad3236b8fc07d8405656534fb",
           "importsFiles": [
-            "apps/desktop/src/components/VectorReductionPanel.tsx"
+            "apps/desktop/src/components/VectorReductionPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorReductionPanel.test.tsx"
         },
         {
           "hash": "010018e288430e4de12e7df2536261be485d64b4459b116edfcf2ffcd5002181",
           "parseError": true,
-          "path": "apps/desktop/src/components/VectorReductionPanel.tsx"
+          "path": "apps/desktop/src/components/VectorReductionPanel.tsx",
+          "unreadSyntax": "jsx-ampersand"
         },
         {
           "hash": "ba4e76e9d0db90bfee58964a00646db33ec1795d0adec6423adb2b318d3389c2",
           "importsFiles": [
-            "apps/desktop/src/components/VectorShapesPanel.tsx"
+            "apps/desktop/src/components/VectorShapesPanel.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorShapesPanel.test.tsx"
         },
@@ -1358,12 +1561,18 @@
             "VectorShapesPanel"
           ],
           "hash": "df69538ea933c2b13741f641e57f85c85807e0f2bdd7ec40fe4bb7855e3f67f1",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorShapesPanel.tsx"
         },
         {
           "hash": "637bbb4d4735233167a760b477592c84c38a1905b7681777c293e0c73faa1ffe",
           "importsFiles": [
-            "apps/desktop/src/components/VectorSourceBanner.tsx"
+            "apps/desktop/src/components/VectorSourceBanner.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorSourceBanner.test.tsx"
         },
@@ -1372,6 +1581,9 @@
             "VectorSourceBanner"
           ],
           "hash": "8335196cc1bebce9dfdabef6e985859794faf6b93c7abec62f103fae174d5d94",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/VectorSourceBanner.tsx"
         },
         {
@@ -1380,7 +1592,8 @@
           ],
           "hash": "a8bb4e338f47596b040e4e849a89c646a0b591559defb0194fecda1a303d19e1",
           "importsFiles": [
-            "apps/desktop/src/components/VectorCanvas.tsx"
+            "apps/desktop/src/components/VectorCanvas.tsx",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorToolRail.tsx"
         },
@@ -1392,7 +1605,9 @@
           "importsFiles": [
             "apps/desktop/src/components/VectorCanvas.tsx",
             "apps/desktop/src/components/VectorLivePreview.tsx",
-            "apps/desktop/src/components/VectorToolRail.tsx"
+            "apps/desktop/src/components/VectorToolRail.tsx",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/components/VectorWorkspace.tsx"
         },
@@ -1401,6 +1616,10 @@
             "WorkflowRunner"
           ],
           "hash": "6edcc6c8583ac5497cb6a8162aa3b4ae35dfcbacceadc1cc4071c713829b97f6",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/components/WorkflowRunner.tsx"
         },
         {
@@ -1473,7 +1692,8 @@
             "apps/desktop/src/lib/animationPresetLibrary.ts",
             "apps/desktop/src/lib/animationSequenceGenerator.ts",
             "apps/desktop/src/lib/spriteTemplateLibrary.ts",
-            "apps/desktop/src/lib/spriteTemplateRenderer.ts"
+            "apps/desktop/src/lib/spriteTemplateRenderer.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/aiToolDispatcher.ts"
         },
@@ -1508,6 +1728,9 @@
             "searchPresets"
           ],
           "hash": "a86ccf8995e586ade0ec9149909c478f5a3744522011154e5fc7f1396da3c058",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/animationPresetLibrary.ts"
         },
         {
@@ -1515,7 +1738,8 @@
           "importsFiles": [
             "apps/desktop/src/lib/animationSequenceGenerator.ts",
             "apps/desktop/src/lib/spriteTemplateLibrary.ts",
-            "apps/desktop/src/lib/spriteTemplateRenderer.ts"
+            "apps/desktop/src/lib/spriteTemplateRenderer.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/animationSequenceGenerator.test.ts"
         },
@@ -1528,7 +1752,8 @@
           "importsFiles": [
             "apps/desktop/src/lib/animationPresetLibrary.ts",
             "apps/desktop/src/lib/spriteTemplateLibrary.ts",
-            "apps/desktop/src/lib/spriteTemplateRenderer.ts"
+            "apps/desktop/src/lib/spriteTemplateRenderer.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/animationSequenceGenerator.ts"
         },
@@ -1556,6 +1781,9 @@
             "screenToCanvasPixelUnclamped"
           ],
           "hash": "76048e3ab0217221c79f3b55c345b102d8d482701a474c1ddc5375d45500af42",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/canvasPixelMath.ts"
         },
         {
@@ -1587,6 +1815,10 @@
             "saveCharacterBuildLibrary"
           ],
           "hash": "b6348b490869a7e38a5f618fa45c18801e6e6c040e7fa12b8d6d6bb7acba41df",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/characterBuildStorage.ts"
         },
         {
@@ -1609,6 +1841,9 @@
             "saveExportSettings"
           ],
           "hash": "e52129942a7c4b490db863878e22b3659d8726c3ccbc9d77b4d3241c80af0ac2",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/exportSettings.ts"
         },
         {
@@ -1617,6 +1852,9 @@
             "savePackLibrary"
           ],
           "hash": "af3ba5bf8194ded56b8a8abad4e7091ea3baf282ac16a554476e0bbcd343a354",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/packLibraryStorage.ts"
         },
         {
@@ -1625,12 +1863,17 @@
             "savePackagingSettings"
           ],
           "hash": "4d8c3118e5b0490e4bd163cda2f2bc6d3f66f6990e2f06be0cb96928933a41cd",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/packagingSettings.ts"
         },
         {
           "hash": "f99bf77a9f0ac0d75481a432319274fb5b4fd74650404c48ba637ec7c7831002",
           "importsFiles": [
-            "apps/desktop/src/lib/partLibraryStorage.ts"
+            "apps/desktop/src/lib/partLibraryStorage.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/partLibraryStorage.test.ts"
         },
@@ -1640,6 +1883,10 @@
             "savePartLibrary"
           ],
           "hash": "f531d656fea460b88ce57ac2b3933e6e3549bf535855beef208427fbafd7defd",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/partLibraryStorage.ts"
         },
         {
@@ -1649,7 +1896,8 @@
           "hash": "d3bbbdbb28cc599d58b5db70bda1a096897885456f1c666d5a298a5342a260f5",
           "importsFiles": [
             "apps/desktop/src/lib/packLibraryStorage.ts",
-            "apps/desktop/src/lib/templateLibraryStorage.ts"
+            "apps/desktop/src/lib/templateLibraryStorage.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/seedSampleContent.ts"
         },
@@ -1667,13 +1915,17 @@
             "searchTemplates"
           ],
           "hash": "0c9aaf8e112445ddf241e61b0f6dda70f763de1384dde6389c6844e2e2a8490a",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/spriteTemplateLibrary.ts"
         },
         {
           "hash": "460d9063220b912130c23bbefc81ee504f0f47a574f3d61ba69d7c137189961c",
           "importsFiles": [
             "apps/desktop/src/lib/spriteTemplateLibrary.ts",
-            "apps/desktop/src/lib/spriteTemplateRenderer.ts"
+            "apps/desktop/src/lib/spriteTemplateRenderer.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/spriteTemplateRenderer.test.ts"
         },
@@ -1684,7 +1936,8 @@
           ],
           "hash": "582a500bfa5c5544618ca64b51705c6301bc72b8d0e0acde8984c2d4956b4e77",
           "importsFiles": [
-            "apps/desktop/src/lib/spriteTemplateLibrary.ts"
+            "apps/desktop/src/lib/spriteTemplateLibrary.ts",
+            "packages/domain/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/spriteTemplateRenderer.ts"
         },
@@ -1694,7 +1947,8 @@
           ],
           "hash": "c0baa202fb9800f53fb9eab7d45807e6c8124588dc599ddcace673c2720be527",
           "importsFiles": [
-            "apps/desktop/src/lib/canvasFrameStore.ts"
+            "apps/desktop/src/lib/canvasFrameStore.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/syncLayers.ts"
         },
@@ -1704,6 +1958,9 @@
             "saveTemplateLibrary"
           ],
           "hash": "4c9b7be1f554daef276cc8a62ee94ec8309510bdf5b55fa3837c59b859e35b3d",
+          "importsFiles": [
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/lib/templateLibraryStorage.ts"
         },
         {
@@ -1717,7 +1974,8 @@
         {
           "hash": "5362a9ff8dbfcff32acc13a9e78416ff448f25389eb1e40a61ef918cc035f99b",
           "importsFiles": [
-            "apps/desktop/src/lib/useCanvasPointerHandlers.ts"
+            "apps/desktop/src/lib/useCanvasPointerHandlers.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/useCanvasPointerHandlers.test.ts"
         },
@@ -1729,7 +1987,9 @@
           "importsFiles": [
             "apps/desktop/src/lib/canvasFrameStore.ts",
             "apps/desktop/src/lib/canvasPixelMath.ts",
-            "apps/desktop/src/lib/syncLayers.ts"
+            "apps/desktop/src/lib/syncLayers.ts",
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "apps/desktop/src/lib/useCanvasPointerHandlers.ts"
         },
@@ -1775,6 +2035,9 @@
         },
         {
           "hash": "85f022c51d04f5abda7b77a3500c3547871c9441b73e933b3d132a609bafbef1",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "apps/desktop/src/workflows/definitions.ts"
         },
         {
@@ -1782,6 +2045,10 @@
             "executeWorkflow"
           ],
           "hash": "448d3ce211bbe8a3d5656e007b28f8e052c6ac691b9dcf460a57bb9decc08a73",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "apps/desktop/src/workflows/executor.ts"
         },
         {
@@ -1803,6 +2070,7 @@
       "importConfidence": "full",
       "name": "desktop",
       "origin": "authored",
+      "outsideReads": 9,
       "role": "code",
       "testedBy": 63,
       "unresolvedSites": 0
@@ -2990,7 +3258,7 @@
       "name": "domain",
       "origin": "authored",
       "role": "code",
-      "testedBy": 4,
+      "testedBy": 140,
       "unresolvedSites": 0
     },
     {
@@ -3027,16 +3295,16 @@
       ],
       "importConfidence": "full",
       "name": "examples",
-      "origin": "authored",
+      "origin": "mixed",
       "role": "config",
       "testedBy": 0,
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 5,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 2,
+      "dynamicWrites": 0,
       "entryPoints": [
         "packages/mcp-sprite-server/src/index.ts"
       ],
@@ -3240,14 +3508,16 @@
         {
           "hash": "82e942258a8db8c082827aeb8aa8270139a2e1492ece1d92f496721dc7abaae3",
           "importsFiles": [
-            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
+            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "packages/mcp-sprite-server/src/adapters/storeAdapter.history.test.ts"
         },
         {
           "hash": "b952c95711220f227c4f742882d64888b3308c42630f558e42ef9ae80ea1c8e5",
           "importsFiles": [
-            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
+            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "packages/mcp-sprite-server/src/adapters/storeAdapter.mcp4.test.ts"
         },
@@ -3370,6 +3640,10 @@
             "storeUndo"
           ],
           "hash": "d9d3e17df68cedb7284d731e480d282bef44902183e4060138c7d37228312bf1",
+          "importsFiles": [
+            "packages/domain/src/index.ts",
+            "packages/state/src/index.ts"
+          ],
           "path": "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
         },
         {
@@ -3382,14 +3656,18 @@
         {
           "hash": "3238be32c3f17be35b4569747e7f3068e0494d4033a76109f933d1d1b0acc105",
           "importsFiles": [
-            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
+            "packages/domain/src/index.ts",
+            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "packages/mcp-sprite-server/src/dogfood/benchmarkPack.test.ts"
         },
         {
           "hash": "3b0a105c12bc65e36062946d54fb86ee42de6b4ea57547eabbfb163ea7686c83",
           "importsFiles": [
-            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
+            "packages/domain/src/index.ts",
+            "packages/mcp-sprite-server/src/adapters/storeAdapter.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "packages/mcp-sprite-server/src/dogfood/materialize.test.ts"
         },
@@ -3399,7 +3677,8 @@
             "packages/mcp-sprite-server/src/adapters/storeAdapter.ts",
             "packages/mcp-sprite-server/src/schemas/result.ts",
             "packages/mcp-sprite-server/src/server.ts",
-            "packages/mcp-sprite-server/src/session/sessionManager.ts"
+            "packages/mcp-sprite-server/src/session/sessionManager.ts",
+            "packages/state/src/index.ts"
           ],
           "path": "packages/mcp-sprite-server/src/index.ts"
         },
@@ -3867,7 +4146,8 @@
       ],
       "importConfidence": "full",
       "name": "mcp-sprite-server",
-      "origin": "authored",
+      "origin": "mixed",
+      "outsideReads": 1,
       "outsideWrites": 4,
       "role": "code",
       "testedBy": 23,
@@ -3985,10 +4265,10 @@
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 2,
+      "dynamicReads": 1,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 5,
+      "dynamicWrites": 0,
       "entryPoints": [],
       "externals": 0,
       "files": [
@@ -4067,9 +4347,10 @@
       "importConfidence": "full",
       "name": "scripts",
       "origin": "authored",
+      "outsideReads": 4,
       "role": "code",
       "testedBy": 0,
-      "unresolvedSites": 16
+      "unresolvedSites": 17
     },
     {
       "dynamicReads": 0,
@@ -4248,17 +4529,24 @@
         },
         {
           "hash": "437d6aac4881b5a37c5e20ae5b5564a8e216f5e3861510fe5e113aeae6a8ccfe",
+          "importsFiles": [
+            "packages/api-contract/src/index.ts"
+          ],
           "path": "packages/state/src/aiStore.ts"
         },
         {
           "hash": "5fe70d4fe16e47875fcf7fa77b717cfe6cb051b1561fa20603dcbcf47d49ce84",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/anchorStore.ts"
           ],
           "path": "packages/state/src/anchorStore.test.ts"
         },
         {
           "hash": "7833a0502c4e932e6d30ef91a5a4d3a38cc8a3fc2a4e893c0dd3aace2b5585c5",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/anchorStore.ts"
         },
         {
@@ -4279,6 +4567,7 @@
         {
           "hash": "040d5fd5560904e35b086775346bbff814e759791ab5b949b4acdb31baae4b84",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/bundleExport.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -4291,6 +4580,7 @@
           ],
           "hash": "503a14a98307e7aa0173fe3471e88365f8aba711196b3caed56bc4a28f47a451",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/paletteRemap.ts",
             "packages/state/src/spriteExport.ts",
             "packages/state/src/spriteImportExport.ts",
@@ -4301,6 +4591,7 @@
         {
           "hash": "522dd72352ee542e386166e226a26624a36b20d153f85cf8f93fb55fb32f059d",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/scenePlaybackStore.ts"
           ],
           "path": "packages/state/src/cameraTimelineHelpers.test.ts"
@@ -4319,6 +4610,7 @@
         {
           "hash": "17c6de9fcf6dca8049e6158030795f6e3b5182f90bb9555d16eb1a90e71d1bd3",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterBuildLibrary.ts"
           ],
           "path": "packages/state/src/characterBuildLibrary.test.ts"
@@ -4339,11 +4631,15 @@
             "toSavedBuild"
           ],
           "hash": "3c84b0a741da71adba13c8b64c4b5df82128ae6069fd2b9a5ce641bd9b6681fe",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/characterBuildLibrary.ts"
         },
         {
           "hash": "969a58affedbcb5243c6f54c1ccf3fcd36cd6098ee2699f9fc138a1def87f663",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterBuildLibrary.ts"
           ],
           "path": "packages/state/src/characterBuildStorage.test.ts"
@@ -4351,6 +4647,7 @@
         {
           "hash": "4997b8d8dacf7156b2d087d26fb82ace88fd25ddb5e48f4f4b2e15a86634df67",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterHelpers.ts"
           ],
           "path": "packages/state/src/characterHelpers.test.ts"
@@ -4369,11 +4666,15 @@
             "validateCharacterBuild"
           ],
           "hash": "b30e6cef6d2c9401d97df1401dd89acf8c0322a0723ff0c2a3508252ee926dcd",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/characterHelpers.ts"
         },
         {
           "hash": "bc2acfbf9862f1643c702551a47bb0528316a4801458d08e4e1423ca3532ee83",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterPresetHelpers.ts"
           ],
           "path": "packages/state/src/characterPresetHelpers.test.ts"
@@ -4386,6 +4687,7 @@
           ],
           "hash": "41ca0422a6f7fe1ee3a668bb6fba691cdc83265030c104a0f71d95d48588526d",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterHelpers.ts"
           ],
           "path": "packages/state/src/characterPresetHelpers.ts"
@@ -4393,6 +4695,7 @@
         {
           "hash": "ba88c7e62a4eaba3b9a1a77e08d4f78f4acfffd2922cbf8f7586ef6675c5ccc1",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterBuildLibrary.ts",
             "packages/state/src/characterSceneBridge.ts"
           ],
@@ -4435,11 +4738,15 @@
             "unlinkFromSource"
           ],
           "hash": "bc07de618981f2e4897dd271c5f529f2de52d45b974c94abc28e37bd5bc0ef31",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/characterSceneBridge.ts"
         },
         {
           "hash": "132470dbc499a1e20ac0803564235d9ced5a7cc6b60a104df8b32d7f7d87dab0",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterStore.ts"
           ],
           "path": "packages/state/src/characterStore.test.ts"
@@ -4455,6 +4762,7 @@
           ],
           "hash": "a7afe6c3a904c5798b614db72e2ee3da2d03f3d82c915b9a706eaa1dcce6b5e2",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterBuildLibrary.ts",
             "packages/state/src/characterHelpers.ts"
           ],
@@ -4463,6 +4771,7 @@
         {
           "hash": "71acb6d9f68e19f0371af745859cbeaaccd9529b08e5db897fef736141fe3a62",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/collapseOverlay.ts"
           ],
           "path": "packages/state/src/collapseOverlay.test.ts"
@@ -4473,6 +4782,7 @@
           ],
           "hash": "93ef997684f861fa87ac429510b5717be92e3098f70b0263c4f2f8152ef15277",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
           "path": "packages/state/src/collapseOverlay.ts"
@@ -4498,6 +4808,7 @@
         {
           "hash": "077c06bfe0c44b2b5e8b5f11b8d03505ed6f20e5f908ff954befabccbb966cec",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/index.ts",
             "packages/state/src/layerStore.ts",
             "packages/state/src/projectStore.ts",
@@ -4532,6 +4843,7 @@
         {
           "hash": "7e40e6e1b2ad60de456d2bc1b881bd13fd90fd762ec82c5ca43467f813d07200",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/copilotContext.ts"
           ],
           "path": "packages/state/src/copilotContext.test.ts"
@@ -4543,6 +4855,7 @@
           ],
           "hash": "2f3773fcff187d6ebb428742de05d2357a40739f6e06ba5afde673d0640aab7e",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorComparison.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
@@ -4551,6 +4864,7 @@
         {
           "hash": "fc8536b7fe20a2483b273e56c3a46add09d34d3addb59883d0fe3d290a7fc171",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/copilotVision.ts"
           ],
           "path": "packages/state/src/copilotVision.test.ts"
@@ -4562,6 +4876,9 @@
             "pixelBufferToBase64Png"
           ],
           "hash": "94e6af95534200a7dc9f5376b81f5e59407877abbc57d171e679087707f093be",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/copilotVision.ts"
         },
         {
@@ -4590,6 +4907,7 @@
         {
           "hash": "adaaadb4fd283230c3116387e34c18f79ac41aaa426d0d536d186720c04573c1",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/aiStore.ts",
             "packages/state/src/anchorStore.ts",
             "packages/state/src/appShellStore.ts",
@@ -4674,6 +4992,7 @@
         {
           "hash": "4837aae5169ba306ce4c07ebf7184ecd7fea2372244e3abc89d0f64be2e134e7",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/aiStore.ts",
             "packages/state/src/anchorStore.ts",
             "packages/state/src/motionStore.ts",
@@ -4688,6 +5007,7 @@
         {
           "hash": "a034d4f34a9cbe6ca9b44bf5f1c588c8590c0a21a041543d130c03fd805aa1e7",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/interchange.ts",
             "packages/state/src/partLibrary.ts"
           ],
@@ -4705,22 +5025,30 @@
             "parseProjectTemplate"
           ],
           "hash": "b013261dd56ae650ef52007657e134750ff57d81a104f7e3239f47775b6789db",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/interchange.ts"
         },
         {
           "hash": "605ab56cc9bea95efa2661ddb8c5cfb7811798b7706acbeb8c49aef8750ff4c9",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/layerStore.ts"
           ],
           "path": "packages/state/src/layerStore.test.ts"
         },
         {
           "hash": "df0b6ae095e6712069c59de498c72cbb428b4f1bfb29dfedb649d3e79c9a3768",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/layerStore.ts"
         },
         {
           "hash": "f59cd6a61dc2be12a34750f9827450056aa1bdd1589afcc72d823927707998c3",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/libraryIndex.ts",
             "packages/state/src/partLibrary.ts"
           ],
@@ -4735,6 +5063,9 @@
             "sortWithPriority"
           ],
           "hash": "98b0c2d70466c8ede9a368236072306d8a8250698f42aaf27dabe25c449365c2",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/libraryIndex.ts"
         },
         {
@@ -4757,17 +5088,24 @@
         },
         {
           "hash": "ee65f61fa9a6c62b72a8e590d05f3cb8481c0b7d9d399246e592497a8abc23c8",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/locomotionStore.ts"
         },
         {
           "hash": "c2f9042af3a3abed9fce00ded7b1a645c574f5ec9889d6bae853d920727dcb69",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/motionStore.ts"
           ],
           "path": "packages/state/src/motionStore.test.ts"
         },
         {
           "hash": "e92d59c8ea93009591c38423ec23ea578016203a8aee657b4d61d00d6e897694",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/motionStore.ts"
         },
         {
@@ -4788,6 +5126,7 @@
           ],
           "hash": "6a2d859def9928554ed704cf6ac8e888827c85c9fe93667b46cce2b13d8375c6",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/copilotVision.ts",
             "packages/state/src/proposalModel.ts"
           ],
@@ -4820,6 +5159,7 @@
         {
           "hash": "ff4394bc61c30b13201eeb5874f7b7f9b7222e0ff603b4e7ddb8fc4e23d0bb37",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/paletteRemap.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -4834,6 +5174,7 @@
           ],
           "hash": "9010ad5e4e7cef279202c1e3b52896e4819156975e31ed54d754c30f5a093d3e",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/paletteRemap.ts"
@@ -4841,17 +5182,22 @@
         {
           "hash": "723abf933a017949d1679047423a9fab9a9c659ee9e7cc71f716ee6e7c3881e8",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/paletteStore.ts"
           ],
           "path": "packages/state/src/paletteStore.test.ts"
         },
         {
           "hash": "b0b508e55ec06b6691cd092eecfce824c9815c15fd61545ac8ca8d8a237d7146",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/paletteStore.ts"
         },
         {
           "hash": "13f0cb5280bad62a78f4899ec9136cd937b739c873e71a187757440a0d7a2fce",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/partLibrary.ts"
           ],
           "path": "packages/state/src/partLibrary.test.ts"
@@ -4870,6 +5216,7 @@
           ],
           "hash": "4007bd44f9fc3b1598c09b886feb9aa0b61b8ecd9718070ee7229a6cabfa1730",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/characterBuildLibrary.ts"
           ],
           "path": "packages/state/src/partLibrary.ts"
@@ -4877,6 +5224,7 @@
         {
           "hash": "fb903af203dbbd8670db1ccdff8cf587cf0e7674c3313479ae38bab6356511c6",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/partPromotion.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -4887,11 +5235,15 @@
             "createPartFromSelection"
           ],
           "hash": "549f5a42aeaf1c2e37e0fca4395bb48637b62d0ebe6aa56ffa5084f3fe8739b1",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/partPromotion.ts"
         },
         {
           "hash": "0b9bee584fead9e7ca1f0b8fdcbf604d134f43753f9ba8b2b502a9d797f1b1bd",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spritePersistence.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -4906,11 +5258,15 @@
         },
         {
           "hash": "6f932fcc8293caf33524aa52103147405a5fdfbb610286772dc8f9151cda6bd8",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/projectStore.ts"
         },
         {
           "hash": "bda961cef1cd97d20d1dfc784ac65b714964d3f7b16425d463c22373556a7719",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/proposalApply.ts",
             "packages/state/src/proposalModel.ts",
             "packages/state/src/vectorMasterStore.ts"
@@ -4924,6 +5280,7 @@
           ],
           "hash": "d1c9acac906e270cb8555cb39c2cf649245e00cdf6f37e642a5babff597e6314",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/proposalModel.ts"
           ],
           "path": "packages/state/src/proposalApply.ts"
@@ -4931,6 +5288,7 @@
         {
           "hash": "b241c0e851778df6ffe7360f35fb8d121e2eaa1fdb05cad86ebe73ac13227174",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/proposalGenerate.ts"
           ],
           "path": "packages/state/src/proposalGenerate.test.ts"
@@ -4943,6 +5301,7 @@
           ],
           "hash": "5de0c132a8dcff7bd4b8a116c213d9fc3eb519fa662d061e6b42858b408773b0",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/copilotContext.ts",
             "packages/state/src/proposalModel.ts"
           ],
@@ -4951,6 +5310,7 @@
         {
           "hash": "e5cad5fff3677625c9ad4c69eb45bf732ec5a146ee48cc0dbd1d92e967c40f50",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/proposalModel.ts"
           ],
           "path": "packages/state/src/proposalModel.test.ts"
@@ -4970,17 +5330,24 @@
             "rejectProposal"
           ],
           "hash": "6fdf7db6807f0c7353de9fa48ae6b55152127bd8f45fede3a3347d62098a69e0",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/proposalModel.ts"
         },
         {
           "hash": "6fea18ac118ec2d35b5bb1d677510d7506481fff7f63947d39ba68a91aeea7b2",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/provenanceStore.ts"
           ],
           "path": "packages/state/src/provenanceStore.test.ts"
         },
         {
           "hash": "112bc9cf6353dcc8f0c18c1fc77c61248ca066870cdeb27ad3008a1c6fc51417",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/provenanceStore.ts"
         },
         {
@@ -5001,6 +5368,7 @@
         {
           "hash": "34563087d5d46153ed745a5b5939835e007b21d4d79e38402965d01f5a23b81c",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/scenePlaybackStore.ts"
           ],
           "path": "packages/state/src/resolveCameraAtTick.test.ts"
@@ -5031,11 +5399,15 @@
         },
         {
           "hash": "ea42789e4250924d4980a45a63e304a1a3ee46adcf798f98eff4745bded8e918",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/sandboxStore.ts"
         },
         {
           "hash": "e311ee63898bbb2c5db2887135b02d03bbea32a44e58c233c7fa89cf47dc277d",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneComparison.ts",
             "packages/state/src/sceneProvenance.ts",
             "packages/state/src/sceneProvenanceDrilldown.ts"
@@ -5055,6 +5427,7 @@
           ],
           "hash": "3eda3e7d10e3f366f28778297cafccdf387c164c4267ab13156219d5c7f7d186",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneProvenance.ts",
             "packages/state/src/sceneProvenanceDrilldown.ts",
             "packages/state/src/structuredValueSummary.ts"
@@ -5064,6 +5437,7 @@
         {
           "hash": "951873075c9889e525af2657317b655b5ef8bb9c4843b1834c73a663217beb8e",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneEditorStore.ts",
             "packages/state/src/sceneHistoryEngine.ts",
             "packages/state/src/sceneProvenance.ts",
@@ -5074,6 +5448,7 @@
         {
           "hash": "563c7057c0eb12dd9531da961b9870f62922d661baeaba18da9e0e6ee68ea795",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts",
             "packages/state/src/sceneHistoryEngine.ts",
             "packages/state/src/sceneProvenance.ts",
@@ -5085,6 +5460,7 @@
         {
           "hash": "1a4f6f4c86f758cd596643d25960362b78022465815cb7e5d6cd815dc1d2ba42",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts"
           ],
           "path": "packages/state/src/sceneHistory.test.ts"
@@ -5097,11 +5473,15 @@
             "isSceneHistoryChange"
           ],
           "hash": "ac331716cccc69e4d997beb43dd99aec44671904d79116362a5c39d4835c5de3",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/sceneHistory.ts"
         },
         {
           "hash": "a00df9afc819e4d83e33fbf56feb16c00f424b2c45ece8cf47a65dcef64329ea",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts",
             "packages/state/src/sceneHistoryEngine.ts"
           ],
@@ -5120,6 +5500,7 @@
           ],
           "hash": "4dc433d7980a02b54508e5bebb999cdb24e920d66e89b05a9799bcea657bf624",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts"
           ],
           "path": "packages/state/src/sceneHistoryEngine.ts"
@@ -5127,6 +5508,7 @@
         {
           "hash": "92cc32752a240d92b59c7c6b1847859ecef33cac402dbe2094aab04fda7e9dd3",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/scenePlaybackStore.ts"
           ],
           "path": "packages/state/src/scenePlaybackStore.test.ts"
@@ -5140,6 +5522,9 @@
             "resolveCameraAtTick"
           ],
           "hash": "29880e3600b8baf8dcb72c033aea763daeedf5ed27c9ce5a93999c79f6eff608",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/scenePlaybackStore.ts"
         },
         {
@@ -5167,6 +5552,7 @@
         {
           "hash": "658717d9f56df77a1493aba7c1785c410b813a4f39400c40f289f675093416e9",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneProvenance.ts",
             "packages/state/src/sceneProvenanceDrilldown.ts"
           ],
@@ -5181,6 +5567,7 @@
           ],
           "hash": "4aab6fd8c1df03547e90ee73e0d8cf71c28cd5bf52150aaf0e2197ebd8d97978",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts",
             "packages/state/src/sceneProvenance.ts"
           ],
@@ -5188,11 +5575,15 @@
         },
         {
           "hash": "a5b76cb66c5056a75c3ec5b1c0c8f202ebf3cab36d13b7d232866e98f0c7e1a8",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/sceneProvenancePersistence.test.ts"
         },
         {
           "hash": "e308f9f84d57755dead39b7e5f95bb531f66b23362168d4e0580bce2255e7dff",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneRestore.ts"
           ],
           "path": "packages/state/src/sceneRestore.test.ts"
@@ -5204,6 +5595,7 @@
           ],
           "hash": "6bf140d6b17606d0462edb02c00f7555f88b142f753803a3c5ab9456dd459c26",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sceneHistory.ts"
           ],
           "path": "packages/state/src/sceneRestore.ts"
@@ -5211,6 +5603,7 @@
         {
           "hash": "556824a86dc3c32b395d7c82dd538c14b319c3b7d51897da678ea5221ba4d76d",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/bundleExport.ts",
             "packages/state/src/packLibrary.ts",
             "packages/state/src/sampleContent.ts",
@@ -5227,6 +5620,9 @@
         },
         {
           "hash": "b1b32a36fd7fff297eae8eb73a781ce830dd65bdd9ed3737b01c3642672022c5",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/selectionStore.ts"
         },
         {
@@ -5239,6 +5635,7 @@
         {
           "hash": "831e500ce28d50b2f3c1feb935da0f8562d51ad4557d56e0b16ac43a154ddf1a",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/canvasViewStore.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -5247,12 +5644,16 @@
         {
           "hash": "3607a82067659efed0174b947ea9fb9e62f524fb47fadffe814429da09d0b90c",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/sizeProfileStore.ts"
           ],
           "path": "packages/state/src/sizeProfileStore.test.ts"
         },
         {
           "hash": "53a76e02e1bd770e3bfd8d103ac0007c1f8adfff08f64e8dacfcd0395f8f00ea",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/sizeProfileStore.ts"
         },
         {
@@ -5273,6 +5674,7 @@
         {
           "hash": "50bceb52fb289dcc8b8fe36ad5d244d53133e3d3b5837f97347c1855931acaa7",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/brushSettingsStore.ts",
             "packages/state/src/sketchDab.ts"
           ],
@@ -5281,6 +5683,7 @@
         {
           "hash": "0cb8c501d9014555ba0b02fad9e3be5be9041b11db78a1374532ce51aa333500",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/layerStore.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -5288,6 +5691,9 @@
         },
         {
           "hash": "e1eb9d55664c2a259d8a8266cf02d56e9459034b385d55937cd37436a68de50c",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/sketchTool.test.ts"
         },
         {
@@ -5315,6 +5721,7 @@
         {
           "hash": "0115eb689c3c66fe5e60523a91f0f981c4883d000073c42bddadda68590466b0",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteAnalysis.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -5328,6 +5735,7 @@
           ],
           "hash": "7280d8b522be3c2f95e949ba31216885cf7265b28feeb88d4d31eca782a37519",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/spriteAnalysis.ts"
@@ -5335,6 +5743,7 @@
         {
           "hash": "5ed34349ab76057f488b998f951f609b60ab2198e49a54ef2cae48b8fcb6e37e",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/interchange.ts",
             "packages/state/src/partLibrary.ts",
             "packages/state/src/spriteEditorStore.ts",
@@ -5345,6 +5754,7 @@
         {
           "hash": "c192743fa5c58c04e1083847796b1afaf558d085e9dc38113b4a089460df5685",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/interchange.ts",
             "packages/state/src/paletteRemap.ts",
             "packages/state/src/spriteExport.ts",
@@ -5357,6 +5767,7 @@
         {
           "hash": "b1b958a727e28e401d36829ca0997de20cc32330cbe90f820a8ad3212dd8f97c",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteExport.ts",
             "packages/state/src/spriteImportExport.ts",
             "packages/state/src/spriteRaster.ts"
@@ -5373,6 +5784,7 @@
           ],
           "hash": "0bd856c72e0630f356081040db5516cb14d52a98f20bf43cd2e0c070d4ced8b1",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/paletteRemap.ts",
             "packages/state/src/spriteImportExport.ts",
             "packages/state/src/spriteRaster.ts"
@@ -5387,6 +5799,7 @@
           ],
           "hash": "e3f01a61793651844f44106690439c8764d68d9ee2b33a9ec67a02497b7a8de4",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/spriteHistory.ts"
@@ -5394,6 +5807,7 @@
         {
           "hash": "bacc6e0ca48024825304d2f8ed3cc47ae5793c719e72523accb59ea040381f1f",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteHistory.ts",
             "packages/state/src/spriteHistoryEngine.ts"
           ],
@@ -5419,6 +5833,7 @@
         {
           "hash": "f2344e25140ca8b888cd91144b916031186515cf21ed0cabec3ff549967bb365",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteImportExport.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -5432,11 +5847,15 @@
             "validateSheetDimensions"
           ],
           "hash": "64a8369a29bb540ac6833ff55e5f162143fc71c1b99690343e56584aef236410",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/spriteImportExport.ts"
         },
         {
           "hash": "bf04097598f7d4fb533f8d2c22a1d93a786564adba8bbfb596fbf9eb69a6f1a9",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spritePersistence.ts",
             "packages/state/src/spriteRaster.ts"
           ],
@@ -5450,6 +5869,9 @@
             "serializeSpriteFile"
           ],
           "hash": "64712fab9c9f5c9029b278a16a4e06857acd78d11cb750be6d33e09e078b0a52",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/spritePersistence.ts"
         },
         {
@@ -5462,6 +5884,7 @@
         {
           "hash": "7d6a789d8e9fd7cdb1c18d4000eb1939175999accc4b1439a785d99b4413ed7d",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/spriteRaster.test.ts"
@@ -5488,11 +5911,15 @@
             "silhouetteBuffer"
           ],
           "hash": "516b753db0ab0ebc2a9133d9f176a73aa7617238a8276954abf4d03a9a639d90",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/spriteRaster.ts"
         },
         {
           "hash": "23ba5c91a7d4edd1862a37cf5a3ea1d55c1d2af0651bda7f2b548c4f8b958349",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts",
             "packages/state/src/spriteTransform.ts"
           ],
@@ -5505,6 +5932,7 @@
           ],
           "hash": "1e4bf3f7ec3eac3a1a53e0e25e476099e4cd4ab397c71c77bc712cdab9430368",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/spriteTransform.ts"
@@ -5512,6 +5940,7 @@
         {
           "hash": "9a930fe6621c0e5da390bf8d90e9fdc49a3527c17938e43da55fe91ab79a5baf",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteValidation.ts"
           ],
           "path": "packages/state/src/spriteValidation.test.ts"
@@ -5521,6 +5950,10 @@
             "runSpriteValidation"
           ],
           "hash": "0705a27c21949f0f31f9672b2d5888d6de1a3082fe7c4a2e2ca3075a8d013884",
+          "importsFiles": [
+            "packages/api-contract/src/index.ts",
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/spriteValidation.ts"
         },
         {
@@ -5562,6 +5995,7 @@
         {
           "hash": "88e4c072ca0d841150fa4694a7191b26126291281ac84ca07166cd606b5789bf",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/layerStore.ts"
           ],
           "path": "packages/state/src/syncLayers.test.ts"
@@ -5606,11 +6040,15 @@
         },
         {
           "hash": "7ab14c9daba59084299d67a62a76ba3a14b385bd676be68004f482bd04fca8eb",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/toolStore.ts"
         },
         {
           "hash": "2f353b166867eee1c1adbc3bb9611b98a18f966c5113fef9afe37abe1d02eb71",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts",
             "packages/state/src/translationComparison.ts"
           ],
@@ -5627,6 +6065,7 @@
           ],
           "hash": "21cc3df182f5f045d04808949f39ee8b5a7a29fc28c65b5c64242eacbe37b58a",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/spriteRaster.ts"
           ],
           "path": "packages/state/src/translationComparison.ts"
@@ -5652,11 +6091,15 @@
         },
         {
           "hash": "9c8df442673c81f58b4cbc24411650c83efb5ce29fe9bdd4d831b1a4983706a7",
+          "importsFiles": [
+            "packages/api-contract/src/index.ts"
+          ],
           "path": "packages/state/src/validationStore.ts"
         },
         {
           "hash": "9bef2fd59e9a202406440794a65c440a3a81e9390708d275340f53a648ee9c0e",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorComparison.ts"
           ],
           "path": "packages/state/src/vectorComparison.test.ts"
@@ -5670,6 +6113,7 @@
           ],
           "hash": "22eb749d8e43852e68dbe6b6b6cd7fe88751a3890a57f60ed8704f9a08c83660",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/translationComparison.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
@@ -5678,6 +6122,7 @@
         {
           "hash": "74d5d2b8247b10bd78db74038ca42ffb2b54733af3f420bc11ecb231d11db2c8",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorHandoff.ts"
           ],
           "path": "packages/state/src/vectorHandoff.test.ts"
@@ -5689,6 +6134,7 @@
           ],
           "hash": "36f7d7c55fe98af29ae9bf66f847eb2d78c77d9a81f94948e6885aa922404f23",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
           "path": "packages/state/src/vectorHandoff.ts"
@@ -5696,17 +6142,22 @@
         {
           "hash": "8a83b47c322c3c2d326d2c6cff2b242e29b89c5bc663bf8d5a516800e7db18b0",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorMasterStore.ts"
           ],
           "path": "packages/state/src/vectorMasterStore.test.ts"
         },
         {
           "hash": "17876f13e511d5dca19d26006e883701939b4e7ecbdb03fcd31c590de6cf93f2",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/vectorMasterStore.ts"
         },
         {
           "hash": "38584d99cddefa38491437222b007b847a019ef54bdc8d56cefb2d86bd123df7",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
           "path": "packages/state/src/vectorRasterize.test.ts"
@@ -5719,11 +6170,15 @@
             "wouldShapeCollapse"
           ],
           "hash": "2de107c032413f916fb16587d9aac494611b8eed5eb61ff7a45b861b0897bd9d",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/vectorRasterize.ts"
         },
         {
           "hash": "b3bf00134e4f1768b1da7e8ef0c9c2a4b556d8c3cc3f47c26fa0ba49abbcdc41",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorRegenerate.ts"
           ],
           "path": "packages/state/src/vectorRegenerate.test.ts"
@@ -5735,6 +6190,7 @@
           ],
           "hash": "2e755cd5901073075559ae25d2ce0026b85f96ccc41ce561233255761052d9c5",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/vectorHandoff.ts",
             "packages/state/src/vectorRasterize.ts"
           ],
@@ -5757,6 +6213,7 @@
         {
           "hash": "55e36c1b3c28721f899c60e7c1df242a6fdbb4b9a0802bd6cb5bba402d130a84",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/bundleExport.ts",
             "packages/state/src/interchange.ts",
             "packages/state/src/paletteRemap.ts",
@@ -5772,12 +6229,16 @@
         {
           "hash": "94dc335ddc219a826800a877ce25cebc4fe7326f1f675fba0fb81995b5fb8b48",
           "importsFiles": [
+            "packages/domain/src/index.ts",
             "packages/state/src/workflowStore.ts"
           ],
           "path": "packages/state/src/workflowStore.test.ts"
         },
         {
           "hash": "3eb131e8f078a9dd56d053cbc1fe8561296b26c897ed5be248505e6151ccc0a5",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/workflowStore.ts"
         },
         {
@@ -5789,6 +6250,9 @@
         },
         {
           "hash": "8fa739596283854ce9c74690d141b59644ceb8bab941d83edff02537d4588812",
+          "importsFiles": [
+            "packages/domain/src/index.ts"
+          ],
           "path": "packages/state/src/workspaceStore.ts"
         },
         {
@@ -5806,8 +6270,9 @@
       "importConfidence": "full",
       "name": "state",
       "origin": "authored",
+      "outsideReads": 10,
       "role": "code",
-      "testedBy": 88,
+      "testedBy": 145,
       "unresolvedSites": 0
     }
   ],
@@ -5818,7 +6283,7 @@
         {
           "job": "test",
           "step": "Atlas check",
-          "text": "npx --yes @dogfood-lab/atlas@1.16.0 check"
+          "text": "npx --yes @dogfood-lab/atlas@1.17.0 check"
         },
         {
           "job": "test",
@@ -5838,7 +6303,11 @@
       ],
       "elsewhere": [],
       "file": ".github/workflows/ci.yml",
-      "landings": [],
+      "landings": [
+        "docs/benchmark-assets",
+        "examples/benchmark-assets",
+        "packages/mcp-sprite-server/fixtures/golden"
+      ],
       "mentions": [],
       "name": "CI",
       "permissions": [],
@@ -5858,9 +6327,38 @@
           "boundary": "state",
           "depth": 0,
           "files": 173
+        },
+        {
+          "boundary": "api-contract",
+          "depth": 1,
+          "enters": {
+            "file": "packages/api-contract/src/index.ts",
+            "from": "packages/state/src/aiStore.ts"
+          },
+          "files": 4
         }
       ],
-      "readers": [],
+      "readers": [
+        {
+          "by": "packages/mcp-sprite-server/examples/run-workflows.ts",
+          "call": "literal",
+          "confidence": "ast",
+          "target": "packages/mcp-sprite-server/fixtures/golden"
+        },
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/generateGoldens.test.ts",
+          "call": "literal",
+          "confidence": "ast",
+          "fromTests": true,
+          "target": "packages/mcp-sprite-server/fixtures/golden"
+        },
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
+          "call": "readFile",
+          "confidence": "ast",
+          "target": "packages/mcp-sprite-server/fixtures/golden"
+        }
+      ],
       "runs": [
         {
           "directory": true,
@@ -6923,9 +7421,50 @@
       "usesWorkflowToken": false
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "from": "api-contract",
+      "kind": "file",
+      "to": "domain"
+    },
+    {
+      "from": "desktop",
+      "kind": "file",
+      "to": "api-contract"
+    },
+    {
+      "from": "desktop",
+      "kind": "file",
+      "to": "domain"
+    },
+    {
+      "from": "desktop",
+      "kind": "file",
+      "to": "state"
+    },
+    {
+      "from": "mcp-sprite-server",
+      "kind": "file",
+      "to": "domain"
+    },
+    {
+      "from": "mcp-sprite-server",
+      "kind": "file",
+      "to": "state"
+    },
+    {
+      "from": "state",
+      "kind": "file",
+      "to": "api-contract"
+    },
+    {
+      "from": "state",
+      "kind": "file",
+      "to": "domain"
+    }
+  ],
   "generatedFrom": {
-    "commit": "77b5fa487931180d034d5c4d8129b63051e6280d",
+    "commit": "cfb891743d975536ee393631177f9419c82f9768",
     "tracked": 850
   },
   "landings": [
@@ -7079,6 +7618,16 @@
       ],
       "target": "audit/event-handlers/command-capability-manifest.json",
       "writers": []
+    },
+    {
+      "readers": [],
+      "target": "docs/benchmark-assets",
+      "writers": [
+        {
+          "by": "packages/mcp-sprite-server/src/dogfood/materialize.test.ts",
+          "confidence": "ast"
+        }
+      ]
     },
     {
       "readers": [],
@@ -7264,6 +7813,16 @@
     },
     {
       "readers": [],
+      "target": "docs/dogfood/stage44-quality",
+      "writers": [
+        {
+          "by": "scripts/dogfood-44-quality.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
       "target": "docs/dogfood/stage44-quality/dogfood-log.md",
       "writers": [
         {
@@ -7304,6 +7863,16 @@
     },
     {
       "readers": [],
+      "target": "docs/showcase/stage46",
+      "writers": [
+        {
+          "by": "scripts/showcase-46.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
       "target": "docs/showcase/stage46/showcase-log.md",
       "writers": [
         {
@@ -7314,10 +7883,30 @@
     },
     {
       "readers": [],
+      "target": "docs/showcase/stage47-ollama",
+      "writers": [
+        {
+          "by": "scripts/dogfood-47-ollama.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
       "target": "docs/showcase/stage47-ollama/dogfood-log.md",
       "writers": [
         {
           "by": "scripts/dogfood-47-ollama.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
+      "target": "docs/showcase/stage47a-test",
+      "writers": [
+        {
+          "by": "scripts/test-47a-prompt.mjs",
           "confidence": "ast"
         }
       ]
@@ -7373,6 +7962,16 @@
       ]
     },
     {
+      "readers": [],
+      "target": "examples/benchmark-assets",
+      "writers": [
+        {
+          "by": "packages/mcp-sprite-server/src/dogfood/materialize.test.ts",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
       "readers": [
         {
           "by": "packages/mcp-sprite-server/examples/run-workflows.ts",
@@ -7401,10 +8000,20 @@
           "call": "literal",
           "confidence": "ast",
           "fromTests": true
+        },
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
+          "call": "readFile",
+          "confidence": "ast"
         }
       ],
       "target": "packages/mcp-sprite-server/fixtures/golden",
-      "writers": []
+      "writers": [
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
+          "confidence": "ast"
+        }
+      ]
     },
     {
       "readers": [
@@ -7418,9 +8027,25 @@
           "call": "literal",
           "confidence": "ast",
           "fromTests": true
+        },
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
+          "call": "readFile",
+          "confidence": "ast"
         }
       ],
       "target": "packages/mcp-sprite-server/fixtures/output",
+      "writers": []
+    },
+    {
+      "readers": [
+        {
+          "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
+          "call": "readFile",
+          "confidence": "ast"
+        }
+      ],
+      "target": "packages/mcp-sprite-server/fixtures/output/*",
       "writers": []
     },
     {

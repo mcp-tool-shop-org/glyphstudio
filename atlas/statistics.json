@@ -26,7 +26,10 @@
         "collapsed": false,
         "confidence": "low",
         "importsAndCoChanges": [],
-        "importsOnly": []
+        "importsOnly": [
+          "desktop",
+          "state"
+        ]
       },
       "cohesion": null,
       "cohesionDropped": false,
@@ -122,7 +125,12 @@
         "collapsed": false,
         "confidence": "low",
         "importsAndCoChanges": [],
-        "importsOnly": []
+        "importsOnly": [
+          "api-contract",
+          "desktop",
+          "mcp-sprite-server",
+          "state"
+        ]
       },
       "cohesion": null,
       "cohesionDropped": false,
@@ -161,7 +169,7 @@
       "confidence": "low",
       "highWater": null,
       "name": "mcp-sprite-server",
-      "qualifyingSourceCommits": 1,
+      "qualifyingSourceCommits": 0,
       "rebaseline": null
     },
     {
@@ -234,7 +242,10 @@
         "collapsed": false,
         "confidence": "low",
         "importsAndCoChanges": [],
-        "importsOnly": []
+        "importsOnly": [
+          "desktop",
+          "mcp-sprite-server"
+        ]
       },
       "cohesion": null,
       "cohesionDropped": false,
@@ -249,8 +260,8 @@
     "definition": "commits is how many commits in the window touch the file, including merges and commits dropped from coupling. lines is added plus deleted in those commits.",
     "files": [
       {
-        "commits": 4,
-        "lines": 14,
+        "commits": 5,
+        "lines": 19,
         "path": ".github/workflows/ci.yml"
       },
       {
@@ -265,38 +276,28 @@
       },
       {
         "commits": 1,
-        "lines": 9,
-        "path": "CHANGELOG.md"
+        "lines": 107,
+        "path": "atlas/README.md"
       },
       {
         "commits": 1,
-        "lines": 4,
-        "path": "README.md"
+        "lines": 62,
+        "path": "atlas/boundaries.yaml"
       },
       {
         "commits": 1,
-        "lines": 2,
-        "path": "package.json"
+        "lines": 479,
+        "path": "atlas/page.json"
       },
       {
         "commits": 1,
-        "lines": 4,
-        "path": "packages/mcp-sprite-server/README.md"
+        "lines": 390,
+        "path": "atlas/statistics.json"
       },
       {
         "commits": 1,
-        "lines": 3,
-        "path": "packages/mcp-sprite-server/src/server.ts"
-      },
-      {
-        "commits": 1,
-        "lines": 17,
-        "path": "packages/mcp-sprite-server/src/version.test.ts"
-      },
-      {
-        "commits": 1,
-        "lines": 9,
-        "path": "packages/mcp-sprite-server/src/version.ts"
+        "lines": 7576,
+        "path": "atlas/structure.json"
       },
       {
         "commits": 1,
@@ -312,41 +313,16 @@
         "commits": 1,
         "lines": 6,
         "path": "site/package.json"
-      },
-      {
-        "commits": 1,
-        "lines": 19,
-        "path": "site/src/content/docs/handbook/architecture.md"
-      },
-      {
-        "commits": 1,
-        "lines": 118,
-        "path": "site/src/content/docs/handbook/beginners.md"
-      },
-      {
-        "commits": 1,
-        "lines": 4,
-        "path": "site/src/content/docs/handbook/getting-started.md"
-      },
-      {
-        "commits": 1,
-        "lines": 2,
-        "path": "site/src/content/docs/handbook/index.md"
-      },
-      {
-        "commits": 1,
-        "lines": 34,
-        "path": "site/src/content/docs/handbook/workspace.md"
       }
     ]
   },
   "confidence": {
     "level": "low",
-    "reason": "fewer than 30 qualifying commits in the window, and fewer than 20 source files reach 10 revisions"
+    "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-09-24T02:10:26.147Z",
+  "generatedAt": "2026-09-24T08:27:41.404Z",
   "generatedFrom": {
-    "commit": "77b5fa487931180d034d5c4d8129b63051e6280d"
+    "commit": "cfb891743d975536ee393631177f9419c82f9768"
   },
   "pairs": [],
   "parameters": {
@@ -359,16 +335,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-09-17T18:24:53-07:00",
-    "inScopeFiles": 850,
+    "headDate": "2026-09-23T22:12:39-04:00",
+    "inScopeFiles": 855,
     "pinnedStart": null,
-    "priorFloor": null,
-    "qualifyingCommits": 8,
+    "priorFloor": "fallen",
+    "qualifyingCommits": 6,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-03-22T01:24:53.000Z",
+    "since": "2026-03-28T02:12:39.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",

@@ -4,22 +4,157 @@
     "assets/",
     "audit/",
     "dogfood/",
-    "examples/",
     "root",
     "site/"
   ],
-  "breaks": [],
+  "breaks": [
+    {
+      "doors": 1,
+      "importedBy": [
+        "api-contract",
+        "desktop",
+        "mcp-sprite-server",
+        "state"
+      ],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "domain",
+      "partLabel": "domain"
+    },
+    {
+      "doors": 1,
+      "importedBy": [
+        "desktop",
+        "state"
+      ],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "api-contract",
+      "partLabel": "api-contract"
+    },
+    {
+      "doors": 1,
+      "importedBy": [
+        "desktop",
+        "mcp-sprite-server"
+      ],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "state",
+      "partLabel": "state"
+    },
+    {
+      "kind": "place",
+      "readers": [
+        "mcp-sprite-server"
+      ],
+      "target": "packages/mcp-sprite-server/fixtures/golden/",
+      "writers": [
+        "mcp-sprite-server"
+      ]
+    }
+  ],
   "changes": {
-    "first": true
+    "fileCounts": {
+      "added": 0,
+      "changed": 1,
+      "moved": 0,
+      "parts": 1,
+      "removed": 0
+    },
+    "items": [
+      {
+        "kind": "import-added",
+        "sentence": "api-contract now imports domain.",
+        "subjects": [
+          "api-contract",
+          "domain"
+        ]
+      },
+      {
+        "kind": "import-added",
+        "sentence": "desktop now imports api-contract.",
+        "subjects": [
+          "desktop",
+          "api-contract"
+        ]
+      },
+      {
+        "kind": "import-added",
+        "sentence": "desktop now imports domain.",
+        "subjects": [
+          "desktop",
+          "domain"
+        ]
+      },
+      {
+        "kind": "import-added",
+        "sentence": "And 5 more new imports between parts.",
+        "subjects": []
+      },
+      {
+        "kind": "landing",
+        "sentence": "docs/benchmark-assets/ is now written by packages/mcp-sprite-server/src/dogfood/materialize.test.ts.",
+        "subjects": [
+          "docs/benchmark-assets/",
+          "packages/mcp-sprite-server/src/dogfood/materialize.test.ts"
+        ]
+      },
+      {
+        "kind": "landing",
+        "sentence": "docs/dogfood/stage44-quality/ is now written by scripts/dogfood-44-quality.mjs.",
+        "subjects": [
+          "docs/dogfood/stage44-quality/",
+          "scripts/dogfood-44-quality.mjs"
+        ]
+      },
+      {
+        "kind": "landing",
+        "sentence": "docs/showcase/stage46/ is now written by scripts/showcase-46.mjs.",
+        "subjects": [
+          "docs/showcase/stage46/",
+          "scripts/showcase-46.mjs"
+        ]
+      },
+      {
+        "kind": "landing",
+        "sentence": "And 7 more new writers and readers of places.",
+        "subjects": []
+      },
+      {
+        "kind": "origin",
+        "sentence": "examples was authored and is now mixed.",
+        "subjects": [
+          "examples"
+        ]
+      },
+      {
+        "kind": "origin",
+        "sentence": "mcp-sprite-server was authored and is now mixed.",
+        "subjects": [
+          "mcp-sprite-server"
+        ]
+      },
+      {
+        "kind": "counts",
+        "sentence": "1 file changed content, across 1 part.",
+        "subjects": []
+      }
+    ],
+    "since": {
+      "commit": "77b5fa487931180d034d5c4d8129b63051e6280d",
+      "generatedAt": "2026-09-24T02:10:26.147Z"
+    },
+    "unchanged": false
   },
   "changesTogether": [],
   "changesTogetherNote": [
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "77b5fa487931180d034d5c4d8129b63051e6280d",
+  "commit": "cfb891743d975536ee393631177f9419c82f9768",
   "defaultBranch": "main",
-  "derived": "15 parts, mostly TypeScript (424 files). Work enters through 3 doors; the busiest is CI, which reaches 3 parts.",
+  "derived": "15 parts, mostly TypeScript (424 files). Work enters through 3 doors; the busiest is CI, which reaches 4 parts.",
   "doors": [
     {
       "checks": [
@@ -30,7 +165,11 @@
       "checksCount": 3,
       "file": ".github/workflows/ci.yml",
       "id": ".github/workflows/ci.yml",
-      "landings": [],
+      "landings": [
+        "docs/benchmark-assets/",
+        "examples/benchmark-assets/",
+        "packages/mcp-sprite-server/fixtures/golden/"
+      ],
       "name": "CI",
       "pushes": false,
       "reach": [
@@ -48,6 +187,11 @@
           "boundary": "state",
           "depth": 0,
           "files": 173
+        },
+        {
+          "boundary": "api-contract",
+          "depth": 1,
+          "files": 4
         }
       ],
       "runs": [
@@ -233,8 +377,30 @@
   "duplicates": [],
   "duplicatesLead": null,
   "duplicatesNote": [],
-  "edges": [],
+  "edges": [
+    {
+      "from": "api-contract",
+      "fromTests": false,
+      "to": "domain"
+    },
+    {
+      "from": "state",
+      "fromTests": false,
+      "to": "api-contract"
+    },
+    {
+      "from": "state",
+      "fromTests": false,
+      "to": "domain"
+    }
+  ],
   "generated": [
+    {
+      "place": "docs/benchmark-assets/",
+      "writers": [
+        "packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test)"
+      ]
+    },
     {
       "place": "docs/dogfood/character-concept/",
       "writers": [
@@ -284,7 +450,7 @@
       ]
     },
     {
-      "place": "docs/dogfood/stage44-quality/dogfood-log.md",
+      "place": "docs/dogfood/stage44-quality/",
       "writers": [
         "scripts/dogfood-44-quality.mjs"
       ]
@@ -302,19 +468,19 @@
       ]
     },
     {
-      "place": "docs/showcase/stage46/showcase-log.md",
+      "place": "docs/showcase/stage46/",
       "writers": [
         "scripts/showcase-46.mjs"
       ]
     },
     {
-      "place": "docs/showcase/stage47-ollama/dogfood-log.md",
+      "place": "docs/showcase/stage47-ollama/",
       "writers": [
         "scripts/dogfood-47-ollama.mjs"
       ]
     },
     {
-      "place": "docs/showcase/stage47a-test/shapes.json",
+      "place": "docs/showcase/stage47a-test/",
       "writers": [
         "scripts/test-47a-prompt.mjs"
       ]
@@ -344,6 +510,18 @@
       ]
     },
     {
+      "place": "examples/benchmark-assets/",
+      "writers": [
+        "packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test)"
+      ]
+    },
+    {
+      "place": "packages/mcp-sprite-server/fixtures/golden/",
+      "writers": [
+        "packages/mcp-sprite-server/src/workflows/verify.ts"
+      ]
+    },
+    {
       "place": "showcase/",
       "writers": [
         "showcase/generate.mjs"
@@ -356,13 +534,13 @@
       ]
     }
   ],
-  "generatedAt": "2026-09-24T02:10:26.147Z",
+  "generatedAt": "2026-09-24T08:27:41.404Z",
   "limits": [
-    "16 import sites could not be resolved.",
-    "1 file uses syntax the parser cannot read (apps/desktop/src/components/VectorReductionPanel.tsx), so what it imports is not known.",
-    "7 writes and 8 reads use paths built at run time and are not named here.",
-    "4 writes go to the directory the command is run in, the home directory or a path its caller passes, not to this repository.",
-    "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 20 source files reach 10 revisions."
+    "17 import sites could not be resolved.",
+    "1 file uses syntax the parser cannot read (apps/desktop/src/components/VectorReductionPanel.tsx), so what it imports is not known: a bare `&` in JSX text (1).",
+    "2 reads use paths built at run time and are not named here.",
+    "4 writes and 24 reads go to the directory the command is run in, the home directory or a path its caller passes, not to this repository.",
+    "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions."
   ],
   "mainDoor": ".github/workflows/ci.yml",
   "partLabels": {
@@ -383,28 +561,51 @@
     "state": "state"
   },
   "parts": 15,
-  "readers": [],
+  "readers": [
+    {
+      "readers": [],
+      "target": "docs/benchmark-assets/"
+    },
+    {
+      "readers": [],
+      "target": "examples/benchmark-assets/"
+    },
+    {
+      "readers": [
+        "packages/mcp-sprite-server/examples/run-workflows.ts"
+      ],
+      "target": "packages/mcp-sprite-server/fixtures/golden/",
+      "tests": 1
+    }
+  ],
   "repo": "mcp-tool-shop-org/glyphstudio",
   "sequences": [],
   "startDoor": ".github/workflows/ci.yml",
   "startHere": [
     ".github/workflows/ci.yml",
-    "packages/state/src/aiStore.test.ts"
+    "packages/state/src/index.ts",
+    "packages/domain/src/index.ts"
   ],
   "summary": null,
   "summaryFrom": null,
   "testFiles": 187,
   "testedBy": {
-    "api-contract": 0,
+    "api-contract": 5,
     "desktop": 63,
-    "domain": 4,
+    "domain": 140,
     "mcp-sprite-server": 23,
     "scripts": 0,
     "showcase": 0,
-    "state": 88
+    "state": 145
   },
-  "unnamedWrites": 7,
+  "unnamedWrites": 0,
   "unread": [
+    {
+      "place": "docs/benchmark-assets/",
+      "writers": [
+        "packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test)"
+      ]
+    },
     {
       "place": "docs/dogfood/character-sprite/",
       "writers": [
@@ -442,27 +643,17 @@
       ]
     },
     {
-      "place": "docs/dogfood/stage44-quality/dogfood-log.md",
+      "place": "docs/dogfood/stage44-quality/",
       "writers": [
         "scripts/dogfood-44-quality.mjs"
       ]
-    },
-    {
-      "place": "docs/dogfood/stage45-feedback/dogfood-log.md",
-      "writers": [
-        "scripts/dogfood-45-feedback.mjs"
-      ]
     }
   ],
+  "unreadFiles": 1,
   "unreadNote": [
-    "And 10 more places."
+    "And 12 more places."
   ],
   "untested": [
-    {
-      "part": "api-contract",
-      "partLabel": "api-contract",
-      "testedBy": 0
-    },
     {
       "part": "scripts",
       "partLabel": "scripts",
@@ -475,5 +666,5 @@
     }
   ],
   "untestedNote": [],
-  "written": 20
+  "written": 23
 }
