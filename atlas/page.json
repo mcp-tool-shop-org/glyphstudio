@@ -49,6 +49,7 @@
         "mcp-sprite-server"
       ],
       "target": "packages/mcp-sprite-server/fixtures/golden/",
+      "tests": 1,
       "writers": [
         "mcp-sprite-server"
       ]
@@ -56,94 +57,80 @@
   ],
   "changes": {
     "fileCounts": {
-      "added": 0,
-      "changed": 1,
+      "added": 1,
+      "changed": 653,
       "moved": 0,
-      "parts": 1,
+      "parts": 14,
       "removed": 0
     },
     "items": [
       {
-        "kind": "import-added",
-        "sentence": "api-contract now imports domain.",
+        "kind": "door",
+        "sentence": "CI's pull request trigger now also names `codecov.yml`.",
         "subjects": [
-          "api-contract",
-          "domain"
+          ".github/workflows/ci.yml"
         ]
       },
       {
-        "kind": "import-added",
-        "sentence": "desktop now imports api-contract.",
+        "kind": "door",
+        "sentence": "CI's push trigger now also names `codecov.yml`.",
         "subjects": [
-          "desktop",
-          "api-contract"
+          ".github/workflows/ci.yml"
         ]
       },
       {
-        "kind": "import-added",
-        "sentence": "desktop now imports domain.",
+        "kind": "door",
+        "sentence": "glyphstudio (apps/desktop/src-tauri/Cargo.toml) is a new desktop app. It runs apps/desktop/src-tauri/src/main.rs.",
         "subjects": [
-          "desktop",
-          "domain"
-        ]
-      },
-      {
-        "kind": "import-added",
-        "sentence": "And 5 more new imports between parts.",
-        "subjects": []
-      },
-      {
-        "kind": "landing",
-        "sentence": "docs/benchmark-assets/ is now written by packages/mcp-sprite-server/src/dogfood/materialize.test.ts.",
-        "subjects": [
-          "docs/benchmark-assets/",
-          "packages/mcp-sprite-server/src/dogfood/materialize.test.ts"
+          "apps/desktop/src-tauri/Cargo.toml",
+          "apps/desktop/src-tauri/src/main.rs"
         ]
       },
       {
         "kind": "landing",
-        "sentence": "docs/dogfood/stage44-quality/ is now written by scripts/dogfood-44-quality.mjs.",
+        "sentence": "apps/desktop/src-tauri/gen/schemas/ is now written by apps/desktop/src-tauri/build.rs.",
         "subjects": [
-          "docs/dogfood/stage44-quality/",
+          "apps/desktop/src-tauri/gen/schemas/",
+          "apps/desktop/src-tauri/build.rs"
+        ]
+      },
+      {
+        "kind": "landing",
+        "sentence": "docs/dogfood/stage44-quality/*-post-*x*.png is now written by scripts/dogfood-44-quality.mjs.",
+        "subjects": [
+          "docs/dogfood/stage44-quality/*-post-*x*.png",
           "scripts/dogfood-44-quality.mjs"
         ]
       },
       {
         "kind": "landing",
-        "sentence": "docs/showcase/stage46/ is now written by scripts/showcase-46.mjs.",
+        "sentence": "docs/dogfood/stage44-quality/*-pre-*x*.png is now written by scripts/dogfood-44-quality.mjs.",
         "subjects": [
-          "docs/showcase/stage46/",
-          "scripts/showcase-46.mjs"
+          "docs/dogfood/stage44-quality/*-pre-*x*.png",
+          "scripts/dogfood-44-quality.mjs"
         ]
       },
       {
         "kind": "landing",
-        "sentence": "And 7 more new writers and readers of places.",
+        "sentence": "And 3 more new writers and readers of places.",
         "subjects": []
       },
       {
         "kind": "origin",
-        "sentence": "examples was authored and is now mixed.",
+        "sentence": "desktop was authored and is now mixed.",
         "subjects": [
-          "examples"
-        ]
-      },
-      {
-        "kind": "origin",
-        "sentence": "mcp-sprite-server was authored and is now mixed.",
-        "subjects": [
-          "mcp-sprite-server"
+          "desktop"
         ]
       },
       {
         "kind": "counts",
-        "sentence": "1 file changed content, across 1 part.",
+        "sentence": "1 file added and 653 changed content, across 14 parts.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "77b5fa487931180d034d5c4d8129b63051e6280d",
-      "generatedAt": "2026-09-24T02:10:26.147Z"
+      "commit": "cfb891743d975536ee393631177f9419c82f9768",
+      "generatedAt": "2026-09-24T08:27:41.404Z"
     },
     "unchanged": false
   },
@@ -152,9 +139,9 @@
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "cfb891743d975536ee393631177f9419c82f9768",
+  "commit": "fdf655be3efd8c3a809142b0b762b59d5c43135f",
   "defaultBranch": "main",
-  "derived": "15 parts, mostly TypeScript (424 files). Work enters through 3 doors; the busiest is CI, which reaches 4 parts.",
+  "derived": "15 parts, mostly TypeScript (424 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).",
   "doors": [
     {
       "checks": [
@@ -163,6 +150,7 @@
         "packages/state/src/"
       ],
       "checksCount": 3,
+      "checksMore": 0,
       "file": ".github/workflows/ci.yml",
       "id": ".github/workflows/ci.yml",
       "landings": [
@@ -317,17 +305,21 @@
         "packages/state/src/workspaceStore.test.ts"
       ],
       "runsCount": 120,
-      "sends": [],
+      "runsMore": 118,
+      "sends": [
+        "uploads coverage to Codecov"
+      ],
       "stages": [],
       "triggers": [
-        "on a pull request touching 8 paths",
-        "on a push to main touching 8 paths",
+        "on a pull request to main touching 9 paths",
+        "on a push to main touching 9 paths",
         "or by hand"
       ]
     },
     {
       "checks": [],
       "checksCount": 0,
+      "checksMore": 0,
       "file": ".github/workflows/pages.yml",
       "id": ".github/workflows/pages.yml",
       "landings": [],
@@ -337,7 +329,7 @@
         {
           "boundary": "site",
           "depth": 0,
-          "files": 3
+          "files": 5
         }
       ],
       "runs": [
@@ -345,6 +337,7 @@
         "site/src/"
       ],
       "runsCount": 2,
+      "runsMore": 0,
       "sends": [
         "deploys the site"
       ],
@@ -357,6 +350,7 @@
     {
       "checks": [],
       "checksCount": 0,
+      "checksMore": 0,
       "file": ".github/workflows/dogfood.yml",
       "id": ".github/workflows/dogfood.yml",
       "landings": [],
@@ -365,6 +359,7 @@
       "reach": [],
       "runs": [],
       "runsCount": 0,
+      "runsMore": 0,
       "sends": [
         "sends a dispatch to dogfood-lab/testing-os"
       ],
@@ -372,6 +367,35 @@
       "triggers": [
         "by hand"
       ]
+    },
+    {
+      "app": "desktop",
+      "builtFrom": "apps/desktop/src-tauri",
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": "apps/desktop/src-tauri/Cargo.toml",
+      "id": "apps/desktop/src-tauri/Cargo.toml#glyphstudio",
+      "kind": "command",
+      "landings": [],
+      "name": "glyphstudio",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "desktop",
+          "depth": 0,
+          "files": 45
+        }
+      ],
+      "runs": [
+        "apps/desktop/src-tauri/src/main.rs"
+      ],
+      "runsCount": 1,
+      "runsMore": 0,
+      "sends": [],
+      "stages": [],
+      "triggers": [],
+      "unshipped": true
     }
   ],
   "duplicates": [],
@@ -394,7 +418,14 @@
       "to": "domain"
     }
   ],
+  "engine": "1.24.0",
   "generated": [
+    {
+      "place": "apps/desktop/src-tauri/gen/schemas/",
+      "writers": [
+        "apps/desktop/src-tauri/build.rs (a build script)"
+      ]
+    },
     {
       "place": "docs/benchmark-assets/",
       "writers": [
@@ -450,7 +481,19 @@
       ]
     },
     {
-      "place": "docs/dogfood/stage44-quality/",
+      "place": "docs/dogfood/stage44-quality/*-post-*x*.png",
+      "writers": [
+        "scripts/dogfood-44-quality.mjs"
+      ]
+    },
+    {
+      "place": "docs/dogfood/stage44-quality/*-pre-*x*.png",
+      "writers": [
+        "scripts/dogfood-44-quality.mjs"
+      ]
+    },
+    {
+      "place": "docs/dogfood/stage44-quality/dogfood-log.md",
       "writers": [
         "scripts/dogfood-44-quality.mjs"
       ]
@@ -468,13 +511,25 @@
       ]
     },
     {
-      "place": "docs/showcase/stage46/",
+      "place": "docs/showcase/stage46/*--*.png",
       "writers": [
         "scripts/showcase-46.mjs"
       ]
     },
     {
-      "place": "docs/showcase/stage47-ollama/",
+      "place": "docs/showcase/stage46/showcase-log.md",
+      "writers": [
+        "scripts/showcase-46.mjs"
+      ]
+    },
+    {
+      "place": "docs/showcase/stage47-ollama/*---*x*.png",
+      "writers": [
+        "scripts/dogfood-47-ollama.mjs"
+      ]
+    },
+    {
+      "place": "docs/showcase/stage47-ollama/dogfood-log.md",
       "writers": [
         "scripts/dogfood-47-ollama.mjs"
       ]
@@ -534,12 +589,11 @@
       ]
     }
   ],
-  "generatedAt": "2026-09-24T08:27:41.404Z",
+  "generatedAt": "2026-09-30T20:10:02.011Z",
   "limits": [
-    "17 import sites could not be resolved.",
-    "1 file uses syntax the parser cannot read (apps/desktop/src/components/VectorReductionPanel.tsx), so what it imports is not known: a bare `&` in JSX text (1).",
-    "2 reads use paths built at run time and are not named here.",
-    "4 writes and 24 reads go to the directory the command is run in, the home directory or a path its caller passes, not to this repository.",
+    "17 imports could not be resolved: `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; `scripts/dogfood-43-creature.mjs` imports a path built at run time; and 14 more.",
+    "59 writes and 10 reads use paths built at run time and are not named here.",
+    "13 writes and 31 reads go to a path their caller passes, not to this repository.",
     "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions."
   ],
   "mainDoor": ".github/workflows/ci.yml",
@@ -580,26 +634,32 @@
   ],
   "repo": "mcp-tool-shop-org/glyphstudio",
   "sequences": [],
-  "startDoor": ".github/workflows/ci.yml",
+  "startDoor": "apps/desktop/src-tauri/Cargo.toml#glyphstudio",
   "startHere": [
-    ".github/workflows/ci.yml",
-    "packages/state/src/index.ts",
-    "packages/domain/src/index.ts"
+    "apps/desktop/src-tauri/src/main.rs",
+    "apps/desktop/src-tauri/src/lib.rs"
   ],
+  "startReason": "This path follows glyphstudio (a desktop app built from apps/desktop/src-tauri, which nothing ships) from its entry, since CI runs only tests and checks.",
   "summary": null,
   "summaryFrom": null,
-  "testFiles": 187,
+  "testFiles": 202,
   "testedBy": {
     "api-contract": 5,
-    "desktop": 63,
+    "desktop": 78,
     "domain": 140,
     "mcp-sprite-server": 23,
     "scripts": 0,
     "showcase": 0,
     "state": 145
   },
-  "unnamedWrites": 0,
+  "unnamedWrites": 59,
   "unread": [
+    {
+      "place": "apps/desktop/src-tauri/gen/schemas/",
+      "writers": [
+        "apps/desktop/src-tauri/build.rs (a build script)"
+      ]
+    },
     {
       "place": "docs/benchmark-assets/",
       "writers": [
@@ -641,17 +701,11 @@
       "writers": [
         "scripts/dogfood-44-curves.mjs"
       ]
-    },
-    {
-      "place": "docs/dogfood/stage44-quality/",
-      "writers": [
-        "scripts/dogfood-44-quality.mjs"
-      ]
     }
   ],
-  "unreadFiles": 1,
+  "unreadFiles": 0,
   "unreadNote": [
-    "And 12 more places."
+    "And 17 more places."
   ],
   "untested": [
     {
@@ -665,6 +719,8 @@
       "testedBy": 0
     }
   ],
-  "untestedNote": [],
-  "written": 23
+  "untestedNote": [
+    "64 test files run in no workflow: apps/desktop/src/components/AISettingsPanel.test.tsx, apps/desktop/src/components/AnchorPanel.test.tsx, apps/desktop/src/components/AssetBrowserPanel.test.tsx and 61 more."
+  ],
+  "written": 28
 }

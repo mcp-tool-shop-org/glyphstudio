@@ -1,36 +1,36 @@
 # glyphstudio: how it works
 
-Mapped at 2026-09-24 from commit cfb8917.
+Mapped at 2026-09-30 from commit fdf655b by Atlas 1.24.0.
 
 ## What this is
 
-15 parts, mostly TypeScript (424 files). Work enters through 3 doors; the busiest is CI, which reaches 4 parts.
+15 parts, mostly TypeScript (424 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).
 
-## What changed since 2026-09-24 (77b5fa4)
+## What changed since 2026-09-24 (cfb8917)
 
-- api-contract now imports domain.
-- desktop now imports api-contract.
-- desktop now imports domain.
-- And 5 more new imports between parts.
-- docs/benchmark-assets/ is now written by packages/mcp-sprite-server/src/dogfood/materialize.test.ts.
-- docs/dogfood/stage44-quality/ is now written by scripts/dogfood-44-quality.mjs.
-- docs/showcase/stage46/ is now written by scripts/showcase-46.mjs.
-- And 7 more new writers and readers of places.
-- examples was authored and is now mixed.
-- mcp-sprite-server was authored and is now mixed.
-- 1 file changed content, across 1 part.
+- CI's pull request trigger now also names `codecov.yml`.
+- CI's push trigger now also names `codecov.yml`.
+- glyphstudio (apps/desktop/src-tauri/Cargo.toml) is a new desktop app. It runs apps/desktop/src-tauri/src/main.rs.
+- apps/desktop/src-tauri/gen/schemas/ is now written by apps/desktop/src-tauri/build.rs.
+- docs/dogfood/stage44-quality/*-post-*x*.png is now written by scripts/dogfood-44-quality.mjs.
+- docs/dogfood/stage44-quality/*-pre-*x*.png is now written by scripts/dogfood-44-quality.mjs.
+- And 3 more new writers and readers of places.
+- desktop was authored and is now mixed.
+- 1 file added and 653 changed content, across 14 parts.
 
 ## What comes in
 
-1. **CI.** On a pull request touching 8 paths; on a push to main touching 8 paths; or by hand. Runs packages/domain/src/ciGates.test.ts, packages/domain/src/shortcutManifest.test.ts, packages/domain/src/sizeProfile.test.ts and 117 more; checks packages/domain/src/, packages/mcp-sprite-server/src/ and packages/state/src/.
+1. **CI.** On a pull request to main touching 9 paths; on a push to main touching 9 paths; or by hand. Runs packages/domain/src/ciGates.test.ts, packages/domain/src/shortcutManifest.test.ts, packages/domain/src/sizeProfile.test.ts and 118 more; checks packages/domain/src/, packages/mcp-sprite-server/src/ and packages/state/src/.
 2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
 3. **Dogfood.** By hand. Runs no file this map can see.
+4. **glyphstudio** (a desktop app built from apps/desktop/src-tauri, which nothing ships). Runs apps/desktop/src-tauri/src/main.rs.
 
 ## What happens through CI
 
 1. The workflow runs 5 files in domain, 23 files in mcp-sprite-server, and 93 files in state; it checks packages/domain/src/ in domain, packages/mcp-sprite-server/src/ in mcp-sprite-server and packages/state/src/ in state.
 2. That reaches api-contract (4 files).
 3. It writes to docs/benchmark-assets/, examples/benchmark-assets/ and packages/mcp-sprite-server/fixtures/golden/.
+4. It uploads coverage to Codecov.
 
 ## Who reads the results
 
@@ -44,12 +44,14 @@ Mapped at 2026-09-24 from commit cfb8917.
 
 **Dogfood** runs no file this map can see and sends a dispatch to dogfood-lab/testing-os.
 
+**glyphstudio** (a desktop app built from apps/desktop/src-tauri, which nothing ships) runs apps/desktop/src-tauri/src/main.rs.
+
 ## What breaks what
 
 - **domain** is imported by 4 parts (api-contract, desktop, mcp-sprite-server, state) and sits on the path of 1 door.
 - **api-contract** is imported by 2 parts (desktop, state) and sits on the path of 1 door.
 - **state** is imported by 2 parts (desktop, mcp-sprite-server) and sits on the path of 1 door.
-- **packages/mcp-sprite-server/fixtures/golden/** is written by mcp-sprite-server and read by mcp-sprite-server; a hand edit reaches every reader.
+- **packages/mcp-sprite-server/fixtures/golden/** is written by mcp-sprite-server and read by mcp-sprite-server, and by 1 test; a hand edit reaches every reader.
 
 ## What tends to change together
 
@@ -62,8 +64,11 @@ Window: 180 days; a pair counts from 3 shared commits, since the window holds fe
 - **scripts** is imported by no test.
 - **showcase** is imported by no test.
 
+64 test files run in no workflow: apps/desktop/src/components/AISettingsPanel.test.tsx, apps/desktop/src/components/AnchorPanel.test.tsx, apps/desktop/src/components/AssetBrowserPanel.test.tsx and 61 more.
+
 ## Written but never read
 
+- **apps/desktop/src-tauri/gen/schemas/** is written by apps/desktop/src-tauri/build.rs (a build script) and read by nothing else in this repository.
 - **docs/benchmark-assets/** is written by packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test) and read by nothing else in this repository.
 - **docs/dogfood/character-sprite/** is written by scripts/translate-character.mjs and read by nothing else in this repository.
 - **docs/dogfood/prop-sprite/** is written by scripts/translate-prop.mjs and read by nothing else in this repository.
@@ -71,16 +76,16 @@ Window: 180 days; a pair counts from 3 shared commits, since the window holds fe
 - **docs/dogfood/stage43-humanoid/** is written by scripts/dogfood-43-humanoid.mjs and read by nothing else in this repository.
 - **docs/dogfood/stage43-prop/** is written by scripts/dogfood-43-prop.mjs and read by nothing else in this repository.
 - **docs/dogfood/stage44-curves/** is written by scripts/dogfood-44-curves.mjs and read by nothing else in this repository.
-- **docs/dogfood/stage44-quality/** is written by scripts/dogfood-44-quality.mjs and read by nothing else in this repository.
 
-And 12 more places.
+And 17 more places.
 
 ## Helpers that look duplicated
 
-No two parts export a helper that looks alike in the files this map could read; 1 file could not be.
+No two parts export a helper that looks alike.
 
 ## Generated, never hand-edited
 
+- **apps/desktop/src-tauri/gen/schemas/** is written by apps/desktop/src-tauri/build.rs (a build script).
 - **docs/benchmark-assets/** is written by packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test).
 - **docs/dogfood/character-concept/** is written by scripts/dogfood-character.mjs.
 - **docs/dogfood/character-sprite/** is written by scripts/translate-character.mjs.
@@ -90,11 +95,15 @@ No two parts export a helper that looks alike in the files this map could read; 
 - **docs/dogfood/stage43-humanoid/** is written by scripts/dogfood-43-humanoid.mjs.
 - **docs/dogfood/stage43-prop/** is written by scripts/dogfood-43-prop.mjs.
 - **docs/dogfood/stage44-curves/** is written by scripts/dogfood-44-curves.mjs.
-- **docs/dogfood/stage44-quality/** is written by scripts/dogfood-44-quality.mjs.
+- **docs/dogfood/stage44-quality/*-post-*x*.png** is written by scripts/dogfood-44-quality.mjs.
+- **docs/dogfood/stage44-quality/*-pre-*x*.png** is written by scripts/dogfood-44-quality.mjs.
+- **docs/dogfood/stage44-quality/dogfood-log.md** is written by scripts/dogfood-44-quality.mjs.
 - **docs/dogfood/stage45-feedback/dogfood-log.md** is written by scripts/dogfood-45-feedback.mjs.
 - **docs/dogfood/vector-master/** is written by scripts/dogfood-vector-master.mjs.
-- **docs/showcase/stage46/** is written by scripts/showcase-46.mjs.
-- **docs/showcase/stage47-ollama/** is written by scripts/dogfood-47-ollama.mjs.
+- **docs/showcase/stage46/*--*.png** is written by scripts/showcase-46.mjs.
+- **docs/showcase/stage46/showcase-log.md** is written by scripts/showcase-46.mjs.
+- **docs/showcase/stage47-ollama/*---*x*.png** is written by scripts/dogfood-47-ollama.mjs.
+- **docs/showcase/stage47-ollama/dogfood-log.md** is written by scripts/dogfood-47-ollama.mjs.
 - **docs/showcase/stage47a-test/** is written by scripts/test-47a-prompt.mjs.
 - **docs/showcase/stage47b-critique/** is written by scripts/test-47b-critique-loop.mjs.
 - **docs/visual-recovery/critiques/** is written by scripts/critique-sprite.mjs.
@@ -107,20 +116,19 @@ No two parts export a helper that looks alike in the files this map could read; 
 
 ## Hand-authored
 
-People write .github/, assets/, audit/, dogfood/, the repository root and site/. Nothing in the files this map could read writes to them; 1 file could not be.
+People write .github/, assets/, audit/, dogfood/, the repository root and site/; 59 writes with paths built at run time may land here.
 
 ## Where to start
 
-.github/workflows/ci.yml → packages/state/src/index.ts → packages/domain/src/index.ts
+apps/desktop/src-tauri/src/main.rs → apps/desktop/src-tauri/src/lib.rs
 
-Read those in order to follow one pull request end to end.
+Read those in order to follow one run of glyphstudio end to end. This path follows glyphstudio (a desktop app built from apps/desktop/src-tauri, which nothing ships) from its entry, since CI runs only tests and checks.
 
 ## What this map cannot see
 
-- 17 import sites could not be resolved.
-- 1 file uses syntax the parser cannot read (apps/desktop/src/components/VectorReductionPanel.tsx), so what it imports is not known: a bare `&` in JSX text (1).
-- 2 reads use paths built at run time and are not named here.
-- 4 writes and 24 reads go to the directory the command is run in, the home directory or a path its caller passes, not to this repository.
+- 17 imports could not be resolved: `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; `scripts/dogfood-43-creature.mjs` imports a path built at run time; and 14 more.
+- 59 writes and 10 reads use paths built at run time and are not named here.
+- 13 writes and 31 reads go to a path their caller passes, not to this repository.
 - Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions.
 
 Regenerate with `npx --yes @dogfood-lab/atlas map`.
