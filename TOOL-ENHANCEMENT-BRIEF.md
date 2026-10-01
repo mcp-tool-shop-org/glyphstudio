@@ -95,7 +95,7 @@ Register in `lib.rs` → `generate_handler![..., canvas::my_command]`
 cd F:\AI\GlyphStudio && npx tsc --noEmit -p apps/desktop/tsconfig.json
 
 # Rust (needs cargo PATH)
-export PATH="$PATH:/c/Users/mikey/.cargo/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 cd F:/AI/GlyphStudio/apps/desktop/src-tauri && cargo check
 
 # All tests
