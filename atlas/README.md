@@ -1,26 +1,19 @@
 # glyphstudio: how it works
 
-Mapped at 2026-09-30 from commit fdf655b by Atlas 1.24.0.
+Mapped at 2026-10-01 from commit 5a1cc32 by Atlas 1.24.0.
 
 ## What this is
 
 15 parts, mostly TypeScript (424 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).
 
-## What changed since 2026-09-24 (cfb8917)
+## What changed since 2026-09-30 (fdf655b)
 
-- CI's pull request trigger now also names `codecov.yml`.
-- CI's push trigger now also names `codecov.yml`.
-- glyphstudio (apps/desktop/src-tauri/Cargo.toml) is a new desktop app. It runs apps/desktop/src-tauri/src/main.rs.
-- apps/desktop/src-tauri/gen/schemas/ is now written by apps/desktop/src-tauri/build.rs.
-- docs/dogfood/stage44-quality/*-post-*x*.png is now written by scripts/dogfood-44-quality.mjs.
-- docs/dogfood/stage44-quality/*-pre-*x*.png is now written by scripts/dogfood-44-quality.mjs.
-- And 3 more new writers and readers of places.
-- desktop was authored and is now mixed.
-- 1 file added and 653 changed content, across 14 parts.
+- CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `package.json`, `packages/**`, `pnpm-lock.yaml`, `site/astro.config.mjs`, `site/package-lock.json` and `site/package.json`.
+- 2 files changed content, across 2 parts.
 
 ## What comes in
 
-1. **CI.** On a pull request to main touching 9 paths; on a push to main touching 9 paths; or by hand. Runs packages/domain/src/ciGates.test.ts, packages/domain/src/shortcutManifest.test.ts, packages/domain/src/sizeProfile.test.ts and 118 more; checks packages/domain/src/, packages/mcp-sprite-server/src/ and packages/state/src/.
+1. **CI.** On a pull request to main; on a push to main touching 9 paths; or by hand. Runs packages/domain/src/ciGates.test.ts, packages/domain/src/shortcutManifest.test.ts, packages/domain/src/sizeProfile.test.ts and 118 more; checks packages/domain/src/, packages/mcp-sprite-server/src/ and packages/state/src/.
 2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
 3. **Dogfood.** By hand. Runs no file this map can see.
 4. **glyphstudio** (a desktop app built from apps/desktop/src-tauri, which nothing ships). Runs apps/desktop/src-tauri/src/main.rs.
