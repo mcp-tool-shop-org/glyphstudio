@@ -1,15 +1,14 @@
 # glyphstudio: how it works
 
-Mapped at 2026-10-01 from commit 5a1cc32 by Atlas 1.24.0.
+Mapped at 2026-11-08 from commit 02f65e1 by Atlas 1.24.0.
 
 ## What this is
 
 15 parts, mostly TypeScript (424 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).
 
-## What changed since 2026-09-30 (fdf655b)
+## What changed since 2026-10-01 (5a1cc32)
 
-- CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `package.json`, `packages/**`, `pnpm-lock.yaml`, `site/astro.config.mjs`, `site/package-lock.json` and `site/package.json`.
-- 2 files changed content, across 2 parts.
+Nothing structural changed since 2026-10-01; 15 files changed content.
 
 ## What comes in
 
@@ -119,7 +118,7 @@ Read those in order to follow one run of glyphstudio end to end. This path follo
 
 ## What this map cannot see
 
-- 17 imports could not be resolved: `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; `scripts/dogfood-43-creature.mjs` imports a path built at run time; and 14 more.
+- 18 imports could not be resolved: `packages/mcp-sprite-server/src/server.ts` imports `./schemaCompat.js`, which is not in this repository; `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; and 15 more.
 - 59 writes and 10 reads use paths built at run time and are not named here.
 - 13 writes and 31 reads go to a path their caller passes, not to this repository.
 - Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions.

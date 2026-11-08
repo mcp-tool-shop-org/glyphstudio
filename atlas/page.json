@@ -58,37 +58,30 @@
   "changes": {
     "fileCounts": {
       "added": 0,
-      "changed": 2,
+      "changed": 15,
       "moved": 0,
-      "parts": 2,
+      "parts": 7,
       "removed": 0
     },
     "items": [
       {
-        "kind": "door",
-        "sentence": "CI's pull request trigger no longer names `.github/workflows/ci.yml`, `atlas/**`, `codecov.yml`, `package.json`, `packages/**`, `pnpm-lock.yaml`, `site/astro.config.mjs`, `site/package-lock.json` and `site/package.json`.",
-        "subjects": [
-          ".github/workflows/ci.yml"
-        ]
-      },
-      {
         "kind": "counts",
-        "sentence": "2 files changed content, across 2 parts.",
+        "sentence": "Nothing structural changed since 2026-10-01; 15 files changed content.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "fdf655be3efd8c3a809142b0b762b59d5c43135f",
-      "generatedAt": "2026-09-30T20:10:02.011Z"
+      "commit": "5a1cc3213f0da895e6d0a325272dee125e73825a",
+      "generatedAt": "2026-10-01T02:00:24.281Z"
     },
-    "unchanged": false
+    "unchanged": true
   },
   "changesTogether": [],
   "changesTogetherNote": [
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "5a1cc3213f0da895e6d0a325272dee125e73825a",
+  "commit": "02f65e19c071c0a3de7fd09ed6e0bb52e84af9e3",
   "defaultBranch": "main",
   "derived": "15 parts, mostly TypeScript (424 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).",
   "doors": [
@@ -538,9 +531,9 @@
       ]
     }
   ],
-  "generatedAt": "2026-10-01T02:00:24.281Z",
+  "generatedAt": "2026-11-08T00:21:25.461Z",
   "limits": [
-    "17 imports could not be resolved: `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; `scripts/dogfood-43-creature.mjs` imports a path built at run time; and 14 more.",
+    "18 imports could not be resolved: `packages/mcp-sprite-server/src/server.ts` imports `./schemaCompat.js`, which is not in this repository; `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; and 15 more.",
     "59 writes and 10 reads use paths built at run time and are not named here.",
     "13 writes and 31 reads go to a path their caller passes, not to this repository.",
     "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions."
