@@ -6749,6 +6749,10 @@
           "path": "packages/mcp-sprite-server/package.json"
         },
         {
+          "hash": "bd54de4f7085867b99de15c299abeddc7d886d0fc3ebdc8797967998bfd0b151",
+          "path": "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json"
+        },
+        {
           "hash": "e0dcaeae9975de892efe5cb6924ed1d40419646e4013420d1bba082ccf85f463",
           "importsFiles": [
             "packages/mcp-sprite-server/src/adapters/storeAdapter.ts"
@@ -7034,6 +7038,29 @@
         },
         {
           "exports": [
+            "installInputSchemaContract",
+            "restoreInputSchemaContract"
+          ],
+          "failurePaths": [
+            {
+              "in": "installInputSchemaContract",
+              "kind": "throw",
+              "line": 81
+            }
+          ],
+          "hash": "558e8399c94cb1ef77a9aa5c1e28fd86b7af52a901876554eca478f824d9c88d",
+          "path": "packages/mcp-sprite-server/src/schemaCompat.ts"
+        },
+        {
+          "hash": "1f21fed4172c59243186658e587340995c7b49305e07dcf87e6d1cd5d8a4e963",
+          "importsFiles": [
+            "packages/mcp-sprite-server/src/server.ts"
+          ],
+          "path": "packages/mcp-sprite-server/src/schemaContract.test.ts",
+          "testFramework": "vitest"
+        },
+        {
+          "exports": [
             "fail",
             "success"
           ],
@@ -7083,13 +7110,15 @@
             "packages/mcp-sprite-server/src/resources/documentResource.ts",
             "packages/mcp-sprite-server/src/resources/stateResource.ts",
             "packages/mcp-sprite-server/src/resources/renderResource.ts",
-            "packages/mcp-sprite-server/src/resources/catalogResource.ts"
+            "packages/mcp-sprite-server/src/resources/catalogResource.ts",
+            "packages/mcp-sprite-server/src/schemaCompat.ts"
           ],
           "importsFiles": [
             "packages/mcp-sprite-server/src/resources/catalogResource.ts",
             "packages/mcp-sprite-server/src/resources/documentResource.ts",
             "packages/mcp-sprite-server/src/resources/renderResource.ts",
             "packages/mcp-sprite-server/src/resources/stateResource.ts",
+            "packages/mcp-sprite-server/src/schemaCompat.ts",
             "packages/mcp-sprite-server/src/session/sessionManager.ts",
             "packages/mcp-sprite-server/src/tools/analysisTools.ts",
             "packages/mcp-sprite-server/src/tools/documentTools.ts",
@@ -7667,15 +7696,8 @@
       "testRunners": [
         "vitest"
       ],
-      "testedBy": 23,
-      "unresolvedNamed": [
-        {
-          "path": "packages/mcp-sprite-server/src/server.ts",
-          "specifier": "./schemaCompat.js",
-          "why": "missing"
-        }
-      ],
-      "unresolvedSites": 1
+      "testedBy": 24,
+      "unresolvedSites": 0
     },
     {
       "dynamicReads": 0,
@@ -10601,7 +10623,7 @@
         {
           "boundary": "mcp-sprite-server",
           "depth": 0,
-          "files": 56
+          "files": 58
         },
         {
           "boundary": "state",
@@ -10766,6 +10788,13 @@
           "job": "test",
           "matched": true,
           "path": "packages/mcp-sprite-server/src/resources/catalogResource.test.ts",
+          "runKind": "executes",
+          "via": "vitest"
+        },
+        {
+          "job": "test",
+          "matched": true,
+          "path": "packages/mcp-sprite-server/src/schemaContract.test.ts",
           "runKind": "executes",
           "via": "vitest"
         },
@@ -11506,7 +11535,7 @@
           "via": "vitest"
         }
       ],
-      "runsCount": 123,
+      "runsCount": 124,
       "secrets": [],
       "sends": {
         "deploysPages": false,
@@ -11547,7 +11576,7 @@
         {
           "coverage": true,
           "dir": "packages/mcp-sprite-server",
-          "files": 23,
+          "files": 24,
           "job": "test",
           "junit": true,
           "runner": "vitest",
@@ -11906,8 +11935,8 @@
   ],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "02f65e19c071c0a3de7fd09ed6e0bb52e84af9e3",
-    "tracked": 851
+    "commit": "65f37a9cf30e82264c40aca572cbfc2a63bb81ae",
+    "tracked": 854
   },
   "landings": [
     {
@@ -12535,6 +12564,18 @@
     {
       "readers": [
         {
+          "by": "packages/mcp-sprite-server/src/schemaContract.test.ts",
+          "call": "readFileSync",
+          "confidence": "ast",
+          "fromTests": true
+        }
+      ],
+      "target": "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json",
+      "writers": []
+    },
+    {
+      "readers": [
+        {
           "by": "audit/event-handlers/1-handler-registry.json",
           "call": "literal",
           "confidence": "text"
@@ -12669,7 +12710,7 @@
   "overlaps": [],
   "submodules": [],
   "symlinks": [],
-  "testFiles": 202,
+  "testFiles": 203,
   "testsNotRun": [
     "apps/desktop/src/components/AISettingsPanel.test.tsx",
     "apps/desktop/src/components/AnchorPanel.test.tsx",
