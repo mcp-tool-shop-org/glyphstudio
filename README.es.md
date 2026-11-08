@@ -11,139 +11,134 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square" alt="Platforms">
   <img src="https://img.shields.io/badge/tauri-v2-orange?style=flat-square" alt="Tauri v2">
-  <img src="https://img.shields.io/badge/tests-2776%20passing-brightgreen?style=flat-square" alt="Tests">
+  <img src="https://img.shields.io/badge/tests-4550%2B%20passing-brightgreen?style=flat-square" alt="Tests">
   <a href="https://mcp-tool-shop-org.github.io/glyphstudio/"><img src="https://img.shields.io/badge/Landing_Page-live-blue?style=flat-square" alt="Landing Page"></a>
 </p>
 
-Un estudio de creación de sprites diseñado para la edición precisa de píxeles, animación cuadro por cuadro y futura asistencia en la creación de movimientos.
+# GlyphStudio
 
-GlyphStudio es una aplicación de escritorio construida con **Tauri v2**, **React** y **Rust**. Está diseñada en torno a una regla simple: el editor debe mantener el control de la obra de arte, y la automatización debe estar subordinada al artista.
+Un estudio de activos de píxeles, con control, para imágenes fijas, animaciones, variantes, partes reutilizables y salida estructurada.
 
-## Estado actual
+GlyphStudio es una aplicación de escritorio creada con **Tauri v2**, **React** y **Rust**. Se distribuye junto con un **servidor MCP** que expone toda la superficie de edición de sprites a los LLM (modelos de lenguaje grandes), con la misma lógica de dominio, los mismos búferes de píxeles y las mismas funciones de deshacer/rehacer.
 
-GlyphStudio es un editor de escritorio funcional con 30 etapas completadas y 1149 pruebas superadas.
+## Qué puedes hacer
 
-### Editor de lienzo (backend en Rust)
-- Lienzo de píxeles determinista con renderizado de vecinos más cercanos.
-- Capas con visibilidad, bloqueo, opacidad, cambio de nombre, reordenación.
-- Dibujo basado en trazos con deshacer/rehacer.
-- Selección rectangular, acciones de portapapeles y flujo de trabajo de transformación.
-- Línea de tiempo de múltiples fotogramas con aislamiento de deshacer/rehacer por fotograma.
-- Superposiciones de "piel de cebolla" para la edición de fotogramas adyacentes.
-- Controles de reproducción con soporte para FPS y bucle.
-- Asistencia para movimientos con generación de propuestas deterministas.
-- Sistema de anclajes con jerarquía, degradado y plantillas de movimiento secundario.
-- Presets de movimiento con aplicación por lotes en todos los fotogramas.
-- Definiciones de recorte con punto de pivote, etiquetas y validación.
-- Exportación de láminas de sprites con manifiesto (formatos de ejecución nativos y genéricos).
-- Catálogo de recursos con miniaturas, búsqueda y empaquetado.
-- Guardado/carga de proyectos, recuperación automática y migración de esquema.
+**Crear:** Dibuja arte de píxeles con herramientas deterministas, capas y control de paleta.
 
-### Compositor de escenas (frontend + Rust)
-- Composición de escenas con instancias de recursos, ordenación en profundidad, visibilidad, opacidad, paralaje.
-- Sistema de cámara con paneo, zoom, animación de fotogramas clave y derivación de tomas.
-- Sistema de construcción de personajes con ranuras, presets, validación y puente de escena.
-- Deshacer/rehacer de escenas con historial completo de instantáneas y reversión en caso de fallo de sincronización.
-- Seguimiento de origen persistente con inspección detallada de 20 tipos de operaciones.
-- Flujos de trabajo de comparación y restauración de escenas.
+**Animar:** Crea animaciones cuadro por cuadro con la función de "cebolla", control de tiempo y herramientas para mejorar la calidad de las transiciones.
 
-### Editor de sprites (solo frontend)
-- Editor de píxeles independiente con herramientas de lápiz, borrador, relleno y cuentagotas.
-- Edición de múltiples capas con visibilidad, cambio de nombre y reordenación por capa.
-- Composición alfa con vista previa de trazos en tiempo real en todas las capas.
-- Gestión de fotogramas con "piel de cebolla", reproducción, barra de desplazamiento y duración por fotograma.
-- Selección rectangular con copiar/cortar/pegar/eliminar.
-- Importación/exportación de láminas de sprites con aplanamiento de múltiples capas.
-- Panel de paleta con selector de color e intercambio de primer plano/fondo.
+**Variante:** Divide los activos en variantes de documentos con nombre (direccional, pose) y variantes de paleta (familias de colores). Previsualiza antes de confirmar.
 
-Esto no es un simple programa para navegador ni una máquina tragamonedas. Es un editor de escritorio nativo donde Rust controla la verdad de los píxeles del lienzo y el frontend controla la verdad de los píxeles del sprite.
+**Reutilizar:** Promociona las selecciones a partes reutilizables. Guarda paquetes seleccionados. Inserta partes en diferentes proyectos.
 
-## Filosofía del producto
+**Combinar:** Exporta familias de activos en un solo paso: base + variantes de documentos + variantes de paleta, con nombres de archivo contextuales.
 
-GlyphStudio se basa en cuatro principios:
+**Comienza rápido:** Comienza con plantillas, paquetes o recetas iniciales. La interfaz principal refleja los flujos de trabajo que admite el estudio.
 
-1. **Edición determinista**
-Cada mutación de píxel debe ser legal, inspeccionable y reversible.
+## Mejores flujos de trabajo
 
-2. **Inteligencia artificial subordinada**
-La automatización debe ayudar al flujo de trabajo sin reemplazar el control creativo.
+### Sprite estático
+Proyecto en blanco (32x32) → dibuja con lápiz/relleno/borrador → espacio de trabajo de paleta → exporta a PNG.
 
-3. **Estructura centrada en la animación**
-Los fotogramas, las operaciones de la línea de tiempo, la "piel de cebolla" y la reproducción son conceptos centrales del editor, no añadidos posteriormente.
+### Bucle animado
+Proyecto en blanco (32x32, 4 fotogramas) → dibuja el fotograma 1 → duplica + edita → función de "cebolla" para la alineación → control de tiempo → exporta a GIF o tira de imágenes.
 
-4. **Estado confiable**
-El guardado/carga, el autoguardado, la recuperación, el deshacer/rehacer y la migración se tratan como características del producto, no como tareas de limpieza.
+### Familia de variantes
+Dibuja el activo base → divide en variantes de documentos (por ejemplo, caminar a la izquierda, caminar a la derecha) → crea conjuntos de paletas (por ejemplo, Fuego, Hielo) → previsualiza el remapeo de la paleta → exporta combinado con nombres de archivo `{name}-{variant}-{palette}.png`.
+
+### Partes reutilizables
+Dibuja una forma recurrente → selecciona → promueve a parte → guarda en la biblioteca → inserta en otros fotogramas/proyectos. Guarda partes + paletas seleccionadas como un paquete para reutilizar en diferentes proyectos.
+
+### Inicio con plantilla/paquete
+ProjectHome → elige una plantilla (lista para animar o lista para variantes) o un paquete (kit de interfaz de usuario, colección de paletas) → proyecto de trabajo con la estructura ya cargada.
+
+## Presentación
+
+Cuatro proyectos canónicos demuestran los flujos de trabajo más sólidos. Cada uno es un archivo de intercambio válido que puedes importar:
+
+| Presentación | Archivo | Lo que demuestra |
+|----------|------|----------------|
+| Gema de cristal | [`showcase/still-sprite.interchange.json`](showcase/) | Creación de imágenes fijas, uso de paletas |
+| Llama parpadeante | [`showcase/loop-animation.interchange.json`](showcase/) | Animación de 4 fotogramas, temporización |
+| Variantes de escudo | [`showcase/variant-family.interchange.json`](showcase/) | Base + variantes de paleta de Fuego/Hielo |
+| Kit de interfaz de usuario de juego | [`showcase/pack-project.interchange.json`](showcase/) | Partes reutilizables (estrella, corazón, moneda) |
+
+Consulta [`showcase/SHOWCASE.md`](showcase/SHOWCASE.md) para obtener más detalles.
+
+## Conceptos clave
+
+| Concepto | Qué es | Dónde se encuentra |
+|---------|-----------|----------------|
+| **Palette Set** | Un conjunto de colores con nombre para cambiar los colores | A nivel de documento, conmutable |
+| **Document Variant** | Una división de la secuencia de fotogramas (pose, dirección) | A nivel de documento, fotogramas independientes |
+| **Part** | Un sello de píxeles reutilizable promovido desde una selección | Biblioteca, para usar en diferentes proyectos |
+| **Pack** | Un paquete seleccionado de conjuntos de paletas + partes | Biblioteca, importable/exportable |
+| **Template** | Un plano de inicio de proyecto (lienzo, paleta, fotogramas) | Biblioteca, se usa desde ProjectHome |
+| **Bundle** | Una exportación en un solo paso de la base + variantes + paletas | Flujo de exportación |
+| **Interchange** | Formato JSON para mover estructuras creadas entre proyectos | Archivos `.interchange.json` |
+
+## Atajos contextuales
+
+GlyphStudio muestra los atajos relevantes según lo que estés haciendo. La barra se actualiza a medida que cambia el contexto.
+
+| Contexto | Atajos clave |
+|---------|--------------|
+| **Drawing** | `B` Lápiz, `E` Borrador, `G` Relleno, `M` Marco, `X` Intercambiar primer plano/fondo, `Ctrl+Z` Deshacer |
+| **Selection active** | `Ctrl+C` Copiar, `Ctrl+X` Cortar, `Ctrl+V` Pegar, `Del` Limpiar, `Esc` Deseleccionar |
+| **Stamp mode** | `Click` Colocar sello, `Esc` Salir |
+| **Animation** | `Ctrl+D` Duplicar fotograma, `Space` Reproducir/Detener, `Left/Right` Avanzar fotogramas |
+| **Library focused** | `Ctrl+F` Buscar, `Up/Down` Navegar, `Enter` Activar |
+| **Variant workflow** | `+ Variant` Dividir secuencia, `Toggle` Superponer comparación |
+| **Palette preview** | `Apply` Confirmar remapeo, `Cancel` Descartar |
+
+## Paquetes
+
+| Paquete | Descripción |
+|---------|-------------|
+| `apps/desktop` | Aplicación de escritorio Tauri v2 (React + Rust) |
+| [`@glyphstudio/domain`](packages/domain/) | Tipos y contratos |
+| [`@glyphstudio/api-contract`](packages/api-contract/) | Tipos de contrato IPC de Tauri |
+| [`@glyphstudio/state`](packages/state/) | Gestión de estado, operaciones de ráster, historial |
+| [`@glyphstudio/mcp-sprite-server`](packages/mcp-sprite-server/) | Servidor MCP: 76 herramientas, 6 recursos |
 
 ## Arquitectura
 
 ### Frontend (React + TypeScript)
-- Más de 17 tiendas de Zustand organizadas por dominio.
-- Renderizador de lienzo HTML para ambos editores.
-- Interfaz de usuario del editor de lienzo: capas, línea de tiempo, selección, reproducción, constructor de personajes, compositor de escenas.
-- Editor de sprites: editor de píxeles independiente con búferes de píxeles propiedad del frontend.
-- Composición alfa a través de `flattenLayers` para la edición de sprites de múltiples capas.
+- Almacenes de Zustand organizados por dominio
+- Renderizador de lienzo HTML
+- Editor de sprites con búferes de píxeles y composición alfa de propiedad del frontend
+- Panel de biblioteca con índice unificado, búsqueda, fijación y navegación por teclado
 
 ### Backend (Rust)
-- Buffers de píxeles y composición de capas para el editor de lienzo.
-- Transacciones de trazo con previsualizaciones antes y después.
-- Sesiones de selección/transformación.
-- Persistencia del proyecto, autoguardado, recuperación en caso de fallos.
-- Canales de exportación (PNG, hoja de sprites, recorte, paquete).
-- Motor de composición de escenas con cámara y reproducción.
-- Catálogo de recursos con generación de miniaturas.
-- 166 comandos de Tauri implementados.
+- Búferes de píxeles y composición de capas autoritativas
+- Transacciones de trazo con deshacer/rehacer
+- Persistencia del proyecto, guardado automático, recuperación en caso de fallo
+- Flujos de trabajo de exportación (PNG, hoja de sprites, GIF animado, paquete)
+- Motor de composición de escenas con cámara y reproducción
 
-### Entorno de escritorio
-- Tauri v2
+### Servidor MCP (Node.js)
+- Almacén de Zustand sin cabeza por sesión (sin React, sin navegador)
+- 76 herramientas registradas a través de `@modelcontextprotocol/sdk`
+- El mismo código `@glyphstudio/domain` y `@glyphstudio/state` que la aplicación de escritorio
+- Se ejecuta a través de stdio: funciona con Claude Desktop, Claude Code o cualquier cliente MCP
+
+Consulta el [README del servidor MCP](packages/mcp-sprite-server/README.md) para obtener el inventario completo de herramientas.
 
 ## Estructura de monorepositorio
 
 ```text
 glyphstudio/
-  apps/desktop/
-    src/
-    src-tauri/
+  apps/desktop/           Desktop app (React + Tauri + Rust)
+    src/                  Frontend
+    src-tauri/            Rust backend
   packages/
-    domain/
-    api-contract/
-    state/
-  site/
+    domain/               Types and contracts
+    api-contract/         Tauri IPC types
+    state/                State management, raster, history (2,575+ tests)
+    mcp-sprite-server/    MCP server — 76 tools
+  showcase/               Canonical showcase projects
+  site/                   Landing page (Astro)
 ```
-
-## Etapas implementadas
-
-### Etapas 1–3: Base del editor
-Lienzo, capas, herramientas de dibujo, deshacer/rehacer, selección, transformaciones, línea de tiempo, vista previa de fotogramas, reproducción, operaciones de fotogramas, exportación PNG/en tira, persistencia del proyecto, autoguardado, recuperación en caso de fallos.
-
-### Etapa 4A: Asistencia para animación
-Sesiones de animación con límites, generación determinista de propuestas, previsualización con tiras de fotogramas, seguridad de la sesión, confirmación de la propuesta en la línea de tiempo.
-
-### Etapas 5–8: Refinamiento de la animación
-Anclajes con jerarquía y degradado, plantillas de animación secundaria (viento, balanceo, oscilación, crujido), entorno de pruebas de animación con métricas de análisis, preajustes de animación con aplicación por lotes.
-
-### Etapas 9–10: Recortes, exportación, base de la escena
-Definiciones de recorte con punto de pivote/etiquetas/validación, exportación de hojas de sprites con manifiestos, catálogo de recursos con miniaturas, empaquetado, composición de escenas con instancias y ordenación en profundidad.
-
-### Etapas 11–14: Sistema de personajes
-Construcciones de personajes con 12 ranuras para regiones del cuerpo, selector de preajustes con niveles de compatibilidad, validación de la construcción, biblioteca de construcciones con persistencia, puente de personaje a escena con colocación de instantáneas.
-
-### Etapas 15–16: Edición de escenas
-Cámara de escena con paneo/zoom, fotogramas clave de la cámara con interpolación, deshacer/rehacer de la escena con historial completo de instantáneas, reversión en caso de fallo de la sincronización del backend.
-
-### Etapas 17–24: Origen e inspección
-Origen de la escena persistido con 20 tipos de operaciones, inspección detallada con fragmentos capturados antes y después, resúmenes de valores estructurados, motor de comparación de escenas, flujos de trabajo de previsualización de restauración.
-
-### Etapas 25–26: Restauración y restauración selectiva
-Contrato de restauración de escenas con derivación pura, restauración selectiva por dominio (instancias, cámara, fotogramas clave, reproducción), configuración de reproducción a través de una interfaz limpia con deshacer/rehacer.
-
-### Etapas 27–28: Editor de sprites
-Editor de sprites solo para la interfaz de usuario: contrato del documento, lienzo de píxeles con lápiz/borrador/relleno/cuentagotas, fotogramas con vista previa de fotogramas, selección con portapapeles, importación/exportación de hojas de sprites, atajos de teclado, zoom/cuadrícula, panel de paleta.
-
-### Etapa 29: Previsualización de animación
-Contrato del reproductor de animación, interfaz de usuario de reproducción con barra de desplazamiento y atajo de espacio, edición de la duración del fotograma en línea con preajustes, supresión de la vista previa de fotogramas durante la reproducción.
-
-### Etapa 30: Capas y flujo de trabajo de capas
-Tipo de capa SpriteLayer, buffers de píxeles con clave de layerId, composición alfa de flattenLayers, seguimiento de activeLayerId, panel de capas con operaciones CRUD/visibilidad/renombrar/reordenar, composición de trazos preliminares en todas las capas visibles, exportación de capas múltiples.
 
 ## Ejecución de la aplicación
 
@@ -165,72 +160,72 @@ pnpm install
 pnpm dev
 ```
 
-### Verificación de tipos
+### Ejecutar el servidor MCP (independiente)
+
+```bash
+npx tsx packages/mcp-sprite-server/src/cli.ts
+```
+
+### Comprobación de tipos
 
 ```bash
 pnpm typecheck
 ```
 
-### Verificación de Rust
+### Prueba
+
+```bash
+pnpm test
+```
+
+### Comprobación de Rust
 
 ```bash
 cd apps/desktop/src-tauri
 cargo check
+cargo test
 ```
 
-## Soporte de exportación
+## Soporte para exportación
 
-### Editor de lienzo (Rust)
-- **Imagen PNG del fotograma actual** — imagen compuesta única.
-- **Secuencia PNG** — archivos numerados (name_0001.png, name_0002.png, ...).
-- **Tira de sprites** — tira de imagen única, horizontal o vertical.
-- **Hoja de clips** — hoja de sprites creada a partir de definiciones de clips, con un manifiesto opcional.
-- **Hoja de todos los clips** — hoja combinada de todos los clips válidos.
-- **Paquete de recursos** — carpeta o archivo ZIP que contiene imágenes, manifiestos y una miniatura de vista previa.
-- **Paquete de catálogo** — empaquetado de múltiples recursos con subcarpetas para cada recurso.
+| Destino | Formatos |
+|--------|---------|
+| **Single frame** | PNG (capas visibles combinadas) |
+| **Animation** | GIF animado, secuencia PNG, tira de sprites |
+| **Sheet** | Hoja de sprites con manifiesto (tiempo de ejecución nativo + genérico) |
+| **Bundle** | Carpeta o archivo ZIP con imágenes, manifiestos y vista previa |
+| **Variant family** | Base + variantes de documentos + variantes de paleta con nombres de archivo contextuales |
+| **MCP Server** | Base64-encoded PNG, hoja, GIF y metadatos JSON |
 
-### Editor de sprites (interfaz de usuario)
-- **Tira de sprites** — tira horizontal con todas las capas visibles combinadas para cada fotograma.
-- **Fotograma actual** — combinación de las capas visibles.
+Las exportaciones utilizan solo capas visibles combinadas. Las superposiciones del editor (calco, estado de reproducción) nunca se incluyen en la salida.
 
-Las exportaciones utilizan solo las capas visibles combinadas. El efecto de "piel de cebolla", el estado de reproducción y las superposiciones temporales del editor no se incluyen en la salida.
+## Filosofía del producto
 
-## Documentación
+1. **Edición determinista:** cada modificación de píxel es legal, se puede inspeccionar y revertir.
+2. **IA subordinada:** la automatización ayuda al flujo de trabajo sin reemplazar el control creativo.
+3. **Estructura centrada en la animación:** los fotogramas, la línea de tiempo, el calco y la reproducción son conceptos centrales, no elementos secundarios.
+4. **Estado confiable:** guardar/cargar, guardado automático, deshacer/rehacer y migración se tratan como características del producto.
+5. **Reutilización honesta:** las partes están marcadas (píxeles confirmados), no son instancias enlazadas falsas. Las variantes son bifurcaciones, no estados compartidos ocultos. Vista previa antes de confirmar.
 
-Consulte el [manual](site/src/content/docs/handbook/) para obtener más detalles:
-
-- [Primeros pasos](site/src/content/docs/handbook/getting-started.md)
-- [Arquitectura](site/src/content/docs/handbook/architecture.md)
-- [Referencia de la API](site/src/content/docs/handbook/reference.md)
-
-## Hoja de ruta
-
-Prioridades a corto plazo:
-
-- Modo de paleta indexada con reglas de contraste y edición de rampas.
-- Integración de asistencia de IA (Ollama local + ComfyUI para tareas de generación limitadas).
-- Espacio de trabajo de análisis de movimiento con superposiciones de zancada/contacto/centro de masa.
-- Motor de validación con acciones de corrección.
-
-## Objetivos no incluidos
+## Objetivos no deseados
 
 GlyphStudio no pretende ser:
 
-- Un editor de imágenes genérico.
-- Una aplicación sencilla para navegadores.
-- Un envoltorio de indicaciones de IA que adivina el arte.
-- Un lienzo confuso donde el estado de la interfaz de usuario y la verdad del backend se desincronizan.
+- Un editor de imágenes genérico
+- Una aplicación de juguete centrada en el navegador
+- Un envoltorio de indicaciones de IA que adivina el arte
+- Un lienzo confuso donde el estado del frontend y la realidad del backend se separan
+- Un sistema de rigging/símbolos falso que pretende ser un enlace
 
 ## Seguridad
 
-GlyphStudio es una aplicación **solo para escritorio**. No realiza solicitudes de red, recopila datos de telemetría ni maneja secretos.
+GlyphStudio es una aplicación **solo de escritorio**. No hay solicitudes de red, ni telemetría, ni secretos.
 
-- **Datos accedidos:** archivos de sprites locales (.glyph, .pxs, .png), archivos de autoguardado/recuperación en el directorio de datos de la aplicación.
-- **Datos NO accedidos:** no hay red, no hay nube, no hay API remotas, no hay cuentas de usuario.
-- **Permisos:** acceso al sistema de archivos limitado a los directorios seleccionados por el usuario a través de los diálogos de archivos nativos de Tauri v2.
-- No se recopila ni se envía **telemetría**.
+- **Datos afectados:** archivos de sprites locales (.glyph, .pxs, .png), archivos de guardado/recuperación automático
+- **Datos NO afectados:** ninguna red, ninguna nube, ninguna API remota, ninguna cuenta de usuario
+- **Permisos:** acceso al sistema de archivos limitado a los directorios seleccionados por el usuario a través de los diálogos de archivos nativos de Tauri v2
 
-Consulte [SECURITY.md](SECURITY.md) para informar sobre vulnerabilidades.
+El servidor MCP se ejecuta localmente a través de stdio sin ninguna salida de red. Consulte [SECURITY.md](SECURITY.md) para obtener información sobre cómo informar sobre vulnerabilidades.
 
 ## Licencia
 
@@ -238,4 +233,4 @@ Consulte [SECURITY.md](SECURITY.md) para informar sobre vulnerabilidades.
 
 ---
 
-Creado por <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>.
+Creado por <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

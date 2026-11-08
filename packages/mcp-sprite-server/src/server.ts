@@ -22,6 +22,7 @@ import { registerResources } from './resources/documentResource.js';
 import { registerStateResource } from './resources/stateResource.js';
 import { registerRenderResources } from './resources/renderResource.js';
 import { registerCatalogResource } from './resources/catalogResource.js';
+import { installInputSchemaContract } from './schemaCompat.js';
 
 export interface GlyphStudioServerOptions {
   /** Custom session manager (for testing). If omitted, a new one is created. */
@@ -60,6 +61,9 @@ export function createGlyphStudioServer(options?: GlyphStudioServerOptions): Gly
   registerHistoryTools(server, sessions);
   registerAnalysisTools(server, sessions);
   registerTransformTools(server, sessions);
+
+  // Keep advertised input schemas identical to v1.0.1 (see schemaCompat.ts)
+  installInputSchemaContract(server as never);
 
   // Register resources
   registerResources(server, sessions);

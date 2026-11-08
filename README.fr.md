@@ -11,141 +11,136 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square" alt="Platforms">
   <img src="https://img.shields.io/badge/tauri-v2-orange?style=flat-square" alt="Tauri v2">
-  <img src="https://img.shields.io/badge/tests-2776%20passing-brightgreen?style=flat-square" alt="Tests">
+  <img src="https://img.shields.io/badge/tests-4550%2B%20passing-brightgreen?style=flat-square" alt="Tests">
   <a href="https://mcp-tool-shop-org.github.io/glyphstudio/"><img src="https://img.shields.io/badge/Landing_Page-live-blue?style=flat-square" alt="Landing Page"></a>
 </p>
 
-Un studio de création de sprites axé sur la qualité, pour une édition précise des pixels, une animation image par image, et une assistance future pour la création de mouvements.
+# GlyphStudio
 
-GlyphStudio est une application de bureau développée avec **Tauri v2**, **React** et **Rust**. Elle est conçue autour d'une règle simple : l'éditeur doit conserver le contrôle de l'œuvre, et l'automatisation doit rester subordonnée à l'artiste.
+Un studio de gestion d’éléments graphiques, conçu pour les images fixes, les animations, les variantes, les éléments réutilisables et la production structurée.
 
-## État actuel
+GlyphStudio est une application de bureau développée avec **Tauri v2**, **React** et **Rust**. Elle est livrée avec un **serveur MCP** qui expose toute la surface d’édition de sprites aux LLM (grands modèles linguistiques) — même logique de domaine, mêmes tampons de pixels, même fonctionnalité d’annulation/rétablissement.
 
-GlyphStudio est un éditeur de bureau fonctionnel, avec 32 étapes disponibles et 2 776 tests réussis.
+## Ce que vous pouvez faire
 
-### Éditeur de zone de dessin (backend en Rust)
-- Zone de dessin avec rendu précis des pixels (voisin le plus proche)
-- Calques avec visibilité, verrouillage, opacité, renommage, réorganisation
-- Dessin basé sur des traits avec annuler/refaire
-- Sélection rectangulaire, actions de presse-papiers et flux de travail de transformation
-- Chronologie multi-images avec annuler/refaire isolé par image
-- Superpositions "peau de poisson" pour l'édition d'images adjacentes
-- Commandes de lecture avec FPS et support de la boucle
-- Assistance pour les mouvements avec génération de propositions précises
-- Système d'ancrage avec hiérarchie, atténuation et modèles de mouvements secondaires
-- Préférences de mouvement avec application groupée sur plusieurs images
-- Définitions de clips avec point de pivot, étiquettes et validation
-- Exportation de feuilles de sprites avec manifeste (formats d'exécution natifs et génériques)
-- Catalogue d'éléments avec miniatures, recherche et regroupement
-- Sauvegarde/chargement du projet, récupération automatique et migration du schéma
+**Créer** — Dessiner des graphismes pixelisés avec des outils déterministes, des calques et un contrôle de la palette de couleurs.
 
-### Compositeur de scènes (frontend + Rust)
-- Composition de scènes avec instances d'éléments, ordre Z, visibilité, opacité, parallaxe
-- Système de caméra avec panoramique, zoom, animation par image clé et dérivation de plans
-- Système de création de personnages avec emplacements, préférences, validation et pont vers la scène
-- Annuler/refaire de la scène avec historique complet et restauration en cas d'échec de synchronisation
-- Provenance persistante avec inspection détaillée de 20 types d'opérations
-- Comparaison et aperçu de restauration de scènes
+**Animer** — Créer des animations image par image avec des outils d’« onion skin », de gestion du timing et d’amélioration de la qualité des transitions.
 
-### Éditeur de sprites (frontend uniquement)
-- Éditeur de pixels autonome avec outils de crayon, gomme, remplissage, pipette
-- Édition multi-calques avec visibilité, renommage et réorganisation par calque
-- Composition alpha avec aperçu de trait en temps réel sur tous les calques
-- Gestion des images avec peau de poisson, lecture, barre de défilement et durée par image
-- Sélection rectangulaire avec copier/couper/coller/supprimer
-- Importation/exportation de feuilles de sprites avec aplatissement multi-calques
-- Panneau de palette avec sélecteur de couleurs et échange de premier plan/arrière-plan
+**Varier** — Créer des variantes d’éléments graphiques dans des documents nommés (direction, pose) et des variantes de palette (familles de couleurs). Prévisualiser avant de valider.
 
-Ce n'est pas un simple outil pour navigateur ou une machine à prompts. C'est un éditeur de bureau natif où Rust gère la vérité des pixels de la zone de dessin, et le frontend gère la vérité des pixels des sprites.
+**Réutiliser** — Promouvoir les sélections en éléments réutilisables. Enregistrer des ensembles d’éléments. Insérer des éléments dans différents projets.
 
-## Philosophie du produit
+**Regrouper** — Exporter des familles d’éléments graphiques en une seule étape : élément de base + variantes de document + variantes de palette, avec des noms de fichiers contextuels.
 
-GlyphStudio est construit autour de quatre principes :
+**Démarrer rapidement** — Commencer à partir de modèles, d’ensembles d’éléments ou de recettes de démarrage. L’interface principale reflète les flux de travail pris en charge par le studio.
 
-1. **Édition déterministe**
-Chaque modification de pixel doit être conforme, inspectable et réversible.
+## Meilleurs flux de travail
 
-2. **Intelligence artificielle subordonnée**
-L'automatisation doit aider au flux de travail sans remplacer le contrôle créatif.
+### Image fixe
+Projet vierge (32x32) → dessiner avec le crayon/outil de remplissage/gomme → espace de travail de la palette → exporter au format PNG.
 
-3. **Structure axée sur l'animation**
-Les images, les opérations de chronologie, la peau de poisson et la lecture sont des concepts fondamentaux de l'éditeur, et non des ajouts ultérieurs.
+### Animation en boucle
+Projet vierge (32x32, 4 images) → dessiner l’image 1 → dupliquer + modifier → « onion skin » pour l’alignement → gestion du timing → exporter au format GIF ou en série d’images.
 
-4. **État fiable**
-La sauvegarde/chargement, l'autosave, la récupération, l'annuler/refaire et la migration sont considérés comme des fonctionnalités du produit, et non comme des tâches de maintenance.
+### Famille de variantes
+Dessiner l’élément de base → créer des variantes de document (par exemple, marcher à gauche, marcher à droite) → créer des ensembles de palettes (par exemple, feu, glace) → prévisualiser le remappage de la palette → exporter en groupe avec des noms de fichiers `{name}-{variant}-{palette}.png`.
+
+### Éléments réutilisables
+Dessiner une forme récurrente → sélectionner → promouvoir en élément → enregistrer dans la bibliothèque → insérer dans d’autres images/projets. Enregistrer des ensembles d’éléments + palettes pour une réutilisation inter-projets.
+
+### Démarrage à partir d’un modèle/ensemble
+ProjectHome → choisir un modèle (prêt pour l’animation ou prêt pour les variantes) ou un ensemble (kit d’interface utilisateur, collection de palettes) → projet en cours avec la structure déjà chargée.
+
+## Présentation
+
+Quatre projets exemplaires illustrent les flux de travail les plus performants. Chacun est un fichier d’échange valide que vous pouvez importer :
+
+| Présentation | Fichier | Ce qu’il prouve |
+|----------|------|----------------|
+| Gemme de cristal | [`showcase/still-sprite.interchange.json`](showcase/) | Création d’images fixes, utilisation de la palette |
+| Flamme vacillante | [`showcase/loop-animation.interchange.json`](showcase/) | Animation de 4 images, gestion du timing |
+| Variantes de bouclier | [`showcase/variant-family.interchange.json`](showcase/) | Élément de base + variantes de palette feu/glace |
+| Kit d’interface utilisateur de jeu | [`showcase/pack-project.interchange.json`](showcase/) | Éléments réutilisables (étoile, cœur, pièce) |
+
+Voir [`showcase/SHOWCASE.md`](showcase/SHOWCASE.md) pour plus de détails.
+
+## Concepts clés
+
+| Concept | Définition | Emplacement |
+|---------|-----------|----------------|
+| **Palette Set** | Un ensemble de couleurs nommé pour le remappage des couleurs | Au niveau du document, commutable |
+| **Document Variant** | Une copie de la séquence d’images (pose, direction) | Au niveau du document, images indépendantes |
+| **Part** | Un tampon de pixels réutilisable, issu d’une sélection | Bibliothèque, inter-projets |
+| **Pack** | Un ensemble organisé d’ensembles de palettes + d’éléments | Bibliothèque, importable/exportable |
+| **Template** | Un modèle de démarrage de projet (canevas, palette, images) | Bibliothèque, utilisé à partir de ProjectHome |
+| **Bundle** | Une exportation en une seule étape de l’élément de base + des variantes + des palettes | Flux d’exportation |
+| **Interchange** | Format JSON pour le déplacement des structures créées entre les projets | Fichiers `.interchange.json` |
+
+## Raccourcis contextuels
+
+GlyphStudio affiche les raccourcis pertinents en fonction de ce que vous faites. La barre s’actualise lorsque le contexte change.
+
+| Contexte | Raccourcis clés |
+|---------|--------------|
+| **Drawing** | `B` Crayon, `E` Gomme, `G` Remplissage, `M` Sélection rectangulaire, `X` Échanger le premier plan/l’arrière-plan, `Ctrl+Z` Annuler |
+| **Selection active** | `Ctrl+C` Copier, `Ctrl+X` Couper, `Ctrl+V` Coller, `Del` Effacer, `Esc` Désélectionner |
+| **Stamp mode** | `Click` Insérer un tampon, `Esc` Quitter |
+| **Animation** | `Ctrl+D` Dupliquer l’image, `Space` Lecture/Pause, `Left/Right` Avancer d’une image |
+| **Library focused** | `Ctrl+F` Rechercher, `Up/Down` Naviguer, `Enter` Activer |
+| **Variant workflow** | `+ Variant` Dupliquer la séquence, `Toggle` Superposer pour comparaison |
+| **Palette preview** | `Apply` Valider le remappage, `Cancel` Annuler |
+
+## Packages
+
+| Package | Description |
+|---------|-------------|
+| `apps/desktop` | Application de bureau Tauri v2 (React + Rust) |
+| [`@glyphstudio/domain`](packages/domain/) | Types et contrats |
+| [`@glyphstudio/api-contract`](packages/api-contract/) | Types de contrats IPC de Tauri |
+| [`@glyphstudio/state`](packages/state/) | Gestion de l’état, opérations de rendu, historique |
+| [`@glyphstudio/mcp-sprite-server`](packages/mcp-sprite-server/) | Serveur MCP — 76 outils, 6 ressources |
 
 ## Architecture
 
 ### Frontend (React + TypeScript)
-- 17+ stores Zustand organisés par domaine
-- Rendu HTML de la zone de dessin pour les deux éditeurs
-- Interface utilisateur de l'éditeur de zone de dessin : calques, chronologie, sélection, lecture, constructeur de personnages, compositeur de scènes
-- Éditeur de sprites : édition de pixels autonome avec tampons de pixels gérés par le frontend
-- Composition alpha via `flattenLayers` pour l'édition de sprites multi-calques
+- Stockages Zustand organisés par domaine
+- Moteur de rendu HTML canvas
+- Éditeur de sprites avec des tampons de pixels et une composition alpha gérés par le frontend
+- Panneau de bibliothèque avec index unifié, recherche, épinglage et navigation au clavier
 
 ### Backend (Rust)
-- Tampons de pixels et composition de calques pour l'éditeur de canevas.
-- Transactions de traits avec aperçus avant/après.
-- Sessions de sélection/transformation.
-- Persistance du projet, sauvegarde automatique, récupération en cas de plantage.
-- Pipelines d'exportation (PNG, feuille de sprites, découpe, regroupement).
-- Moteur de composition de scène avec caméra et lecture.
-- Catalogue d'éléments avec génération de miniatures.
-- 166 commandes Tauri implémentées.
+- Tampons de pixels et composition des calques faisant autorité
+- Transactions de traits avec annulation/rétablissement
+- Persistance du projet, sauvegarde automatique, récupération en cas de plantage
+- Pipelines d’exportation (PNG, feuille de sprites, GIF animé, ensemble)
+- Moteur de composition de scène avec caméra et lecture
 
-### Interface utilisateur de bureau
-- Tauri v2
+### Serveur MCP (Node.js)
+- Stockage Zustand sans tête par session (pas de React, pas de navigateur)
+- 76 outils enregistrés via `@modelcontextprotocol/sdk`
+- Même code `@glyphstudio/domain` et `@glyphstudio/state` que l’application de bureau
+- S’exécute via stdio — fonctionne avec Claude Desktop, Claude Code ou tout client MCP
 
-## Structure de monorepo
+Voir le [README du serveur MCP](packages/mcp-sprite-server/README.md) pour l’inventaire complet des outils.
+
+## Structure du monorepos
 
 ```text
 glyphstudio/
-  apps/desktop/
-    src/
-    src-tauri/
+  apps/desktop/           Desktop app (React + Tauri + Rust)
+    src/                  Frontend
+    src-tauri/            Rust backend
   packages/
-    domain/
-    api-contract/
-    state/
-  site/
+    domain/               Types and contracts
+    api-contract/         Tauri IPC types
+    state/                State management, raster, history (2,575+ tests)
+    mcp-sprite-server/    MCP server — 76 tools
+  showcase/               Canonical showcase projects
+  site/                   Landing page (Astro)
 ```
 
-## Étapes implémentées
-
-### Étapes 1 à 3 : Base de l'éditeur
-Canevas, calques, outils de dessin, annuler/refaire, sélection, transformations, chronologie, superposition d'images, lecture, opérations sur les images, exportation PNG/en bande, persistance du projet, sauvegarde automatique, récupération en cas de plantage.
-
-### Étape 4A : Assistance pour l'animation
-Sessions d'animation contraintes, génération de propositions déterministe, aperçu avec des bandes d'images miniatures, sécurité des sessions, application des propositions à la chronologie.
-
-### Étapes 5 à 8 : Amélioration de l'animation
-Points d'ancrage avec hiérarchie et atténuation, modèles d'animation secondaires (vent, oscillation, balancement, bruissement), bac à sable d'animation avec métriques d'analyse, préréglages d'animation avec application en lot.
-
-### Étapes 9 à 10 : Découpes, exportation, base de la scène
-Définitions de découpes avec point de pivot/étiquettes/validation, exportation de feuilles de sprites avec manifestes, catalogue d'éléments avec miniatures, regroupement, composition de scène avec instances et ordre de superposition.
-
-### Étapes 11 à 14 : Système de personnages
-Créations de personnages avec 12 emplacements pour les régions du corps, sélecteur de préréglages avec niveaux de compatibilité, validation de la création, bibliothèque de créations avec persistance, pont entre le personnage et la scène avec placement d'instantanés.
-
-### Étapes 15 à 16 : Édition de scène
-Caméra de scène avec panoramique/zoom, images clés de la caméra avec interpolation, annuler/refaire de la scène avec historique complet des instantanés, restauration en cas d'échec de la synchronisation du serveur.
-
-### Étapes 17 à 24 : Provenance et inspection
-Provenance de la scène persistante avec 20 types d'opérations, inspection détaillée avec aperçus avant/après capturés, résumés structurés de valeurs, moteur de comparaison de scènes, restauration des flux de travail d'aperçu.
-
-### Étapes 25 à 26 : Restauration et restauration sélective
-Contrat de restauration de scène avec dérivation pure, restauration sélective par domaine (instances, caméra, images clés, lecture), configuration de la lecture via une interface claire avec annuler/refaire.
-
-### Étapes 27 à 28 : Éditeur de sprites
-Éditeur de sprites uniquement côté client : contrat de document, canevas de pixels avec crayon/gomme/remplissage/pipette, images avec superposition d'images, sélection avec presse-papiers, importation/exportation de feuilles de sprites, raccourcis clavier, zoom/grille, panneau de palette.
-
-### Étape 29 : Aperçu de l'animation
-Contrat du lecteur d'animation, interface utilisateur de lecture avec barre de défilement et raccourci Espace, édition de la durée de l'image en ligne avec préréglages, suppression de la superposition d'images pendant la lecture.
-
-### Étape 30 : Calques et flux de travail des calques
-Type de calque SpriteLayer, tampons de pixels indexés par layerId, composition alpha des calques aplatés, suivi de l'activeLayerId, panneau de calques avec CRUD/visibilité/renommage/réorganisation, composition des traits préliminaires sur tous les calques visibles, exportation multi-calques.
-
-## Exécution de l'application
+## Exécution de l’application
 
 ### Prérequis
 - Node.js 20+
@@ -159,16 +154,28 @@ Type de calque SpriteLayer, tampons de pixels indexés par layerId, composition 
 pnpm install
 ```
 
-### Exécuter l'application de bureau
+### Exécuter l’application de bureau
 
 ```bash
 pnpm dev
 ```
 
-### Vérification du typage
+### Exécuter le serveur MCP (en mode autonome)
+
+```bash
+npx tsx packages/mcp-sprite-server/src/cli.ts
+```
+
+### Vérification de type
 
 ```bash
 pnpm typecheck
+```
+
+### Test
+
+```bash
+pnpm test
 ```
 
 ### Vérification Rust
@@ -176,61 +183,49 @@ pnpm typecheck
 ```bash
 cd apps/desktop/src-tauri
 cargo check
+cargo test
 ```
 
-## Prise en charge de l'exportation
+## Prise en charge de l’exportation
 
-### Éditeur de canevas (Rust)
-- **Image PNG actuelle** — image composite unique
-- **Séquence PNG** — fichiers numérotés (name_0001.png, name_0002.png, ...)
-- **Bande de sprites** — bande d'images unique, horizontale ou verticale
-- **Feuille de clips** — feuille de sprites provenant des définitions de clips, avec un fichier manifest optionnel
-- **Feuille de tous les clips** — feuille combinée de tous les clips valides
-- **Bundle d'assets** — dossier ou fichier zip contenant des images, des fichiers manifest et une miniature de prévisualisation
-- **Bundle de catalogue** — regroupement de plusieurs assets avec des sous-dossiers pour chaque asset
+| Cible | Formats |
+|--------|---------|
+| **Single frame** | PNG (calques visibles combinés) |
+| **Animation** | GIF animé, séquence PNG, bande d’images |
+| **Sheet** | Feuille de sprites avec fichier manifeste (environnement d’exécution natif + générique) |
+| **Bundle** | Dossier ou fichier ZIP contenant des images, des fichiers manifeste et un aperçu |
+| **Variant family** | Base + variantes de documents + variantes de palette avec noms de fichiers contextuels |
+| **MCP Server** | Base64-encoded PNG, feuille, GIF et métadonnées JSON |
 
-### Éditeur de sprites (interface utilisateur)
-- **Bande de sprites** — bande horizontale avec toutes les calques visibles aplaties pour chaque image
-- **Image actuelle** — image aplatie des calques visibles
+L’exportation utilise uniquement les calques visibles combinés. Les superpositions de l’éditeur (calque d’oignon, état de lecture) ne sont jamais incluses dans la sortie.
 
-Les exportations utilisent uniquement les calques visibles et composés. L'effet "onion skin", l'état de lecture et les superpositions temporaires de l'éditeur ne sont pas inclus dans la sortie.
+## Philosophie du produit
 
-## Documentation
+1. **Édition déterministe** — Chaque modification de pixel est légale, inspectable et réversible.
+2. **IA subordonnée** — L’automatisation assiste le flux de travail sans remplacer le contrôle créatif.
+3. **Structure axée sur l’animation** — Les images, la ligne de temps, le calque d’oignon et la lecture sont des concepts fondamentaux, et non des éléments secondaires.
+4. **État fiable** — La sauvegarde/chargement, la sauvegarde automatique, l’annulation/rétablissement et la migration sont considérés comme des fonctionnalités du produit.
+5. **Réutilisation honnête** — Les parties sont marquées (pixels validés), et non de fausses instances liées. Les variantes sont des branches, et non un état partagé caché. Aperçu avant la validation.
 
-Consultez le [manuel](site/src/content/docs/handbook/) pour plus de détails :
-
-- [Premiers pas](site/src/content/docs/handbook/getting-started.md)
-- [Architecture](site/src/content/docs/handbook/architecture.md)
-- [Référence de l'API](site/src/content/docs/handbook/reference.md)
-
-## Feuille de route
-
-Priorités à court terme :
-
-- Mode de palette indexée avec règles de contraste et édition des dégradés
-- Intégration de l'assistance par IA (Ollama local + ComfyUI pour les tâches de génération limitées)
-- Espace de travail d'analyse de la locomotion avec superpositions de foulée/contact/centre de masse
-- Moteur de validation avec actions de correction
-
-## Objectifs non poursuivis
+## Objectifs non visés
 
 GlyphStudio ne vise pas à être :
 
-- Un éditeur d'images générique
-- Une application simple pour navigateur
-- Un wrapper pour les invites d'IA qui devine l'art
-- Une toile où l'état de l'interface utilisateur et la réalité du backend divergent
+- Un éditeur d’images générique
+- Une application ludique axée sur le navigateur
+- Un outil d’invite d’IA qui devine le contenu artistique
+- Une toile floue où l’état de l’interface utilisateur et la réalité du backend divergent
+- Un faux système de liaison/symboles qui prétend être un système de liaison
 
 ## Sécurité
 
-GlyphStudio est une application **exclusivement pour ordinateur de bureau**. Elle ne fait aucune requête réseau, ne collecte aucune donnée télémétrique et ne gère aucun secret.
+GlyphStudio est une application **uniquement pour ordinateur de bureau**. Aucune requête réseau, aucun suivi, aucun secret.
 
-- **Données consultées :** fichiers de sprites locaux (.glyph, .pxs, .png), fichiers d'enregistrement automatique/de récupération dans le répertoire des données de l'application.
-- **Données NON consultées :** aucun réseau, aucun cloud, aucune API distante, aucun compte utilisateur.
-- **Permissions :** accès au système de fichiers limité aux répertoires sélectionnés par l'utilisateur via les boîtes de dialogue de fichiers natives Tauri v2.
-- **Aucune donnée télémétrique** n'est collectée ou envoyée.
+- **Données concernées :** fichiers de sprites locaux (.glyph, .pxs, .png), fichiers de sauvegarde/restauration automatique
+- **Données non concernées :** aucun réseau, aucun cloud, aucune API distante, aucun compte utilisateur
+- **Autorisations :** accès au système de fichiers limité aux répertoires sélectionnés par l’utilisateur via les boîtes de dialogue de fichiers natives Tauri v2
 
-Consultez [SECURITY.md](SECURITY.md) pour signaler les vulnérabilités.
+Le serveur MCP s’exécute localement via stdio, sans communication réseau. Voir [SECURITY.md](SECURITY.md) pour signaler les vulnérabilités.
 
 ## Licence
 
@@ -238,4 +233,4 @@ Consultez [SECURITY.md](SECURITY.md) pour signaler les vulnérabilités.
 
 ---
 
-Développé par <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+Créé par <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

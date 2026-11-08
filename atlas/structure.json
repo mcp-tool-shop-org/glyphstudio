@@ -42,7 +42,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "3c3806660b4d6da84e96c4ba005ce8a7f0076cd200af3b999b98d02fa139d66c",
+          "hash": "79502a26d50bbf9984df6df68e7e2f1d3bed5135e0b73e6873fb717719587fa4",
           "path": "packages/api-contract/package.json"
         },
         {
@@ -223,15 +223,15 @@
           "path": "apps/desktop/index.html"
         },
         {
-          "hash": "f302359cb915d1ff68ff9f01c8f623b3863caa2dc50f60167827940e9562ec52",
+          "hash": "9eb92a61c7ae441066c35cf20396566eeee0a751750688c0904b143317bdf0e3",
           "path": "apps/desktop/package.json"
         },
         {
-          "hash": "ce519e2ca9f0716b9188a225a32f52b7386c862295574acbb7305bded9229c65",
+          "hash": "ac3fe9ffa7a93ccd098bcecef4c84fa7ad5d55976bd08211876e488b4f41cadf",
           "path": "apps/desktop/src-tauri/Cargo.lock"
         },
         {
-          "hash": "7d6de84a68c9c6b752eb284f1d30f2fe8080d7a94cb17b74f48d22a339ff66bf",
+          "hash": "6ada9afafbaea628c5fd4b99126d6e463926ef9d6467678d2db6dbe561397f54",
           "path": "apps/desktop/src-tauri/Cargo.toml"
         },
         {
@@ -1858,7 +1858,7 @@
           "path": "apps/desktop/src-tauri/src/types/mod.rs"
         },
         {
-          "hash": "a1ce504172c59e8d2d8e3ac3807909e15b38fb6ab514d9cc84b05bca706d7e2b",
+          "hash": "d7ea87992c72667204fed1223c0b9f1e6697df72cf8542d9c6f50111a55c9956",
           "path": "apps/desktop/src-tauri/tauri.conf.json"
         },
         {
@@ -4038,7 +4038,7 @@
           "path": "apps/desktop/src/components/ToolRail.tsx"
         },
         {
-          "hash": "d3d59836e483f40a1bd951f667c57d843e6b20c4b85f43cab3e438b25890c980",
+          "hash": "35243f5097d4535f3bc6c8e0a3d3cfb1b60825e729506cec8d9571cf8aa5eb7f",
           "importsFiles": [
             "apps/desktop/src/components/TopBar.tsx",
             "packages/state/src/index.ts"
@@ -6124,7 +6124,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "279e54ee13e9d77a986776a7b691a60852c9ec25ecff3340999ea7255a62e162",
+          "hash": "5615da7f8f232ce6b9f60a6d8ecb9f94ddebda936f715fd6556d5e280c185acc",
           "path": "packages/domain/package.json"
         },
         {
@@ -6745,8 +6745,12 @@
           "path": "packages/mcp-sprite-server/fixtures/output/.gitignore"
         },
         {
-          "hash": "aaf4285456b80097b30bcc66f7d848973f6eeec24d374c7e8c87f8f7e1b7ced2",
+          "hash": "6697c40ca518bcd27dd10165e4d7c47a0d4d54237e5c3e74f7042c1b4fccbf06",
           "path": "packages/mcp-sprite-server/package.json"
+        },
+        {
+          "hash": "bd54de4f7085867b99de15c299abeddc7d886d0fc3ebdc8797967998bfd0b151",
+          "path": "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json"
         },
         {
           "hash": "e0dcaeae9975de892efe5cb6924ed1d40419646e4013420d1bba082ccf85f463",
@@ -7034,6 +7038,29 @@
         },
         {
           "exports": [
+            "installInputSchemaContract",
+            "restoreInputSchemaContract"
+          ],
+          "failurePaths": [
+            {
+              "in": "installInputSchemaContract",
+              "kind": "throw",
+              "line": 81
+            }
+          ],
+          "hash": "558e8399c94cb1ef77a9aa5c1e28fd86b7af52a901876554eca478f824d9c88d",
+          "path": "packages/mcp-sprite-server/src/schemaCompat.ts"
+        },
+        {
+          "hash": "1f21fed4172c59243186658e587340995c7b49305e07dcf87e6d1cd5d8a4e963",
+          "importsFiles": [
+            "packages/mcp-sprite-server/src/server.ts"
+          ],
+          "path": "packages/mcp-sprite-server/src/schemaContract.test.ts",
+          "testFramework": "vitest"
+        },
+        {
+          "exports": [
             "fail",
             "success"
           ],
@@ -7063,7 +7090,7 @@
           "exports": [
             "createGlyphStudioServer"
           ],
-          "hash": "e1b232de0a6763952b22eea070cafdccab342d38e6eaa9c434d4cae42e7c699d",
+          "hash": "198570d9a48c637ffdcebea3d5bb8bd01b14e19295bab8b67010cfeea1ee2a69",
           "importOrder": [
             "packages/mcp-sprite-server/src/version.ts",
             "packages/mcp-sprite-server/src/session/sessionManager.ts",
@@ -7083,13 +7110,15 @@
             "packages/mcp-sprite-server/src/resources/documentResource.ts",
             "packages/mcp-sprite-server/src/resources/stateResource.ts",
             "packages/mcp-sprite-server/src/resources/renderResource.ts",
-            "packages/mcp-sprite-server/src/resources/catalogResource.ts"
+            "packages/mcp-sprite-server/src/resources/catalogResource.ts",
+            "packages/mcp-sprite-server/src/schemaCompat.ts"
           ],
           "importsFiles": [
             "packages/mcp-sprite-server/src/resources/catalogResource.ts",
             "packages/mcp-sprite-server/src/resources/documentResource.ts",
             "packages/mcp-sprite-server/src/resources/renderResource.ts",
             "packages/mcp-sprite-server/src/resources/stateResource.ts",
+            "packages/mcp-sprite-server/src/schemaCompat.ts",
             "packages/mcp-sprite-server/src/session/sessionManager.ts",
             "packages/mcp-sprite-server/src/tools/analysisTools.ts",
             "packages/mcp-sprite-server/src/tools/documentTools.ts",
@@ -7667,7 +7696,7 @@
       "testRunners": [
         "vitest"
       ],
-      "testedBy": 23,
+      "testedBy": 24,
       "unresolvedSites": 0
     },
     {
@@ -7687,7 +7716,7 @@
           "path": ".prettierrc"
         },
         {
-          "hash": "2ab97561efbe05dfa0895ac68dbd17e0a3ae29ccc3d1ed4d6b2f172c05d7a2e9",
+          "hash": "d115e8b1bbdb7d4d6433eada028888b4813a46105132513f324a604024fcdd42",
           "path": "CHANGELOG.md"
         },
         {
@@ -7747,7 +7776,7 @@
           "path": "SHIP_GATE.md"
         },
         {
-          "hash": "31087ba7c245cfa59e4fad26f8aa246c6310611b01a624b52689d4e964c3e060",
+          "hash": "79ad140b0524fbc8dc00100bd652d36dacd3cb79439dee3fd585691d1fab95ed",
           "path": "TOOL-ENHANCEMENT-BRIEF.md"
         },
         {
@@ -7759,11 +7788,11 @@
           "path": "llm-sync-drive.yaml"
         },
         {
-          "hash": "b2d594cb296269d04d29f0e85330ac1efe0194ba697e56a65bec4aba32b1d804",
+          "hash": "719392b930637bb97a5419f1c3ba4d247a76b2d7d022318db5c791fb85cb62a6",
           "path": "package.json"
         },
         {
-          "hash": "c2cc0e4954084d655b1cc10abb863c3856872c76ccf7524641ba3b3b3f6446ce",
+          "hash": "5e5b9fad912414abc3d3113b7d8564c9803cb2d203fe5aba59c3def11decad6e",
           "path": "pnpm-lock.yaml"
         },
         {
@@ -8064,7 +8093,7 @@
           "path": "site/astro.config.mjs"
         },
         {
-          "hash": "af5d4f54dca60686724d306eb58759fb25b6f5ba4d66559ab84a968112a184e5",
+          "hash": "c6c51b3f73940d20432ccea006501ddd3b6e5afd767870bff96c64c85273fe0f",
           "path": "site/package-lock.json"
         },
         {
@@ -8155,7 +8184,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "3f65585f40cb74aeb74b2900f91237829ad6e6416bc17bbc09bc3090f853ed62",
+          "hash": "07fd1d7d7499dd43b5a3bfb609b19dda6ed9c0ca61735f5b5cf7bbddacf946f9",
           "path": "packages/state/package.json"
         },
         {
@@ -10594,7 +10623,7 @@
         {
           "boundary": "mcp-sprite-server",
           "depth": 0,
-          "files": 56
+          "files": 58
         },
         {
           "boundary": "state",
@@ -10759,6 +10788,13 @@
           "job": "test",
           "matched": true,
           "path": "packages/mcp-sprite-server/src/resources/catalogResource.test.ts",
+          "runKind": "executes",
+          "via": "vitest"
+        },
+        {
+          "job": "test",
+          "matched": true,
+          "path": "packages/mcp-sprite-server/src/schemaContract.test.ts",
           "runKind": "executes",
           "via": "vitest"
         },
@@ -11499,7 +11535,7 @@
           "via": "vitest"
         }
       ],
-      "runsCount": 123,
+      "runsCount": 124,
       "secrets": [],
       "sends": {
         "deploysPages": false,
@@ -11540,7 +11576,7 @@
         {
           "coverage": true,
           "dir": "packages/mcp-sprite-server",
-          "files": 23,
+          "files": 24,
           "job": "test",
           "junit": true,
           "runner": "vitest",
@@ -11899,8 +11935,8 @@
   ],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "5a1cc3213f0da895e6d0a325272dee125e73825a",
-    "tracked": 851
+    "commit": "65f37a9cf30e82264c40aca572cbfc2a63bb81ae",
+    "tracked": 854
   },
   "landings": [
     {
@@ -12528,6 +12564,18 @@
     {
       "readers": [
         {
+          "by": "packages/mcp-sprite-server/src/schemaContract.test.ts",
+          "call": "readFileSync",
+          "confidence": "ast",
+          "fromTests": true
+        }
+      ],
+      "target": "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json",
+      "writers": []
+    },
+    {
+      "readers": [
+        {
           "by": "audit/event-handlers/1-handler-registry.json",
           "call": "literal",
           "confidence": "text"
@@ -12662,7 +12710,7 @@
   "overlaps": [],
   "submodules": [],
   "symlinks": [],
-  "testFiles": 202,
+  "testFiles": 203,
   "testsNotRun": [
     "apps/desktop/src/components/AISettingsPanel.test.tsx",
     "apps/desktop/src/components/AnchorPanel.test.tsx",
