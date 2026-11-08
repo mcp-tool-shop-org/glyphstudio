@@ -11,147 +11,142 @@
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License">
   <img src="https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Linux-informational?style=flat-square" alt="Platforms">
   <img src="https://img.shields.io/badge/tauri-v2-orange?style=flat-square" alt="Tauri v2">
-  <img src="https://img.shields.io/badge/tests-2776%20passing-brightgreen?style=flat-square" alt="Tests">
+  <img src="https://img.shields.io/badge/tests-4550%2B%20passing-brightgreen?style=flat-square" alt="Tests">
   <a href="https://mcp-tool-shop-org.github.io/glyphstudio/"><img src="https://img.shields.io/badge/Landing_Page-live-blue?style=flat-square" alt="Landing Page"></a>
 </p>
 
-Studio di creazione di sprite incentrato sulla precisione, per la modifica pixel per pixel, l'animazione fotogramma per fotogramma e, in futuro, l'assistenza alla creazione di movimenti.
+# GlyphStudio
 
-GlyphStudio è un'applicazione desktop sviluppata con **Tauri v2**, **React** e **Rust**. È progettata attorno a una semplice regola: l'editor deve mantenere il controllo sull'opera d'arte, e l'automazione deve rimanere subordinata all'artista.
+Uno studio di gestione di risorse pixel per immagini statiche, animazioni, varianti, elementi riutilizzabili e output strutturato.
 
-## Stato attuale
+GlyphStudio è un'applicazione desktop sviluppata con **Tauri v2**, **React** e **Rust**. Viene fornita insieme a un **server MCP** che espone l'intera superficie di modifica degli sprite agli LLM: stessa logica di dominio, stessi buffer di pixel, stessa funzionalità di annullamento/ripetizione.
 
-GlyphStudio è un editor desktop funzionante con 32 fasi disponibili e 2.776 test superati.
+## Cosa puoi fare
 
-### Editor della tela (backend in Rust)
-- Tela pixel con rendering a vicinanza del vicino
-- Livelli con visibilità, blocco, opacità, ridenominazione, riordino
-- Disegno basato su tratti con annulla/riprova
-- Selezione rettangolare, operazioni di clipboard e flusso di lavoro di trasformazione
-- Timeline multi-fotogramma con isolamento annulla/riprova per ogni fotogramma
-- Sovrapposizioni "pellicola" per la modifica di fotogrammi adiacenti
-- Controlli di riproduzione con supporto per FPS e loop
-- Assistenza alla creazione di movimenti con generazione di proposte deterministiche
-- Sistema di ancoraggi con gerarchia, attenuazione e modelli di movimento secondario
-- Impostazioni predefinite per i movimenti con applicazione in batch su più fotogrammi
-- Definizioni di clip con punto di pivot, tag e convalida
-- Esportazione di sprite sheet con manifest (formati di runtime nativi e generici)
-- Catalogo risorse con miniature, ricerca e confezionamento
-- Salvataggio/caricamento del progetto, ripristino automatico e migrazione dello schema
+**Crea** — Disegna pixel art con strumenti deterministici, livelli e controllo della palette.
 
-### Compositore di scene (frontend + Rust)
-- Composizione di scene con istanze di risorse, ordinamento degli z, visibilità, opacità, parallasse
-- Sistema di telecamere con panoramica, zoom, animazione keyframe e derivazione di riprese
-- Sistema di creazione di personaggi con slot, impostazioni predefinite, convalida e collegamento alla scena
-- Annulla/riprova della scena con cronologia completa e ripristino in caso di errore di sincronizzazione
-- Provenienza persistente con possibilità di esaminare in dettaglio 20 tipi di operazioni
-- Confronto e anteprima di ripristino delle scene
+**Anima** — Crea animazioni fotogramma per fotogramma con l'effetto "onion skin", controllo dei tempi e strumenti per migliorare la qualità delle transizioni.
 
-### Editor di sprite (solo frontend)
-- Editor di pixel autonomo con strumenti matita, gomma, riempimento, contagocce
-- Modifica multi-livello con visibilità, ridenominazione e riordino per ogni livello
-- Composizione alfa con anteprima in tempo reale dei tratti su tutti i livelli
-- Gestione dei fotogrammi con pellicola, riproduzione, barra di scorrimento e durata per fotogramma
-- Selezione rettangolare con copia/taglia/incolla/elimina
-- Importazione/esportazione di sprite sheet con appiattimento multi-livello
-- Pannello della tavolozza con selettore di colori e scambio tra primo piano e sfondo
+**Crea varianti** — Deriva risorse in varianti di documenti denominate (direzionali, pose) e varianti di palette (famiglie di colori). Visualizza l'anteprima prima di salvare.
 
-Questo non è un semplice strumento per il browser o una macchina slot. È un editor desktop nativo in cui Rust gestisce la verità dei pixel della tela, mentre il frontend gestisce la verità dei pixel dello sprite.
+**Riutilizza** — Promuovi le selezioni a elementi riutilizzabili. Salva pacchetti curati. Applica elementi a diversi progetti.
 
-## Filosofia del prodotto
+**Raggruppa** — Esporta famiglie di risorse in un'unica operazione: base + varianti di documenti + varianti di palette, con nomi di file contestuali.
 
-GlyphStudio è costruito attorno a quattro principi:
+**Inizia rapidamente** — Inizia da modelli, pacchetti o ricette di avvio. L'interfaccia principale riflette i flussi di lavoro supportati dallo studio.
 
-1. **Modifica deterministica**
-Ogni modifica di un pixel deve essere valida, verificabile e reversibile.
+## Flussi di lavoro migliori
 
-2. **Intelligenza artificiale subordinata**
-L'automazione deve assistere il flusso di lavoro senza sostituire il controllo creativo.
+### Sprite statico
+Progetto vuoto (32x32) → disegna con matita/riempimento/gomma → spazio di lavoro della palette → esporta in PNG.
 
-3. **Struttura incentrata sull'animazione**
-Fotogrammi, operazioni sulla timeline, pellicola e riproduzione sono concetti fondamentali dell'editor, non aggiunte successive.
+### Animazione in loop
+Progetto vuoto (32x32, 4 fotogrammi) → disegna il fotogramma 1 → duplica + modifica → effetto "onion skin" per l'allineamento → controllo dei tempi → esporta in GIF o in una sequenza di immagini.
 
-4. **Stato affidabile**
-Salvataggio/caricamento, salvataggio automatico, ripristino, annulla/riprova e migrazione sono trattati come funzionalità del prodotto, non come semplici attività di pulizia.
+### Famiglia di varianti
+Disegna la risorsa di base → crea varianti di documenti (ad esempio, cammina a sinistra, cammina a destra) → crea set di palette (ad esempio, fuoco, ghiaccio) → visualizza l'anteprima della rimappatura della palette → esporta in un pacchetto con nomi di file `{name}-{variant}-{palette}.png`.
+
+### Elementi riutilizzabili
+Disegna una forma ricorrente → seleziona → promuovi a elemento → salva nella libreria → applica in altri fotogrammi/progetti. Salva elementi e palette curati come pacchetto per il riutilizzo tra progetti.
+
+### Avvio da modello/pacchetto
+ProjectHome → scegli un modello (pronto per l'animazione o per le varianti) o un pacchetto (kit di interfaccia utente, raccolta di palette) → progetto funzionante con la struttura già caricata.
+
+## Esempi
+
+Quattro progetti esemplari dimostrano i flussi di lavoro più efficaci. Ognuno è un file di scambio valido che puoi importare:
+
+| Esempi | File | Cosa dimostra |
+|----------|------|----------------|
+| Crystal Gem | [`showcase/still-sprite.interchange.json`](showcase/) | Creazione di immagini statiche, utilizzo della palette |
+| Flickering Flame | [`showcase/loop-animation.interchange.json`](showcase/) | Animazione di 4 fotogrammi, tempistica |
+| Shield Variants | [`showcase/variant-family.interchange.json`](showcase/) | Base + varianti di palette fuoco/ghiaccio |
+| Game UI Kit | [`showcase/pack-project.interchange.json`](showcase/) | Elementi riutilizzabili (stella, cuore, moneta) |
+
+Consulta [`showcase/SHOWCASE.md`](showcase/SHOWCASE.md) per i dettagli.
+
+## Concetti chiave
+
+| Concetto | Cos'è | Dove si trova |
+|---------|-----------|----------------|
+| **Palette Set** | Un set di colori denominato per la ricolorazione | A livello di documento, commutabile |
+| **Document Variant** | Una derivazione della sequenza di fotogrammi (posa, direzione) | A livello di documento, fotogrammi indipendenti |
+| **Part** | Un elemento pixel riutilizzabile promosso da una selezione | Libreria, tra progetti |
+| **Pack** | Un pacchetto curato di set di palette + elementi | Libreria, importabile/esportabile |
+| **Template** | Un modello di avvio del progetto (tela, palette, fotogrammi) | Libreria, utilizzato da ProjectHome |
+| **Bundle** | Un'esportazione in un'unica operazione di base + varianti + palette | Flusso di esportazione |
+| **Interchange** | Formato JSON per lo spostamento delle strutture create tra progetti | File `.interchange.json` |
+
+## Scorciatoie contestuali
+
+GlyphStudio mostra le scorciatoie pertinenti in base a ciò che stai facendo. La barra si aggiorna man mano che il contesto cambia.
+
+| Contesto | Scorciatoie principali |
+|---------|--------------|
+| **Drawing** | `B` Matita, `E` Gomma, `G` Riempimento, `M` Selezione, `X` Scambia primo piano/sfondo, `Ctrl+Z` Annulla |
+| **Selection active** | `Ctrl+C` Copia, `Ctrl+X` Taglia, `Ctrl+V` Incolla, `Del` Cancella, `Esc` Deseleziona |
+| **Stamp mode** | `Click` Applica elemento, `Esc` Esci |
+| **Animation** | `Ctrl+D` Duplica fotogramma, `Space` Riproduci/Interrompi, `Left/Right` Avanza fotogrammi |
+| **Library focused** | `Ctrl+F` Cerca, `Up/Down` Naviga, `Enter` Attiva |
+| **Variant workflow** | `+ Variant` Deriva sequenza, `Toggle` Confronta sovrapposizione |
+| **Palette preview** | `Apply` Conferma rimappatura, `Cancel` Annulla |
+
+## Pacchetti
+
+| Pacchetto | Descrizione |
+|---------|-------------|
+| `apps/desktop` | Applicazione desktop Tauri v2 (React + Rust) |
+| [`@glyphstudio/domain`](packages/domain/) | Tipi e contratti |
+| [`@glyphstudio/api-contract`](packages/api-contract/) | Tipi di contratto IPC Tauri |
+| [`@glyphstudio/state`](packages/state/) | Gestione dello stato, operazioni raster, cronologia |
+| [`@glyphstudio/mcp-sprite-server`](packages/mcp-sprite-server/) | Server MCP: 76 strumenti, 6 risorse |
 
 ## Architettura
 
 ### Frontend (React + TypeScript)
-- 17+ store di Zustand organizzati per dominio
-- Renderer HTML per la tela per entrambi gli editor
-- Interfaccia utente dell'editor della tela: livelli, timeline, selezione, riproduzione, costruttore di personaggi, compositore di scene
-- Editor di sprite: editor di pixel autonomo con buffer di pixel gestiti dal frontend
-- Composizione alfa tramite `flattenLayers` per la modifica di sprite multi-livello
+- Store di Zustand organizzati per dominio
+- Renderer HTML canvas
+- Editor di sprite con buffer di pixel e composizione alfa gestiti dal frontend
+- Pannello della libreria con indice unificato, ricerca, fissaggio e navigazione da tastiera
 
 ### Backend (Rust)
-- Buffer di pixel e composizione dei livelli per l'editor di tela.
-- Transazioni di tratto con anteprime "prima/dopo".
-- Sessioni di selezione/trasformazione.
-- Persistenza del progetto, salvataggio automatico, ripristino in caso di crash.
-- Pipeline di esportazione (PNG, sprite sheet, clip, bundle).
-- Motore di composizione della scena con telecamera e riproduzione.
-- Catalogo di risorse con generazione di miniature.
-- 166 comandi Tauri implementati.
+- Buffer di pixel e composizione dei livelli definitivi
+- Transazioni di tratto con annullamento/ripetizione
+- Persistenza del progetto, salvataggio automatico, ripristino in caso di arresto anomalo
+- Pipeline di esportazione (PNG, sprite sheet, GIF animata, pacchetto)
+- Motore di composizione della scena con telecamera e riproduzione
 
-### Shell desktop
-- Tauri v2
+### Server MCP (Node.js)
+- Store di Zustand senza intestazione per sessione (nessun React, nessun browser)
+- 76 strumenti registrati tramite `@modelcontextprotocol/sdk`
+- Stesso codice `@glyphstudio/domain` e `@glyphstudio/state` dell'applicazione desktop
+- Funziona tramite stdio: compatibile con Claude Desktop, Claude Code o qualsiasi client MCP
 
-## Struttura monorepo
+Consulta il [README del server MCP](packages/mcp-sprite-server/README.md) per l'elenco completo degli strumenti.
+
+## Struttura del monorepo
 
 ```text
 glyphstudio/
-  apps/desktop/
-    src/
-    src-tauri/
+  apps/desktop/           Desktop app (React + Tauri + Rust)
+    src/                  Frontend
+    src-tauri/            Rust backend
   packages/
-    domain/
-    api-contract/
-    state/
-  site/
+    domain/               Types and contracts
+    api-contract/         Tauri IPC types
+    state/                State management, raster, history (2,575+ tests)
+    mcp-sprite-server/    MCP server — 76 tools
+  showcase/               Canonical showcase projects
+  site/                   Landing page (Astro)
 ```
 
-## Fasi implementate
-
-### Fasi 1–3 — Fondamenti dell'editor
-Tela, livelli, strumenti di disegno, annulla/riprova, selezione, trasformazioni, timeline, onion skin, riproduzione, operazioni sui fotogrammi, esportazione PNG/strip, persistenza del progetto, salvataggio automatico, ripristino in caso di crash.
-
-### Fase 4A — Assistenza per l'animazione
-Sessioni di animazione vincolate, generazione deterministica di proposte, anteprima con miniature dei fotogrammi, sicurezza delle sessioni, commit delle proposte nella timeline.
-
-### Fasi 5–8 — Rifinitura dell'animazione
-Ancore con gerarchia e attenuazione, modelli di animazione secondari (vento, oscillazione, dondolio, fruscio), sandbox di animazione con metriche di analisi, preset di animazione con applicazione in batch.
-
-### Fasi 9–10 — Clip, Esportazione, Fondamenti della scena
-Definizioni di clip con pivot/tag/validazione, esportazione di sprite sheet con manifest, catalogo di risorse con miniature, confezionamento di bundle, composizione della scena con istanze e ordinamento degli z-layer.
-
-### Fasi 11–14 — Sistema dei personaggi
-Creazione di personaggi con 12 slot per le regioni del corpo, selettore di preset con livelli di compatibilità, validazione della creazione, libreria di creazioni con persistenza, ponte tra personaggio e scena con posizionamento di snapshot.
-
-### Fasi 15–16 — Modifica della scena
-Telecamera della scena con panoramica/zoom, keyframe della telecamera con interpolazione, annulla/riprova della scena con cronologia completa degli snapshot, rollback in caso di errore di sincronizzazione del backend.
-
-### Fasi 17–24 — Provenienza e ispezione
-Provenienza della scena persistente con 20 tipi di operazioni, ispezione dettagliata con sezioni "prima/dopo" catturate, riepiloghi strutturati dei valori, motore di confronto delle scene, ripristino delle anteprime.
-
-### Fasi 25–26 — Ripristino e ripristino selettivo
-Contratto di ripristino della scena con derivazione pura, ripristino selettivo per dominio (istanze, telecamera, keyframe, riproduzione), configurazione della riproduzione tramite interfaccia chiara con annulla/riprova.
-
-### Fasi 27–28 — Editor di sprite
-Editor di sprite solo frontend: contratto del documento, tela di pixel con matita/gomma/riempimento/pipetta, fotogrammi con onion skin, selezione con clipboard, importazione/esportazione di sprite sheet, scorciatoie da tastiera, zoom/griglia, pannello della tavolozza.
-
-### Fase 29 — Anteprima dell'animazione
-Contratto del lettore di animazione, interfaccia utente di riproduzione con barra di scorrimento e scorciatoia Space, modifica della durata del fotogramma in linea con preset, soppressione dell'onion skin durante la riproduzione.
-
-### Fase 30 — Livelli e flusso di lavoro dei livelli
-Tipo SpriteLayer, buffer di pixel con chiave layerId, composizione alpha flattenLayers, tracciamento activeLayerId, pannello dei livelli con CRUD/visibilità/rinomina/riordino, composizione delle pennellate in bozza su tutti i livelli visibili, esportazione multi-livello.
-
-## Esecuzione dell'app
+## Esecuzione dell'applicazione
 
 ### Prerequisiti
 - Node.js 20+
 - pnpm 9+
 - Rust 1.75+ (tramite [rustup](https://rustup.rs/))
-- Prerequisiti di Tauri v2 per la tua piattaforma
+- Prerequisiti Tauri v2 per la tua piattaforma
 
 ### Installazione
 
@@ -159,10 +154,16 @@ Tipo SpriteLayer, buffer di pixel con chiave layerId, composizione alpha flatten
 pnpm install
 ```
 
-### Esegui l'app desktop
+### Esegui l'applicazione desktop
 
 ```bash
 pnpm dev
+```
+
+### Avvia il server MCP (in modalità standalone)
+
+```bash
+npx tsx packages/mcp-sprite-server/src/cli.ts
 ```
 
 ### Controllo dei tipi
@@ -171,66 +172,60 @@ pnpm dev
 pnpm typecheck
 ```
 
+### Test
+
+```bash
+pnpm test
+```
+
 ### Controllo Rust
 
 ```bash
 cd apps/desktop/src-tauri
 cargo check
+cargo test
 ```
 
 ## Supporto per l'esportazione
 
-### Editor di tela (Rust)
-- **Immagine PNG del frame corrente** — immagine composita singola.
-- **Sequenza PNG** — file numerati (name_0001.png, name_0002.png, ...).
-- **Striscia di sprite** — striscia orizzontale o verticale di un'unica immagine.
-- **Foglio di clip** — foglio di sprite derivato dalle definizioni dei clip, con un file manifest opzionale.
-- **Foglio di tutti i clip** — foglio combinato di tutti i clip validi.
-- **Pacchetto di risorse** — cartella o file zip contenente immagini, file manifest e miniature di anteprima.
-- **Pacchetto di catalogazione** — pacchetto multi-risorsa con sottocartelle per ogni risorsa.
+| Destinazione | Formati |
+|--------|---------|
+| **Single frame** | PNG (livelli visibili composti) |
+| **Animation** | GIF animata, sequenza PNG, striscia di sprite |
+| **Sheet** | Foglio di sprite con file manifest (runtime nativo + generico) |
+| **Bundle** | Cartella o file zip con immagini, file manifest e anteprima |
+| **Variant family** | Base + varianti del documento + varianti della tavolozza con nomi di file contestuali |
+| **MCP Server** | Base64-encoded PNG, foglio, GIF e metadati JSON |
 
-### Editor di sprite (interfaccia utente)
-- **Striscia di sprite** — striscia orizzontale con tutti i livelli visibili appiattiti per ogni frame.
-- **Frame corrente** — immagine composita appiattita dei livelli visibili.
+L'esportazione utilizza solo i livelli visibili composti. Gli elementi dell'editor (onion skin, stato di riproduzione) non sono mai inclusi nell'output.
 
-Le esportazioni utilizzano solo i livelli visibili compositi. L'effetto "onion skin", lo stato di riproduzione e le sovrapposizioni temporanee dell'editor non sono inclusi nell'output.
+## Filosofia del prodotto
 
-## Documentazione
+1. **Modifica deterministica:** ogni modifica di pixel è valida, ispezionabile e reversibile.
+2. **IA subordinata:** l'automazione assiste il flusso di lavoro senza sostituire il controllo creativo.
+3. **Struttura incentrata sull'animazione:** fotogrammi, timeline, onion skin e riproduzione sono concetti fondamentali, non elementi aggiunti in seguito.
+4. **Stato affidabile:** salvataggio/caricamento, salvataggio automatico, annulla/ripeti e migrazione sono trattati come funzionalità del prodotto.
+5. **Riutilizzo onesto:** le parti sono contrassegnate (pixel confermati), non istanze collegate false. Le varianti sono fork, non uno stato condiviso nascosto. Anteprima prima della conferma.
 
-Consultare il [manuale](site/src/content/docs/handbook/) per maggiori dettagli:
-
-- [Guida introduttiva](site/src/content/docs/handbook/getting-started.md)
-- [Architettura](site/src/content/docs/handbook/architecture.md)
-- [Riferimento API](site/src/content/docs/handbook/reference.md)
-
-## Roadmap (Piano di sviluppo)
-
-Priorità a breve termine:
-
-- Modalità tavolozza indicizzata con regole di contrasto e modifica della scala di grigi.
-- Integrazione dell'assistente AI (Ollama locale + ComfyUI per attività di generazione limitate).
-- Ambiente di analisi della locomozione con sovrapposizioni di passo/contatto/CoM.
-- Motore di validazione con azioni di correzione.
-
-## Obiettivi non previsti
+## Obiettivi non perseguiti
 
 GlyphStudio non mira a essere:
 
-- Un editor di immagini generico.
-- Un'applicazione "giocattolo" pensata principalmente per il browser.
-- Un wrapper per prompt AI che indovina il contenuto artistico.
-- Una tela "morbida" dove lo stato dell'interfaccia utente e la realtà del backend divergono.
+- Un editor di immagini generico
+- Un'app giocosa basata sul browser
+- Un wrapper di prompt AI che indovina l'arte
+- Una tela confusa in cui lo stato del frontend e la realtà del backend divergono
+- Un sistema di rigging/simboli falso che finge di essere un collegamento
 
 ## Sicurezza
 
-GlyphStudio è un'applicazione **solo per desktop**. Non effettua richieste di rete, non raccoglie dati di telemetria e non gestisce informazioni sensibili.
+GlyphStudio è un'applicazione **solo per desktop**. Nessuna richiesta di rete, nessun telemetria, nessun segreto.
 
-- **Dati accessibili:** file di sprite locali (.glyph, .pxs, .png), file di salvataggio automatico/ripristino nella directory dei dati dell'applicazione.
-- **Dati NON accessibili:** nessuna connessione di rete, nessun servizio cloud, nessuna API remota, nessun account utente.
-- **Permessi:** accesso al file system limitato alle directory selezionate dall'utente tramite le finestre di dialogo native di file di Tauri v2.
-- **Nessuna telemetria** viene raccolta o inviata.
+- **Dati interessati:** file sprite locali (.glyph, .pxs, .png), file di salvataggio/ripristino automatico
+- **Dati NON interessati:** nessuna rete, nessun cloud, nessuna API remota, nessun account utente
+- **Autorizzazioni:** accesso al file system limitato alle directory selezionate dall'utente tramite le finestre di dialogo native di Tauri v2
 
-Consultare [SECURITY.md](SECURITY.md) per segnalare eventuali vulnerabilità.
+Il server MCP viene eseguito localmente tramite stdio senza alcuna comunicazione di rete. Consultare [SECURITY.md](SECURITY.md) per segnalare vulnerabilità.
 
 ## Licenza
 
