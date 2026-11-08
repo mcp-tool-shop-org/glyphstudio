@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ### Fixed
 - Removed a personal home-directory path from a project brief and a test fixture.
+- The MCP server's tool list advertises the same input schemas as 1.0.1 after the SDK and Zod update (every tool input again says `additionalProperties: false`), pinned by a snapshot test against 1.0.1's real output.
 - `@glyphstudio/mcp-sprite-server` pins `@modelcontextprotocol/sdk` to exactly 1.32.2: the schema-contract shim reads an SDK internal, so a later SDK must come in through a tested release, not a caret range.
 
 ## [1.0.1] - 2026-03-25
