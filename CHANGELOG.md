@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-11-07
+
+### Security
+- Updated `devalue` in the documentation site to 5.9.3 or later, which fixes two published advisories (GHSA-j22f-vq7h-c4qm, GHSA-mcm9-63f2-9j32).
+- Updated the MCP sprite server to the current MCP SDK (1.32.2) and Zod 4, which clears every known advisory in its dependencies, including a critical one in a web-server library it pulls in.
+- Updated the documentation site's build tools to clear its known advisories.
+
+### Changed
+- The documentation site now builds on Astro 7.
+- Added a beginner section to the handbook and refreshed the README and handbook pages.
+- Checks now run on every pull request, and coverage and test results are reported to Codecov.
+- Added the Atlas repository map, checked in CI.
+- All version numbers (packages, desktop app, Tauri config) now agree at 1.0.2.
+
+### Fixed
+- Removed a personal home-directory path from a project brief and a test fixture.
+
 ## [1.0.1] - 2026-03-25
 
 ### Fixed

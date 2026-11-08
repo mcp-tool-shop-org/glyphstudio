@@ -34,7 +34,7 @@ describe('TopBar', () => {
     });
 
     it('shows filename from filePath without .pxs extension', () => {
-      seed({ filePath: 'C:\\Users\\me\\docs\\hero.pxs' });
+      seed({ filePath: 'C:\\sprites\\hero.pxs' });
       render(<TopBar activeMode="edit" onModeChange={vi.fn()} />);
       expect(screen.getByText('hero')).toBeInTheDocument();
     });

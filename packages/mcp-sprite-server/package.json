@@ -1,6 +1,6 @@
 {
   "name": "@glyphstudio/mcp-sprite-server",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "MCP server exposing GlyphStudio sprite editor as 75 programmable tools",
   "type": "module",
   "main": "src/index.ts",
@@ -52,9 +52,9 @@
   "dependencies": {
     "@glyphstudio/domain": "workspace:*",
     "@glyphstudio/state": "workspace:*",
-    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "fast-png": "^8.0.0",
-    "zod": "^3.24.0",
+    "zod": "^4.6.7",
     "zustand": "^5.0.3"
   },
   "devDependencies": {

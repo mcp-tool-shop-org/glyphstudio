@@ -1,7 +1,7 @@
 {
   "$schema": "https://raw.githubusercontent.com/nicholasrice/tauri/main/crates/tauri-cli/schema.json",
   "productName": "GlyphStudio",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "identifier": "com.mcptoolshop.glyphstudio",
   "build": {
     "frontendDist": "../dist",
