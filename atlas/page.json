@@ -44,6 +44,7 @@
       "partLabel": "state"
     },
     {
+      "into": true,
       "kind": "place",
       "readers": [
         "mcp-sprite-server"
@@ -57,38 +58,51 @@
   ],
   "changes": {
     "fileCounts": {
-      "added": 3,
-      "changed": 0,
+      "added": 0,
+      "changed": 12,
       "moved": 0,
-      "parts": 1,
+      "parts": 3,
       "removed": 0
     },
     "items": [
       {
-        "kind": "door",
-        "sentence": "CI now also runs packages/mcp-sprite-server/src/schemaContract.test.ts.",
+        "kind": "landing",
+        "sentence": "docs/showcase/stage47a-test/monk-47a---*x*.png is now written by scripts/test-47a-prompt.mjs.",
         "subjects": [
-          ".github/workflows/ci.yml",
-          "packages/mcp-sprite-server/src/schemaContract.test.ts"
+          "docs/showcase/stage47a-test/monk-47a---*x*.png",
+          "scripts/test-47a-prompt.mjs"
         ]
       },
       {
         "kind": "landing",
-        "sentence": "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json is now read by packages/mcp-sprite-server/src/schemaContract.test.ts.",
+        "sentence": "docs/showcase/stage47b-critique/monk-r0---*x*.png is now written by scripts/test-47b-critique-loop.mjs.",
         "subjects": [
-          "packages/mcp-sprite-server/src/__fixtures__/base-tools-list-v1.0.1.json",
-          "packages/mcp-sprite-server/src/schemaContract.test.ts"
+          "docs/showcase/stage47b-critique/monk-r0---*x*.png",
+          "scripts/test-47b-critique-loop.mjs"
         ]
       },
       {
+        "kind": "landing",
+        "sentence": "docs/showcase/stage47b-critique/monk-r1---*x*.png is now written by scripts/test-47b-critique-loop.mjs.",
+        "subjects": [
+          "docs/showcase/stage47b-critique/monk-r1---*x*.png",
+          "scripts/test-47b-critique-loop.mjs"
+        ]
+      },
+      {
+        "kind": "landing",
+        "sentence": "And 2 more new writers and readers of places.",
+        "subjects": []
+      },
+      {
         "kind": "counts",
-        "sentence": "3 files added, across 1 part.",
+        "sentence": "12 files changed content, across 3 parts.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "02f65e19c071c0a3de7fd09ed6e0bb52e84af9e3",
-      "generatedAt": "2026-11-08T00:21:25.461Z"
+      "commit": "65f37a9cf30e82264c40aca572cbfc2a63bb81ae",
+      "generatedAt": "2026-11-08T00:24:37.470Z"
     },
     "unchanged": false
   },
@@ -97,8 +111,8 @@
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "65f37a9cf30e82264c40aca572cbfc2a63bb81ae",
-  "defaultBranch": "master",
+  "commit": "ad36a11278a5727d7dbb39e06c4d835c053ea5f4",
+  "defaultBranch": "main",
   "derived": "15 parts, mostly TypeScript (426 files), Rust (46), JavaScript (20), CSS (4), Astro (1) and HTML (1). Work enters through 4 doors; the busiest is CI, which reaches 4 parts. It deploys a site to GitHub Pages. glyphstudio is a desktop app built from apps/desktop/src-tauri (nothing ships it).",
   "doors": [
     {
@@ -377,7 +391,7 @@
       "to": "domain"
     }
   ],
-  "engine": "1.24.0",
+  "engine": "1.26.0",
   "generated": [
     {
       "place": "apps/desktop/src-tauri/gen/schemas/",
@@ -386,6 +400,7 @@
       ]
     },
     {
+      "into": true,
       "place": "docs/benchmark-assets/",
       "writers": [
         "packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test)"
@@ -494,7 +509,13 @@
       ]
     },
     {
-      "place": "docs/showcase/stage47a-test/",
+      "place": "docs/showcase/stage47a-test/monk-47a---*x*.png",
+      "writers": [
+        "scripts/test-47a-prompt.mjs"
+      ]
+    },
+    {
+      "place": "docs/showcase/stage47a-test/shapes.json",
       "writers": [
         "scripts/test-47a-prompt.mjs"
       ]
@@ -530,25 +551,45 @@
       ]
     },
     {
+      "into": true,
       "place": "packages/mcp-sprite-server/fixtures/golden/",
       "writers": [
         "packages/mcp-sprite-server/src/workflows/verify.ts"
       ]
     },
     {
+      "into": true,
       "place": "showcase/",
       "writers": [
         "showcase/generate.mjs"
       ]
     },
     {
-      "place": "showcase/previews/",
+      "place": "showcase/previews/hero-animation.ppm",
+      "writers": [
+        "showcase/render-previews.mjs"
+      ]
+    },
+    {
+      "place": "showcase/previews/hero-still.ppm",
+      "writers": [
+        "showcase/render-previews.mjs"
+      ]
+    },
+    {
+      "place": "showcase/previews/hero-variants.ppm",
+      "writers": [
+        "showcase/render-previews.mjs"
+      ]
+    },
+    {
+      "place": "showcase/previews/part-*.ppm",
       "writers": [
         "showcase/render-previews.mjs"
       ]
     }
   ],
-  "generatedAt": "2026-11-08T00:24:37.470Z",
+  "generatedAt": "2026-11-11T22:18:24.919Z",
   "limits": [
     "17 imports could not be resolved: `scripts/critique-sprite.mjs` imports a path built at run time; `scripts/critique-sprite.mjs` loads `fast-png` when it is installed, which is not declared; `scripts/dogfood-43-creature.mjs` imports a path built at run time; and 14 more.",
     "59 writes and 10 reads use paths built at run time and are not named here.",
@@ -591,12 +632,25 @@
       "tests": 1
     }
   ],
-  "repo": "glyphstudio",
+  "repo": "mcp-tool-shop-org/glyphstudio",
   "sequences": [],
+  "startBeside": [
+    {
+      "files": [
+        "apps/desktop/src-tauri/src/engine/selection.rs",
+        "apps/desktop/src-tauri/src/engine/motion.rs",
+        "apps/desktop/src-tauri/src/engine/sandbox.rs",
+        "apps/desktop/src-tauri/src/engine/scene.rs"
+      ],
+      "from": "apps/desktop/src-tauri/src/lib.rs"
+    }
+  ],
   "startDoor": "apps/desktop/src-tauri/Cargo.toml#glyphstudio",
   "startHere": [
     "apps/desktop/src-tauri/src/main.rs",
-    "apps/desktop/src-tauri/src/lib.rs"
+    "apps/desktop/src-tauri/src/lib.rs",
+    "apps/desktop/src-tauri/src/engine/canvas_state.rs",
+    "apps/desktop/src-tauri/src/engine/pixel_buffer.rs"
   ],
   "startReason": "This path follows glyphstudio (a desktop app built from apps/desktop/src-tauri, which nothing ships) from its entry, since CI runs only tests and checks.",
   "summary": null,
@@ -611,6 +665,7 @@
     "showcase": 0,
     "state": 145
   },
+  "testedCodeParts": 7,
   "unnamedWrites": 59,
   "unread": [
     {
@@ -620,6 +675,7 @@
       ]
     },
     {
+      "into": true,
       "place": "docs/benchmark-assets/",
       "writers": [
         "packages/mcp-sprite-server/src/dogfood/materialize.test.ts (a test)"
@@ -664,7 +720,7 @@
   ],
   "unreadFiles": 0,
   "unreadNote": [
-    "And 17 more places."
+    "And 21 more places."
   ],
   "untested": [
     {
@@ -681,5 +737,5 @@
   "untestedNote": [
     "64 test files run in no workflow: apps/desktop/src/components/AISettingsPanel.test.tsx, apps/desktop/src/components/AnchorPanel.test.tsx, apps/desktop/src/components/AssetBrowserPanel.test.tsx and 61 more."
   ],
-  "written": 28
+  "written": 32
 }

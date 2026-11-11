@@ -9,7 +9,7 @@
       "externals": 0,
       "files": [
         {
-          "hash": "b94cc475bdbb993e17b6af6b31b1f61f8443deb7fd551996578abce59831b930",
+          "hash": "6199d13433694f0480e63e111e483c63512bc1853bce9893a2c43781083e7ddc",
           "path": ".github/workflows/ci.yml"
         },
         {
@@ -6745,7 +6745,7 @@
           "path": "packages/mcp-sprite-server/fixtures/output/.gitignore"
         },
         {
-          "hash": "6697c40ca518bcd27dd10165e4d7c47a0d4d54237e5c3e74f7042c1b4fccbf06",
+          "hash": "bc955d73bb9c1e4c5152734e1b10a22219992dc3669f0270013bbc2cf514fdca",
           "path": "packages/mcp-sprite-server/package.json"
         },
         {
@@ -7716,7 +7716,7 @@
           "path": ".prettierrc"
         },
         {
-          "hash": "d115e8b1bbdb7d4d6433eada028888b4813a46105132513f324a604024fcdd42",
+          "hash": "d0b25c6baf2c509fe284914ae65c319d2b498f413f22c2691f96cb715286465f",
           "path": "CHANGELOG.md"
         },
         {
@@ -7724,35 +7724,35 @@
           "path": "LICENSE"
         },
         {
-          "hash": "a4746fe6de52765fae55c2bb49087b3eac606e59fb6c2d4c1c2b4c4fd66f66e7",
+          "hash": "02a1527212f2349c3202b1236a5257957dd818054e726d248fd9b01a6ac0dcfe",
           "path": "README.es.md"
         },
         {
-          "hash": "576622dddbc66a37dbda7b77bff5304d66ef31bd6a29c78e0716b61a89574c1c",
+          "hash": "c3084e6a88f335add776c939d1fa3258a18fb0dc28aa0cb315a7bff570587468",
           "path": "README.fr.md"
         },
         {
-          "hash": "0e7272c99198b4087159fcc1327a56e8c7d36361ffb1e19bd6a07034c89053ab",
+          "hash": "c8d656b5c4029de56c8e0c69a5e2afdfbe7a29f1fdc4da80a04a2f158e181674",
           "path": "README.hi.md"
         },
         {
-          "hash": "c3789961865b9066d0c890698a340bab40111a9d6e2ccd46f5701d22ab5b84fe",
+          "hash": "aea68225e82148387efd1124e2e7588c8cb0afbbefb061e2f246e88d2b7f803a",
           "path": "README.it.md"
         },
         {
-          "hash": "f40fe72f45b3e4a2555f6acce945b9cc21ccad69b4abea9638e12e534055deea",
+          "hash": "8595d69eed9a7a6f7960258e0cc25aa0c5329f78b848650cffc339b9bbad438c",
           "path": "README.ja.md"
         },
         {
-          "hash": "216e6ff01e6ec0b2b14787e10bf0d546c8d54e556db73892c6978af400268b11",
+          "hash": "6d5ba825297f8b27b2e4e675af0ec554c855b04940251c12998ca30e8d331fea",
           "path": "README.md"
         },
         {
-          "hash": "1874abf8ad465ad6c78dbf506946b0bc3098ec1512e33a69bc58aca04b2bd271",
+          "hash": "e03138251e3b9c998581c45777d4409cf9f50d304da23234301d13f37c35932f",
           "path": "README.pt-BR.md"
         },
         {
-          "hash": "dab483e7547b0abd91ff2821195367bafe25eea0ca100d4770e845fba91eac85",
+          "hash": "35a3173421bc238de5d0be99915387e733c56ef259f9311e88844eb65136b68e",
           "path": "README.zh.md"
         },
         {
@@ -7792,7 +7792,7 @@
           "path": "package.json"
         },
         {
-          "hash": "5e5b9fad912414abc3d3113b7d8564c9803cb2d203fe5aba59c3def11decad6e",
+          "hash": "100fa072de58bdcd1252986d643a1ec8fa8bd9fc73b7bbc264b2189f0d124193",
           "path": "pnpm-lock.yaml"
         },
         {
@@ -11933,9 +11933,9 @@
       "to": "domain"
     }
   ],
-  "engine": "1.24.0",
+  "engine": "1.26.0",
   "generatedFrom": {
-    "commit": "65f37a9cf30e82264c40aca572cbfc2a63bb81ae",
+    "commit": "ad36a11278a5727d7dbb39e06c4d835c053ea5f4",
     "tracked": 854
   },
   "landings": [
@@ -12119,7 +12119,8 @@
           "by": "packages/mcp-sprite-server/src/dogfood/materialize.test.ts",
           "confidence": "ast"
         }
-      ]
+      ],
+      "writesInto": true
     },
     {
       "readers": [],
@@ -12405,7 +12406,7 @@
     },
     {
       "readers": [],
-      "target": "docs/showcase/stage47a-test",
+      "target": "docs/showcase/stage47a-test/monk-47a---*x*.png",
       "writers": [
         {
           "by": "scripts/test-47a-prompt.mjs",
@@ -12426,6 +12427,36 @@
     {
       "readers": [],
       "target": "docs/showcase/stage47b-critique",
+      "writers": [
+        {
+          "by": "scripts/test-47b-critique-loop.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
+      "target": "docs/showcase/stage47b-critique/monk-r0---*x*.png",
+      "writers": [
+        {
+          "by": "scripts/test-47b-critique-loop.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
+      "target": "docs/showcase/stage47b-critique/monk-r1---*x*.png",
+      "writers": [
+        {
+          "by": "scripts/test-47b-critique-loop.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
+      "target": "docs/showcase/stage47b-critique/monk-r2---*x*.png",
       "writers": [
         {
           "by": "scripts/test-47b-critique-loop.mjs",
@@ -12515,7 +12546,8 @@
           "by": "packages/mcp-sprite-server/src/workflows/verify.ts",
           "confidence": "ast"
         }
-      ]
+      ],
+      "writesInto": true
     },
     {
       "readers": [
@@ -12642,17 +12674,8 @@
           "by": "showcase/generate.mjs",
           "confidence": "ast"
         }
-      ]
-    },
-    {
-      "readers": [],
-      "target": "showcase/previews",
-      "writers": [
-        {
-          "by": "showcase/render-previews.mjs",
-          "confidence": "ast"
-        }
-      ]
+      ],
+      "writesInto": true
     },
     {
       "readers": [],
@@ -12677,6 +12700,16 @@
     {
       "readers": [],
       "target": "showcase/previews/hero-variants.ppm",
+      "writers": [
+        {
+          "by": "showcase/render-previews.mjs",
+          "confidence": "ast"
+        }
+      ]
+    },
+    {
+      "readers": [],
+      "target": "showcase/previews/part-*.ppm",
       "writers": [
         {
           "by": "showcase/render-previews.mjs",
